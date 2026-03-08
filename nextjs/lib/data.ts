@@ -73,7 +73,7 @@ export interface Social {
   href: string;
 }
 
-export const siteData = {
+export const siteData: SiteConfig = {
   site: {
     name: "Zzy 的个人网站",
     domain: "https://personal-website-beige-omega.vercel.app",
@@ -415,4 +415,4 @@ export const siteData = {
     { label: "CSDN", href: "https://blog.csdn.net/Zzydzyg0618?spm=1000.2115.3001.5343" },
     { label: "Email", href: "mailto:zzy19812007@gmail.com" }
   ]
-} as const satisfies SiteConfig;
+};

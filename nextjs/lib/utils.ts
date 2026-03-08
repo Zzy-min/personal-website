@@ -13,7 +13,7 @@ export function formatDate(dateString: string): string {
   }).format(new Date(dateString));
 }
 
-export function sortByDateDesc<T>(items: T[], key: keyof T): T[] {
+export function sortByDateDesc<T>(items: readonly T[], key: keyof T): T[] {
   return [...items].sort((left, right) => {
     const leftDate = new Date(left[key] as string);
     const rightDate = new Date(right[key] as string);
