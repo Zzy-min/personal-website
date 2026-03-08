@@ -9,7 +9,7 @@ import { sortByDateDesc } from '@/lib/utils';
 
 export default function BlogPage() {
   const [filter, setFilter] = useState<string>('all');
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState<string>('');
 
   const uniqueTags = useMemo(() => {
     const tags = new Set<string>();
