@@ -35,7 +35,7 @@ export const siteData = {
     ]
   },
   metrics: [
-    { label: "博客文章", value: "18+" },
+    { label: "博客文章", value: "0", key: "posts" },
     { label: "精选项目", value: "4" },
     { label: "主攻方向", value: "Java / Python" }
   ],
@@ -70,7 +70,7 @@ export const siteData = {
       githubUrl: "https://blog.csdn.net/Zzydzyg0618?spm=1000.2115.3001.5343",
       demoUrl: "https://blog.csdn.net/Zzydzyg0618?spm=1000.2115.3001.5343",
       featured: true,
-      updatedAt: "2026-02-24",
+      updatedAt: "2025-02-24",
       status: "持续更新"
     },
     {
@@ -89,7 +89,7 @@ export const siteData = {
     {
       title: "Python基础知识扫盲合集（新手版）",
       summary: "从入门视角整理 Python 基础概念，适合作为后续学习的起点。",
-      publishedAt: "2026-02-24",
+      publishedAt: "2025-02-24",
       tags: ["Python", "入门"],
       sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/145847997",
       featured: true
@@ -97,15 +97,23 @@ export const siteData = {
     {
       title: "Java基础知识合集（新手版）",
       summary: "对 Java 初学阶段常见概念做系统梳理，方便建立整体知识框架。",
-      publishedAt: "2026-02-23",
+      publishedAt: "2025-02-23",
       tags: ["Java", "入门"],
       sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/145816856",
       featured: true
     },
     {
+      title: "C语言基础知识扫盲（新手版）",
+      summary: "面向新手梳理 C 语言的基础知识点，帮助建立最初的编程认知。",
+      publishedAt: "2025-02-23",
+      tags: ["C语言", "入门"],
+      sourceUrl: "https://blog.csdn.net/Zzydzyg0618?spm=1000.2115.3001.5343",
+      featured: true
+    },
+    {
       title: "JVM虚拟机的初步了解",
       summary: "围绕 JVM 的基础概念做入门整理，帮助理解 Java 运行机制。",
-      publishedAt: "2026-01-22",
+      publishedAt: "2025-01-22",
       tags: ["Java", "JVM"],
       sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/145384238",
       featured: true
@@ -113,7 +121,7 @@ export const siteData = {
     {
       title: "java八种数据类型和他们的运用和解释",
       summary: "总结 Java 的八种基本数据类型、适用场景与常见认知点。",
-      publishedAt: "2026-01-22",
+      publishedAt: "2025-01-22",
       tags: ["Java", "数据类型"],
       sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/145354348",
       featured: false
@@ -121,7 +129,7 @@ export const siteData = {
     {
       title: "Java数组的讲解与简单运用",
       summary: "聚焦数组的基本概念、声明方式和简单示例，适合巩固语法基础。",
-      publishedAt: "2026-01-20",
+      publishedAt: "2025-01-20",
       tags: ["Java", "数组"],
       sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/145319771",
       featured: false
@@ -129,7 +137,7 @@ export const siteData = {
     {
       title: "关于Java流程控制的理解和运用",
       summary: "整理分支、循环等流程控制语句的核心理解与简单使用方式。",
-      publishedAt: "2026-01-18",
+      publishedAt: "2025-01-18",
       tags: ["Java", "流程控制"],
       sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/145277960",
       featured: false
@@ -137,7 +145,7 @@ export const siteData = {
     {
       title: "Java运算的初步了解和运用",
       summary: "从基础运算符入手，帮助建立表达式与计算逻辑的直觉。",
-      publishedAt: "2026-01-17",
+      publishedAt: "2025-01-17",
       tags: ["Java", "运算符"],
       sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/145252971",
       featured: false
@@ -145,9 +153,49 @@ export const siteData = {
     {
       title: "初识Java和Java基础知识",
       summary: "面向新手的 Java 起步文章，梳理基础概念与学习切入点。",
-      publishedAt: "2026-01-16",
+      publishedAt: "2025-01-16",
       tags: ["Java", "基础"],
       sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/145228590",
+      featured: false
+    },
+    {
+      title: "Java的简单介绍",
+      summary: "用更轻量的方式介绍 Java 的定位、特点与初学阶段应关注的重点。",
+      publishedAt: "2025-01-13",
+      tags: ["Java", "基础"],
+      sourceUrl: "https://blog.csdn.net/Zzydzyg0618?spm=1000.2115.3001.5343",
+      featured: false
+    },
+    {
+      title: "了解浮点型以及了解单精度和双精度大小规律",
+      summary: "围绕浮点数、单精度与双精度做基础区分，帮助理解常见数值表示。",
+      publishedAt: "2025-01-09",
+      tags: ["编程基础", "数据类型"],
+      sourceUrl: "https://blog.csdn.net/Zzydzyg0618?spm=1000.2115.3001.5343",
+      featured: false
+    },
+    {
+      title: "初识字符串以及布尔类型，简单认识它们",
+      summary: "介绍字符串和布尔类型的基本含义与常见使用方式，夯实入门概念。",
+      publishedAt: "2025-01-08",
+      tags: ["编程基础", "字符串"],
+      sourceUrl: "https://blog.csdn.net/Zzydzyg0618?spm=1000.2115.3001.5343",
+      featured: false
+    },
+    {
+      title: "了解python中的变量和常量",
+      summary: "从变量与常量切入，帮助理解 Python 中最常见的数据命名与使用方式。",
+      publishedAt: "2025-01-07",
+      tags: ["Python", "变量"],
+      sourceUrl: "https://blog.csdn.net/Zzydzyg0618?spm=1000.2115.3001.5343",
+      featured: false
+    },
+    {
+      title: "了解python、认识python以及完成代码敲写",
+      summary: "记录 Python 入门阶段对语言认知、开发环境与基础代码书写的理解。",
+      publishedAt: "2025-01-06",
+      tags: ["Python", "基础"],
+      sourceUrl: "https://blog.csdn.net/Zzydzyg0618?spm=1000.2115.3001.5343",
       featured: false
     }
   ],
@@ -159,33 +207,33 @@ export const siteData = {
       type: "website"
     },
     {
-      date: "2026-02-24",
+      date: "2025-02-24",
       title: "发布 Python 入门合集",
       description: "围绕 Python 基础知识输出系统化整理文章，补齐博客内容矩阵。",
       type: "blog"
     },
     {
-      date: "2026-02-23",
-      title: "发布 Java 基础合集",
-      description: "把零散知识点整合为更适合新手阅读的 Java 基础入门文章。",
+      date: "2025-02-23",
+      title: "补齐 Java 与 C 语言入门合集",
+      description: "同一天集中发布 Java 与 C 语言入门向整理文章，博客内容更完整。",
       type: "blog"
     },
     {
-      date: "2026-01-22",
+      date: "2025-01-22",
       title: "深入到 JVM 与数据类型主题",
       description: "从语法入门逐步延伸到 JVM 与底层概念，开始建立更完整的 Java 认识。",
       type: "learning"
     },
     {
-      date: "2026-01-20",
+      date: "2025-01-20",
       title: "持续输出 Java 基础系列",
       description: "围绕数组、流程控制、运算符等主题形成连续的学习记录。",
       type: "blog"
     },
     {
-      date: "2025-12-01",
-      title: "开始布局项目实践方向",
-      description: "以中国象棋相关项目作为实践抓手，连接前端交互与算法兴趣。",
+      date: "2025-01-06",
+      title: "开始连续输出编程入门内容",
+      description: "从 Python 与基础类型主题起步，逐步形成持续更新的学习型博客节奏。",
       type: "project"
     }
   ],

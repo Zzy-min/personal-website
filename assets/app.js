@@ -20,6 +20,9 @@ const formatDate = (dateString) =>
 
 const createTag = (text) => `<span class="tag">${text}</span>`;
 
+const sortByDateDesc = (items, key) =>
+  [...items].sort((left, right) => new Date(right[key]).getTime() - new Date(left[key]).getTime());
+
 const renderNavigation = () => {
   const navMarkup = siteData.navigation
     .map((item) => {
@@ -81,7 +84,14 @@ const renderSharedFields = () => {
 const renderMetrics = () => {
   const container = byId("metric-list");
   if (!container) return;
-  container.innerHTML = siteData.metrics
+  const metrics = siteData.metrics.map((item) => {
+    if (item.key === "posts") {
+      return { ...item, value: String(siteData.posts.length) };
+    }
+    return item;
+  });
+
+  container.innerHTML = metrics
     .map(
       (item) => `<div class="metric-card"><strong>${item.value}</strong><span>${item.label}</span></div>`
     )
@@ -100,7 +110,7 @@ const projectCard = (project) => `
 
 const postCard = (post) => `
   <article class="card post-card">
-    <div class="card-topline"><span class="eyebrow">${post.tags.join(" · ")}</span><span class="muted">${post.publishedAt}</span></div>
+    <div class="card-topline"><span class="eyebrow">${post.tags.join(" · ")}</span><span class="muted">${formatDate(post.publishedAt)}</span></div>
     <h3>${post.title}</h3>
     <p>${post.summary}</p>
     <div class="tag-list">${post.tags.map(createTag).join("")}</div>
@@ -118,8 +128,9 @@ const renderProjects = () => {
 const renderPosts = () => {
   const latest = byId("latest-posts");
   const list = byId("post-list");
-  if (latest) latest.innerHTML = siteData.posts.slice(0, 3).map(postCard).join("");
-  if (list) list.innerHTML = siteData.posts.map(postCard).join("");
+  const posts = sortByDateDesc(siteData.posts, "publishedAt");
+  if (latest) latest.innerHTML = posts.slice(0, 3).map(postCard).join("");
+  if (list) list.innerHTML = posts.map(postCard).join("");
 };
 
 const renderSkills = () => {
@@ -135,7 +146,7 @@ const renderStrengths = () => {
 const renderTimeline = () => {
   const list = byId("timeline-list");
   if (!list) return;
-  list.innerHTML = siteData.timeline
+  list.innerHTML = sortByDateDesc(siteData.timeline, "date")
     .map(
       (item) => `
         <article class="timeline-item timeline-${item.type}">
