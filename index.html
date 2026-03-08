@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN" data-base="." data-path="/">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zzy 的个人网站 | 项目、博客与成长轨迹</title>
+    <meta name="description" content="聚合 Zzy 的 GitHub 项目、CSDN 技术文章与成长时间线，展示 Java、Python 与 Web 学习成果。" />
+    <meta name="theme-color" content="#07111f" />
+    <meta property="og:title" content="Zzy 的个人网站" />
+    <meta property="og:description" content="一个用于展示项目、博客和个人成长路径的中文技术个人站。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="./assets/og-card.svg" />
+    <meta property="og:locale" content="zh_CN" />
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <header class="site-header">
+        <div class="container header-inner">
+          <a class="brand" href="./">
+            <span class="brand-mark">Z</span>
+            <span class="brand-copy"><strong data-profile="name"></strong><span data-profile="role"></span></span>
+          </a>
+          <nav class="desktop-nav" id="site-nav" aria-label="主导航"></nav>
+          <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false">菜单</button>
+        </div>
+        <div class="container mobile-panel" id="mobile-panel"><nav class="mobile-nav" id="mobile-nav" aria-label="移动导航"></nav></div>
+      </header>
+      <main>
+        <section class="hero">
+          <div class="container hero-grid">
+            <div class="hero-copy hero-card">
+              <span class="eyebrow">个人品牌站 · 作品集 · 博客聚合</span>
+              <h1 data-profile="headline"></h1>
+              <p data-profile="intro"></p>
+              <div class="hero-actions" style="margin-top: 1.4rem"><a class="button primary" href="./projects/">查看项目</a><a class="button secondary" href="./blog/">浏览博客</a></div>
+              <p class="hero-meta" style="margin-top: 1rem">以中文内容为主，聚焦 Java、Python、Web 开发与学习成长记录。</p>
+            </div>
+            <aside class="hero-card">
+              <div class="brand" style="margin-bottom: 1.2rem"><span class="avatar-badge" data-profile="avatar"></span><div><strong data-profile="name"></strong><div class="muted" data-profile="role"></div></div></div>
+              <div class="metric-grid" id="metric-list"></div>
+              <div class="social-links" style="margin-top: 1.2rem"><a data-link="github" target="_blank" rel="noreferrer">GitHub</a><a data-link="blog" target="_blank" rel="noreferrer">CSDN</a></div>
+            </aside>
+          </div>
+        </section>
+        <section class="section"><div class="container"><div class="section-head"><div><span class="eyebrow">精选项目</span><h2>用项目展示成长速度</h2></div><a class="muted" href="./projects/">查看全部项目 →</a></div><div class="card-grid" id="featured-projects"></div></div></section>
+        <section class="section"><div class="container grid-two"><article class="text-card"><span class="eyebrow">技术关键词</span><h2>当前技能栈</h2><p>我更关注“边学边做”的节奏：先理解核心概念，再通过项目把知识落地为成果。</p><div class="tag-list" id="skill-list" style="margin-top: 1rem"></div></article><article class="text-card"><span class="eyebrow">能力特点</span><h2>我的工作方式</h2><ul id="strength-list"></ul></article></div></section>
+        <section class="section"><div class="container"><div class="section-head"><div><span class="eyebrow">最新文章</span><h2>博客是我的第二作品集</h2></div><a class="muted" href="./blog/">查看全部文章 →</a></div><div class="card-grid" id="latest-posts"></div></div></section>
+        <section class="section"><div class="container contact-grid"><article class="contact-panel"><span class="eyebrow">联系我</span><h2>欢迎交流项目、学习方法与技术成长</h2><p>如果你想讨论 Java / Python 学习路径、项目实践，或者想进一步了解我的内容输出，可以通过下面的方式联系我。</p><div class="contact-links" style="margin-top: 1.2rem"><a id="email-link" href="#"></a><a data-link="github" target="_blank" rel="noreferrer">GitHub 主页</a><a data-link="blog" target="_blank" rel="noreferrer">CSDN 博客</a></div></article><article class="text-card"><span class="eyebrow">成长记录</span><h2>接下来会继续完善什么</h2><ul><li>持续补充代表性项目，逐步扩充到更完整的作品集。</li><li>继续同步博客元信息，让个人站成为统一入口。</li><li>后续如本机依赖恢复，可升级到 Next.js 版本并扩展更多交互。</li></ul></article></div></section>
+      </main>
+      <footer class="site-footer"><div class="container footer-inner"><span>© <span id="current-year"></span> Zzy. Built for portfolio and learning.</span><span id="footer-links"></span></div></footer>
+    </div>
+    <script type="module" src="./assets/app.js"></script>
+  </body>
+</html>

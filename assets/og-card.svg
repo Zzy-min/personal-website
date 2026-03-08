@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Zzy personal site preview">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#07111f"/>
+      <stop offset="55%" stop-color="#091a2e"/>
+      <stop offset="100%" stop-color="#050b14"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#52a7ff"/>
+      <stop offset="100%" stop-color="#78f0ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="180" cy="130" r="180" fill="#52a7ff" opacity="0.08"/>
+  <circle cx="1020" cy="90" r="120" fill="#78f0ff" opacity="0.08"/>
+  <rect x="110" y="102" width="980" height="426" rx="36" fill="#0b1c33" stroke="#17365d"/>
+  <rect x="160" y="160" width="108" height="108" rx="28" fill="url(#line)" opacity="0.18"/>
+  <text x="193" y="231" font-size="68" fill="#dff6ff" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-weight="700">Z</text>
+  <text x="320" y="220" font-size="64" fill="#eef5ff" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-weight="700">Zzy 的个人网站</text>
+  <text x="320" y="286" font-size="28" fill="#93a8c8" font-family="Segoe UI, Microsoft YaHei, sans-serif">Java / Python 学习者 · 项目实践者</text>
+  <text x="160" y="380" font-size="34" fill="#bfeaff" font-family="Segoe UI, Microsoft YaHei, sans-serif">项目 · 博客 · 时间线 · 关于我</text>
+  <text x="160" y="442" font-size="24" fill="#93a8c8" font-family="Segoe UI, Microsoft YaHei, sans-serif">持续记录技术成长，把学习沉淀为作品与内容。</text>
+</svg>
