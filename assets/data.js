@@ -1,7 +1,7 @@
 export const siteData = {
   site: {
     name: "Zzy 的个人网站",
-    domain: "https://zzy-min.vercel.app",
+    domain: "https://personal-website-beige-omega.vercel.app",
     github: "https://github.com/Zzy-min",
     blog: "https://blog.csdn.net/Zzydzyg0618?spm=1000.2115.3001.5343"
   },
@@ -79,7 +79,7 @@ export const siteData = {
         "用于聚合 GitHub 项目、博客文章和成长轨迹的个人站点，一站式展示技术能力与内容输出。",
       stack: ["Static Site", "Responsive UI", "SEO", "Vercel"],
       githubUrl: "https://github.com/Zzy-min",
-      demoUrl: "https://zzy-min.vercel.app",
+      demoUrl: "https://personal-website-beige-omega.vercel.app",
       featured: false,
       updatedAt: "2026-03-07",
       status: "进行中"
