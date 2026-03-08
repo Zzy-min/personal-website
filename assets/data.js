@@ -7,10 +7,10 @@ export const siteData = {
   },
   profile: {
     name: "Zzy",
-    role: "Java / Python 学习者 · 项目实践者",
+    role: "Java 学习者 · 项目实践者",
     headline: "用项目和文章记录技术成长，持续构建自己的开发者品牌。",
     intro:
-      "我正在围绕 Java、Python 和 Web 开发建立自己的技术积累：一边做项目，一边把关键知识整理成博客，形成可展示、可复盘、可持续更新的个人作品集。",
+      "我正在围绕 Java 和 Web 开发建立自己的技术积累：一边做项目，一边把关键知识整理成博客，形成可展示、可复盘、可持续更新的个人作品集。",
     location: "中国",
     email: {
       user: "zzy19812007",
@@ -23,7 +23,6 @@ export const siteData = {
     ],
     skills: [
       "Java",
-      "Python",
       "HTML5",
       "CSS3",
       "JavaScript",
@@ -35,9 +34,9 @@ export const siteData = {
     ]
   },
   metrics: [
-    { label: "博客文章", value: "18", key: "posts" },
+    { label: "博客文章", value: "15", key: "posts" },
     { label: "精选项目", value: "4" },
-    { label: "主攻方向", value: "Java / Python" }
+    { label: "主攻方向", value: "Java" }
   ],
   projects: [
     {
@@ -46,9 +45,9 @@ export const siteData = {
         "一个支持双人对战的中国象棋 Web 项目，突出规则实现、棋盘交互和前端页面表达。",
       stack: ["HTML", "CSS", "JavaScript", "Game Logic"],
       githubUrl: "https://github.com/Zzy-min/chinese-chess-readme-fix",
-      demoUrl: "https://github.com/Zzy-min/chinese-chess-readme-fix",
+      demoUrl: "https://xiangqi-web.onrender.com/",
       featured: true,
-      updatedAt: "2026-03-07",
+      updatedAt: "2026-03-08",
       status: "已发布"
     },
     {
@@ -65,8 +64,8 @@ export const siteData = {
     {
       title: "CSDN 技术博客体系",
       summary:
-        "持续输出 Java、Python 和基础编程内容，把阶段性学习沉淀为可检索、可复习的文章集合。",
-      stack: ["CSDN", "Java", "Python", "知识管理"],
+        "持续输出 Java 和基础编程内容，把阶段性学习沉淀为可检索、可复习的文章集合。",
+      stack: ["CSDN", "Java", "知识管理"],
       githubUrl: "https://blog.csdn.net/Zzydzyg0618?spm=1000.2115.3001.5343",
       demoUrl: "https://blog.csdn.net/Zzydzyg0618?spm=1000.2115.3001.5343",
       featured: true,
@@ -231,14 +230,6 @@ export const siteData = {
       featured: false
     },
     {
-      title: "Python基础知识扫盲合集（新手版）",
-      summary: "从入门视角整理 Python 基础概念，适合作为后续学习的起点。",
-      publishedAt: "2025-02-24",
-      tags: ["Python", "入门"],
-      sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/145847997",
-      featured: true
-    },
-    {
       title: "Java基础知识合集（新手版）",
       summary: "对 Java 初学阶段常见概念做系统梳理，方便建立整体知识框架。",
       publishedAt: "2025-02-23",
@@ -326,22 +317,6 @@ export const siteData = {
       sourceUrl: "https://blog.csdn.net/Zzydzyg0618?spm=1000.2115.3001.5343",
       featured: false
     },
-    {
-      title: "了解python中的变量和常量",
-      summary: "从变量与常量切入，帮助理解 Python 中最常见的数据命名与使用方式。",
-      publishedAt: "2025-01-07",
-      tags: ["Python", "变量"],
-      sourceUrl: "https://blog.csdn.net/Zzydzyg0618?spm=1000.2115.3001.5343",
-      featured: false
-    },
-    {
-      title: "了解python、认识python以及完成代码敲写",
-      summary: "记录 Python 入门阶段对语言认知、开发环境与基础代码书写的理解。",
-      publishedAt: "2025-01-06",
-      tags: ["Python", "基础"],
-      sourceUrl: "https://blog.csdn.net/Zzydzyg0618?spm=1000.2115.3001.5343",
-      featured: false
-    }
   ],
   timeline: [
     {
@@ -417,12 +392,6 @@ export const siteData = {
       type: "learning"
     },
     {
-      date: "2025-02-24",
-      title: "发布 Python 入门合集",
-      description: "围绕 Python 基础知识输出系统化整理文章，补齐博客内容矩阵。",
-      type: "blog"
-    },
-    {
       date: "2025-02-23",
       title: "补齐 Java 与 C 语言入门合集",
       description: "同一天集中发布 Java 与 C 语言入门向整理文章，博客内容更完整。",
@@ -443,7 +412,7 @@ export const siteData = {
     {
       date: "2025-01-06",
       title: "开始连续输出编程入门内容",
-      description: "从 Python 与基础类型主题起步，逐步形成持续更新的学习型博客节奏。",
+      description: "从基础类型主题起步，逐步形成持续更新的学习型博客节奏。",
       type: "project"
     }
   ],
