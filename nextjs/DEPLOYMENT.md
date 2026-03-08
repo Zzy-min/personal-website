@@ -21,7 +21,7 @@
 | **Framework Preset** | Next.js |
 | **Root Directory** | `nextjs` |
 | **Build Command** | `npm run build` |
-| **Output Directory** | `.next` |
+| **Output Directory** | `out` |
 | **Install Command** | `npm install` |
 
 **重要：** 确保将 **Root Directory** 设置为 `nextjs`，而不是根目录！
@@ -101,7 +101,7 @@ vercel --prod
 - [ ] Root Directory 设置为 `nextjs`
 - [ ] Framework 选择 Next.js
 - [ ] Build Command 为 `npm run build`
-- [ ] Output Directory 为 `.next`
+- [ ] Output Directory 为 `out`
 - [ ] 构建成功无错误
 - [ ] 部署成功可访问
 

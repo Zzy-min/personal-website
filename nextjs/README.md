@@ -44,9 +44,11 @@ npm run dev
 npm run build
 ```
 
+构建后的静态文件会输出到 `out/`。
+
 ### 本地预览构建结果
 ```bash
-npm run start
+npx serve out
 ```
 
 ## 项目结构

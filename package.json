@@ -1,0 +1,13 @@
+{
+  "name": "personal-website",
+  "private": true,
+  "workspaces": [
+    "nextjs"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace nextjs",
+    "build": "npm run build --workspace nextjs",
+    "start": "npm run start --workspace nextjs",
+    "lint": "npm run lint --workspace nextjs"
+  }
+}
