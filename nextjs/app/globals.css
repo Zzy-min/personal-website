@@ -3,16 +3,31 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-bg text-text;
     background:
-      radial-gradient(circle at top left, rgba(82, 167, 255, 0.15), transparent 28%),
-      radial-gradient(circle at top right, rgba(120, 240, 255, 0.11), transparent 25%),
-      linear-gradient(180deg, #07111f 0%, #091526 52%, #050b14 100%);
+      radial-gradient(circle at top left, rgba(178, 138, 85, 0.16), transparent 22%),
+      radial-gradient(circle at top right, rgba(47, 90, 69, 0.12), transparent 28%),
+      linear-gradient(180deg, #faf4ea 0%, #f5efe5 52%, #efe6d8 100%);
+  }
+
+  ::selection {
+    background: rgba(47, 90, 69, 0.18);
+    color: #1d392b;
   }
 
   a {
     @apply text-inherit no-underline;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-serif tracking-tight text-text;
   }
 
   .shell {

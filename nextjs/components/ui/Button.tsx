@@ -19,11 +19,11 @@ export function Button({
   onClick,
 }: ButtonProps) {
   const baseStyles =
-    'inline-flex items-center justify-center min-h-11 px-4 py-3 rounded-14px border border-transparent transition-transform hover:-translate-y-0.5 duration-200';
+    'inline-flex min-h-11 items-center justify-center rounded-button border px-5 py-3 text-sm font-medium transition duration-200 hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/25';
 
   const variantStyles = {
-    primary: 'bg-gradient-to-br from-primary-blue to-primary-strong text-bg font-bold',
-    secondary: 'bg-white/2 border border-line hover:bg-white/5',
+    primary: 'border-primary bg-primary text-paper-inverse shadow-card hover:bg-primary-strong',
+    secondary: 'border-line bg-panel text-text hover:bg-paper-hover',
   };
 
   if (href) {
@@ -42,6 +42,7 @@ export function Button({
 
   return (
     <button
+      type="button"
       className={cn(baseStyles, variantStyles[variant], className)}
       onClick={onClick}
     >

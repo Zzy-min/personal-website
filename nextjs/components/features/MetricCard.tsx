@@ -5,14 +5,10 @@ interface MetricCardProps {
 }
 
 export function MetricCard({ metric }: MetricCardProps) {
-  const value = metric.key === 'posts'
-    ? String(15) // 直接使用文章数量
-    : metric.value;
-
   return (
-    <div className="flex-1 min-w-[140px] px-5 py-4 rounded-20px bg-white/2 border border-accent-blue/20">
-      <strong className="block text-[1.6rem] mb-1">{value}</strong>
-      <span className="text-sm text-muted">{metric.label}</span>
+    <div className="min-w-[120px] rounded-[20px] border border-line bg-paper px-4 py-4">
+      <strong className="block font-serif text-[1.75rem] text-text">{metric.value}</strong>
+      <span className="mt-1 block text-xs uppercase tracking-[0.14em] text-muted">{metric.label}</span>
     </div>
   );
 }
