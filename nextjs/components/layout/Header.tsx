@@ -1,10 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { siteData } from '@/lib/data';
+import { SiteLink } from '@/components/ui/SiteLink';
 
 export function Header() {
   const pathname = usePathname();
@@ -13,7 +13,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-20 border-b border-line bg-bg/92 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4">
-        <Link href="/" className="flex items-center gap-3 transition-opacity hover:opacity-80">
+        <SiteLink href="/" className="flex items-center gap-3 transition-opacity hover:opacity-80">
           <span className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-primary/15 bg-primary/10 font-serif text-lg text-primary-strong">
             {siteData.profile.name[0].toUpperCase()}
           </span>
@@ -21,13 +21,13 @@ export function Header() {
             <strong className="block font-serif text-lg">{siteData.profile.name}</strong>
             <div className="text-xs uppercase tracking-[0.16em] text-muted">{siteData.profile.role}</div>
           </div>
-        </Link>
+        </SiteLink>
 
         <nav className="hidden items-center gap-2 md:flex" aria-label="主导航">
           {siteData.navigation.map((item) => {
             const isActive = pathname === item.href;
             return (
-              <Link
+              <SiteLink
                 key={item.href}
                 href={item.href}
                 className={`rounded-full px-4 py-2 text-sm transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/25 ${
@@ -37,7 +37,7 @@ export function Header() {
                 }`}
               >
                 {item.label}
-              </Link>
+              </SiteLink>
             );
           })}
         </nav>
@@ -58,7 +58,7 @@ export function Header() {
           {siteData.navigation.map((item) => {
             const isActive = pathname === item.href;
             return (
-              <Link
+              <SiteLink
                 key={item.href}
                 href={item.href}
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -69,7 +69,7 @@ export function Header() {
                 }`}
               >
                 {item.label}
-              </Link>
+              </SiteLink>
             );
           })}
         </nav>

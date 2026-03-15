@@ -1,11 +1,11 @@
 'use client';
 
-import Link from 'next/link';
 import { Github, ExternalLink } from 'lucide-react';
 import { siteData } from '@/lib/data';
 import { MetricCard } from '@/components/features/MetricCard';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
+import { SiteLink } from '@/components/ui/SiteLink';
 
 export function Hero() {
   const featuredProjects = siteData.projects
@@ -59,24 +59,22 @@ export function Hero() {
           </div>
 
           <div className="flex flex-wrap gap-3 mt-5">
-            <Link
+            <SiteLink
               href={siteData.site.github}
-              target="_blank"
-              rel="noreferrer"
+              external
               className="inline-flex items-center gap-2 rounded-full border border-line px-4 py-3 transition-all duration-200 hover:-translate-y-0.5 hover:bg-paper-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/25"
             >
               <Github size={18} />
               <span>GitHub</span>
-            </Link>
-            <Link
+            </SiteLink>
+            <SiteLink
               href={siteData.site.blog}
-              target="_blank"
-              rel="noreferrer"
+              external
               className="inline-flex items-center gap-2 rounded-full border border-line px-4 py-3 transition-all duration-200 hover:-translate-y-0.5 hover:bg-paper-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/25"
             >
               <ExternalLink size={18} />
               <span>CSDN</span>
-            </Link>
+            </SiteLink>
           </div>
         </aside>
       </div>

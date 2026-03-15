@@ -1,8 +1,8 @@
-import Link from 'next/link';
 import { Hero } from '@/components/features/Hero';
 import { siteData } from '@/lib/data';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
+import { SiteLink } from '@/components/ui/SiteLink';
 import { formatDate, sortByDateDesc } from '@/lib/utils';
 
 export default function HomePage() {
@@ -30,9 +30,9 @@ export default function HomePage() {
               我把最能说明问题理解、实现深度和表达能力的项目放在最前面，而不是先讲泛化的自我介绍。
             </p>
           </div>
-          <Link href="/projects" className="text-muted hover:text-text transition-colors">
+          <SiteLink href="/projects" className="text-muted hover:text-text transition-colors">
             查看全部项目 →
-          </Link>
+          </SiteLink>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_0.9fr] gap-6">
@@ -166,9 +166,9 @@ export default function HomePage() {
             <Badge>精选文章</Badge>
             <h2 className="text-3xl font-bold mt-3">文章不是附属品，而是第二层能力证据</h2>
           </div>
-          <Link href="/blog" className="text-muted hover:text-text transition-colors">
+          <SiteLink href="/blog" className="text-muted hover:text-text transition-colors">
             查看全部文章 →
-          </Link>
+          </SiteLink>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
@@ -207,9 +207,9 @@ export default function HomePage() {
             <Badge>成长轨迹</Badge>
             <h2 className="text-3xl font-bold mt-3">我想让别人看见的是稳定上升，而不是一次性展示</h2>
           </div>
-          <Link href="/timeline" className="text-muted hover:text-text transition-colors">
+          <SiteLink href="/timeline" className="text-muted hover:text-text transition-colors">
             查看完整时间线 →
-          </Link>
+          </SiteLink>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

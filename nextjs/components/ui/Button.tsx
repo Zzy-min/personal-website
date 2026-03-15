@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import { cn } from '@/lib/utils';
+import { SiteLink } from '@/components/ui/SiteLink';
 
 interface ButtonProps {
   children: React.ReactNode;
@@ -28,15 +28,14 @@ export function Button({
 
   if (href) {
     return (
-      <Link
+      <SiteLink
         href={href}
-        target={external ? '_blank' : undefined}
-        rel={external ? 'noreferrer' : undefined}
+        external={external}
         className={cn(baseStyles, variantStyles[variant], className)}
         onClick={onClick}
       >
         {children}
-      </Link>
+      </SiteLink>
     );
   }
 

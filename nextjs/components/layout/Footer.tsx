@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import { siteData } from '@/lib/data';
+import { SiteLink } from '@/components/ui/SiteLink';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -19,15 +19,14 @@ export function Footer() {
           </div>
           <div className="flex flex-wrap gap-4 text-sm">
             {siteData.socials.map((item) => (
-              <Link
+              <SiteLink
                 key={item.href}
                 href={item.href}
-                target="_blank"
-                rel="noreferrer"
+                external={item.href.startsWith('http')}
                 className="text-muted transition-colors hover:text-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/25"
               >
                 {item.label}
-              </Link>
+              </SiteLink>
             ))}
           </div>
         </div>

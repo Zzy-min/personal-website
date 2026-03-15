@@ -1,4 +1,6 @@
 import React from 'react';
+import fs from 'node:fs';
+import path from 'node:path';
 import { render, screen, within } from '@testing-library/react';
 import HomePage from '@/app/page';
 import { Header } from '@/components/layout/Header';
@@ -72,5 +74,22 @@ describe('homepage redesign plan', () => {
       'href',
       supportingProject!.demoUrl
     );
+  });
+
+  test('static export navigation avoids next/link imports that trigger RSC fetches on Vercel', () => {
+    const files = [
+      'app/page.tsx',
+      'components/features/Hero.tsx',
+      'components/layout/Footer.tsx',
+      'components/layout/Header.tsx',
+      'components/ui/Button.tsx',
+    ];
+
+    files.forEach((relativePath) => {
+      const absolutePath = path.join(process.cwd(), relativePath);
+      const source = fs.readFileSync(absolutePath, 'utf8');
+
+      expect(source).not.toContain("from 'next/link'");
+    });
   });
 });
