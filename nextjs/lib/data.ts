@@ -91,7 +91,7 @@ export const siteData: SiteConfig = {
   profile: {
     name: "子阳",
     birthday: "2007/5/4",
-    role: "Java / 棋类项目实践者",
+    role: "Java / 技术探索者",
     headline: "用项目证明学习速度与工程潜力",
     positioning: "我把长期迭代的棋类项目、技术文章和当前重点整理成一个能被快速判断的证据型个人网站。",
     intro:

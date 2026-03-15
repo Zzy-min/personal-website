@@ -47,6 +47,7 @@ describe('homepage redesign plan', () => {
     );
 
     expect(screen.getByText('子阳')).toBeInTheDocument();
+    expect(screen.getByText('Java / 技术探索者')).toBeInTheDocument();
     expect(screen.queryByText('面向招聘方的证据型主页')).not.toBeInTheDocument();
   });
 
