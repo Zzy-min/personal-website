@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen, within } from '@testing-library/react';
 import HomePage from '@/app/page';
+import { Header } from '@/components/layout/Header';
 import { siteData } from '@/lib/data';
 
 describe('homepage redesign plan', () => {
@@ -35,6 +36,18 @@ describe('homepage redesign plan', () => {
 
     expect(positions.every((position) => position >= 0)).toBe(true);
     expect(positions).toEqual([...positions].sort((left, right) => left - right));
+  });
+
+  test('homepage header uses the updated personal name and removes the hero eyebrow copy', () => {
+    render(
+      <>
+        <Header />
+        <HomePage />
+      </>
+    );
+
+    expect(screen.getByText('子阳')).toBeInTheDocument();
+    expect(screen.queryByText('面向招聘方的证据型主页')).not.toBeInTheDocument();
   });
 
   test('homepage supporting project cards still expose outbound project links', () => {

@@ -18,6 +18,7 @@ export interface SiteInfo {
 
 export interface Profile {
   name: string;
+  birthday: string;
   role: string;
   headline: string;
   positioning: string;
@@ -82,13 +83,14 @@ export interface Social {
 
 export const siteData: SiteConfig = {
   site: {
-    name: "Zzy 的个人网站",
+    name: "子阳的个人网站",
     domain: "https://personal-website-beige-omega.vercel.app",
     github: "https://github.com/Zzy-min",
     blog: "https://blog.csdn.net/Zzydzyg0618?spm=1000.2115.3001.5343"
   },
   profile: {
-    name: "Zzy",
+    name: "子阳",
+    birthday: "2007/5/4",
     role: "Java / 棋类项目实践者",
     headline: "用项目证明学习速度与工程潜力",
     positioning: "我把长期迭代的棋类项目、技术文章和当前重点整理成一个能被快速判断的证据型个人网站。",

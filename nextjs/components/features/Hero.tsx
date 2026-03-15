@@ -17,8 +17,7 @@ export function Hero() {
     <section className="py-20 px-4 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-[1.15fr_0.85fr] gap-6">
         <div className="bg-panel border border-line rounded-card p-6 shadow-card">
-          <Badge>面向招聘方的证据型主页</Badge>
-          <h1 className="text-[clamp(2.3rem,6vw,4.4rem)] font-bold leading-tight mt-4">
+          <h1 className="text-[clamp(2.3rem,6vw,4.4rem)] font-bold leading-tight">
             {siteData.profile.headline}
           </h1>
           <p className="text-lg mt-4">{siteData.profile.positioning}</p>

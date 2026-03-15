@@ -106,6 +106,8 @@ describe('content page redesign plan', () => {
     expect(screen.getByRole('heading', { name: '我正在成为什么样的开发者' })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: '当前方向' })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: '为什么做这个站' })).toBeInTheDocument();
+    expect(screen.getByText('生日')).toBeInTheDocument();
+    expect(screen.getByText('2007/5/4')).toBeInTheDocument();
   });
 
   test('timeline page frames milestones as growth evidence', () => {
