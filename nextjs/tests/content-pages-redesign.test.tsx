@@ -133,4 +133,44 @@ describe('content page redesign plan', () => {
     expect(timelineText).toContain('完成浏览器版 UI 重构');
     expect(timelineText).toContain('修复浏览器端 AI 队列稳定性');
   });
+
+  test('blog metadata stays aligned with the current CSDN article ids', () => {
+    const expectedSources = new Map([
+      ['线程进阶: 无人机自动防空平台开发教程V2', '157579489'],
+      ['线程之舞：程序运行的韵律与光影', '157543760'],
+      ['Markdow文档初学', '157222951'],
+      ['JAVA实战：文件管理系统1.0', '155426126'],
+      ['C语言经典算法：汉诺塔问题', '155109096'],
+      ['C语言初步学习：数组的增删查改', '153349592'],
+      ['C语言基础知识梳理1.0', '153136471'],
+      ['Java数据类型与基本语法知识回顾', '150274200'],
+      ['初步Java学习:图像处理2.0', '150072013'],
+      ['初步Java学习：图像处理1.0', '149974142'],
+      ['初步Java学习：面向对象编程（3）', '149884586'],
+      ['初步JAVA学习：面向对象编程（2）', '149782562'],
+      ['初步JAVA学习：面向对象编程（1）', '149632696'],
+      ['Java注释的力量：提升代码可读性', '149478249'],
+      ['AI编程神器：通义灵码Java开发实战', '149177415'],
+      ['10招打造你的专属IDEA编程环境', '149169677'],
+      ['Java中的AI集成', '149120293'],
+      ['初步了解Java运算与逻辑关系', '148746755'],
+    ]);
+
+    expectedSources.forEach((articleId, title) => {
+      const post = siteData.posts.find((item) => item.title === title);
+
+      expect(post).toBeDefined();
+      expect(post!.sourceUrl).toContain(articleId);
+    });
+
+    expect(siteData.metrics.find((metric) => metric.key === 'posts')?.value).toBe(
+      String(siteData.posts.length)
+    );
+    expect(siteData.posts.find((post) => post.title === 'Java数据类型与基本语法知识回顾')?.publishedAt).toBe(
+      '2025-08-12'
+    );
+    expect(siteData.posts.find((post) => post.title === '初步了解Java运算与逻辑关系')?.publishedAt).toBe(
+      '2025-06-18'
+    );
+  });
 });

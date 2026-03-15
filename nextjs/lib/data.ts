@@ -127,7 +127,7 @@ export const siteData: SiteConfig = {
     ]
   },
   metrics: [
-    { label: "博客文章", value: "15", key: "posts" },
+    { label: "博客文章", value: "18", key: "posts" },
     { label: "项目案例", value: "5" },
     { label: "主攻方向", value: "Java" }
   ],
@@ -205,7 +205,7 @@ export const siteData: SiteConfig = {
       githubUrl: "https://blog.csdn.net/Zzydzyg0618?spm=1000.2115.3001.5343",
       demoUrl: "https://blog.csdn.net/Zzydzyg0618?spm=1000.2115.3001.5343",
       featured: true,
-      updatedAt: "2025-02-24",
+      updatedAt: "2026-01-31",
       status: "持续更新"
     },
     {
@@ -235,7 +235,7 @@ export const siteData: SiteConfig = {
       featuredReason: "这篇文章最能说明我不仅会写代码，还会把实战里的线程知识重新组织成可理解的教程。",
       publishedAt: "2026-01-31",
       tags: ["Java", "线程", "项目实战"],
-      sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/157543760",
+      sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/157579489",
       featured: true
     },
     {
@@ -244,7 +244,7 @@ export const siteData: SiteConfig = {
       featuredReason: "它体现了我会把抽象概念拆成更容易读懂的语言，而不是只堆知识点。",
       publishedAt: "2026-01-30",
       tags: ["Java", "线程"],
-      sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/157523847",
+      sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/157543760",
       featured: true
     },
     {
@@ -253,7 +253,7 @@ export const siteData: SiteConfig = {
       featuredReason: "这类基础文章证明我在补技术之外，也在补文档表达和知识整理能力。",
       publishedAt: "2026-01-21",
       tags: ["Markdown", "文档"],
-      sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/157234875",
+      sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/157222951",
       featured: true
     },
     {
@@ -262,7 +262,7 @@ export const siteData: SiteConfig = {
       featuredReason: "它能补足我在文件 IO 和命令式逻辑处理上的实战痕迹。",
       publishedAt: "2025-11-30",
       tags: ["Java", "文件IO", "项目实战"],
-      sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/156274373",
+      sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/155426126",
       featured: true
     },
     {
@@ -271,7 +271,7 @@ export const siteData: SiteConfig = {
       featuredReason: "它说明我不只关注应用层练习，也在持续补算法和基础思维训练。",
       publishedAt: "2025-11-21",
       tags: ["C语言", "算法", "递归"],
-      sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/156030641",
+      sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/155109096",
       featured: true
     },
     {
@@ -279,7 +279,7 @@ export const siteData: SiteConfig = {
       summary: "基于静态数组的动态数组操作库，提供增删查改等基本功能，包含边界检查。",
       publishedAt: "2025-10-15",
       tags: ["C语言", "数组", "数据结构"],
-      sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/155721684",
+      sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/153349592",
       featured: true
     },
     {
@@ -287,15 +287,15 @@ export const siteData: SiteConfig = {
       summary: "C语言基础知识笔记，包含数据类型、常量与变量、运算符和常见数据结构。",
       publishedAt: "2025-10-12",
       tags: ["C语言", "基础"],
-      sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/155643582",
+      sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/153136471",
       featured: true
     },
     {
       title: "Java数据类型与基本语法知识回顾",
       summary: "系统介绍Java编程基础知识，包括数据类型、类与对象、接口实现、数组操作和图形界面开发。",
-      publishedAt: "2025-09-04",
+      publishedAt: "2025-08-12",
       tags: ["Java", "基础", "GUI"],
-      sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/154964375",
+      sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/150274200",
       featured: true
     },
     {
@@ -303,7 +303,7 @@ export const siteData: SiteConfig = {
       summary: "基于Java的图像处理系统，实现灰度、马赛克、油画、去背景等多种滤镜效果。",
       publishedAt: "2025-08-08",
       tags: ["Java", "图像处理", "项目实战"],
-      sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/154543837",
+      sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/150072013",
       featured: true
     },
     {
@@ -311,7 +311,7 @@ export const siteData: SiteConfig = {
       summary: "使用Java Swing框架实现图片处理功能，包括马赛克、亮度提升、滤镜和灰度处理。",
       publishedAt: "2025-08-06",
       tags: ["Java", "图像处理", "Swing"],
-      sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/154487823",
+      sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/149974142",
       featured: true
     },
     {
@@ -319,7 +319,7 @@ export const siteData: SiteConfig = {
       summary: "介绍Java Swing界面开发的实现方法，重点讲解登录界面的组件设置与功能实现。",
       publishedAt: "2025-08-03",
       tags: ["Java", "Swing", "GUI"],
-      sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/154422363",
+      sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/149884586",
       featured: true
     },
     {
@@ -327,23 +327,23 @@ export const siteData: SiteConfig = {
       summary: "基于Java Swing的绘图板开发流程，演示MouseListener接口和Graphics对象的图形绘制。",
       publishedAt: "2025-08-01",
       tags: ["Java", "Swing", "绘图"],
-      sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/154377822",
+      sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/149782562",
       featured: true
     },
     {
       title: "初步了解Java运算与逻辑关系",
       summary: "Java编程基础涵盖算术运算、关系运算和逻辑运算，演示偶数求和和闰年计算。",
-      publishedAt: "2025-08-01",
+      publishedAt: "2025-06-18",
       tags: ["Java", "运算符", "逻辑"],
-      sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/154378526",
+      sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/148746755",
       featured: false
     },
     {
       title: "Java注释的力量：提升代码可读性",
       summary: "介绍Java三种注释类型（单行、多行、文档）及最佳实践，提升代码可维护性。",
-      publishedAt: "2025-07-25",
+      publishedAt: "2025-07-20",
       tags: ["Java", "注释", "代码规范"],
-      sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/154223746",
+      sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/149478249",
       featured: false
     },
     {
@@ -351,7 +351,7 @@ export const siteData: SiteConfig = {
       summary: "面向对象编程(OOP)基础介绍，通过定义类创建对象，实现代码复用和模块化。",
       publishedAt: "2025-07-25",
       tags: ["Java", "OOP", "面向对象"],
-      sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/154223575",
+      sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/149632696",
       featured: false
     },
     {
@@ -359,7 +359,7 @@ export const siteData: SiteConfig = {
       summary: "通义灵码AI编程助手功能介绍，包括代码生成、优化建议、异常诊断和知识点讲解。",
       publishedAt: "2025-07-07",
       tags: ["Java", "AI", "开发工具"],
-      sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/153908670",
+      sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/149177415",
       featured: false
     },
     {
@@ -367,7 +367,7 @@ export const siteData: SiteConfig = {
       summary: "IDEA优化指南，包括字体推荐、主题建议、界面布局和快捷键配置。",
       publishedAt: "2025-07-07",
       tags: ["IDEA", "开发工具", "配置"],
-      sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/153908668",
+      sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/149169677",
       featured: false
     },
     {
@@ -375,7 +375,7 @@ export const siteData: SiteConfig = {
       summary: "介绍如何通过VSCode安装通义千问AI编程助手插件，演示其辅助Java开发的过程。",
       publishedAt: "2025-07-06",
       tags: ["Java", "AI", "VSCode"],
-      sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/153860899",
+      sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/149120293",
       featured: false
     }
   ],
@@ -435,9 +435,9 @@ export const siteData: SiteConfig = {
       type: "learning"
     },
     {
-      date: "2025-09-04",
+      date: "2025-08-12",
       title: "Java基础系统回顾",
-      description: "系统整理Java数据类型、面向对象、接口和GUI开发等核心知识。",
+      description: "系统整理 Java 数据类型、面向对象、接口和 GUI 开发等核心知识，开始把零散概念收束成完整知识骨架。",
       type: "learning"
     },
     {
@@ -455,38 +455,32 @@ export const siteData: SiteConfig = {
     {
       date: "2025-08-03",
       title: "Swing界面开发",
-      description: "完成登录界面和绘图板项目，掌握Java Swing GUI编程。",
+      description: "完成登录界面和绘图板相关练习，开始把 Java 学习推进到界面组件、事件监听和交互表达。",
+      type: "learning"
+    },
+    {
+      date: "2025-07-20",
+      title: "建立代码表达意识",
+      description: "发布《Java注释的力量：提升代码可读性》，开始把可读性和维护性当成学习的一部分。",
       type: "learning"
     },
     {
       date: "2025-07-07",
-      title: "开发工具优化",
-      description: "配置IDEA编程环境，学习使用通义灵码等AI编程助手提升效率。",
+      title: "把开发工具纳入工作流",
+      description: "围绕通义灵码和 IDEA 环境优化连续写作，开始把工具选择和效率方法显性化。",
       type: "learning"
     },
     {
-      date: "2025-02-23",
-      title: "补齐 Java 与 C 语言入门合集",
-      description: "同一天集中发布 Java 与 C 语言入门向整理文章，博客内容更完整。",
+      date: "2025-07-06",
+      title: "记录 Java 与 AI 工具结合",
+      description: "发布《Java中的AI集成》，把 AI 辅助编程的尝试整理成公开文章，而不是停留在零散尝试。",
       type: "blog"
     },
     {
-      date: "2025-01-22",
-      title: "深入到 JVM 与数据类型主题",
-      description: "从语法入门逐步延伸到 JVM 与底层概念，开始建立更完整的 Java 认识。",
-      type: "learning"
-    },
-    {
-      date: "2025-01-20",
-      title: "持续输出 Java 基础系列",
-      description: "围绕数组、流程控制、运算符等主题形成连续的学习记录。",
+      date: "2025-06-18",
+      title: "开始连续输出 Java 入门内容",
+      description: "发布《初步了解Java运算与逻辑关系》，作为当前公开技术写作可追溯的起点。",
       type: "blog"
-    },
-    {
-      date: "2025-01-06",
-      title: "开始连续输出编程入门内容",
-      description: "从基础类型主题起步，逐步形成持续更新的学习型博客节奏。",
-      type: "project"
     }
   ],
   navigation: [
