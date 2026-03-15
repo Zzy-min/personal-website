@@ -20,12 +20,14 @@ export interface Profile {
   name: string;
   role: string;
   headline: string;
+  positioning: string;
   intro: string;
   location: string;
   email: {
     user: string;
     domain: string;
   };
+  currentFocus: string[];
   strengths: string[];
   skills: string[];
 }
@@ -39,6 +41,10 @@ export interface Metric {
 export interface Project {
   title: string;
   summary: string;
+  problem: string;
+  outcome: string;
+  highlights: string[];
+  featuredOrder: number | null;
   stack: string[];
   githubUrl: string;
   demoUrl: string;
@@ -50,6 +56,7 @@ export interface Project {
 export interface Post {
   title: string;
   summary: string;
+  featuredReason?: string;
   publishedAt: string;
   tags: string[];
   sourceUrl: string;
@@ -82,19 +89,25 @@ export const siteData: SiteConfig = {
   },
   profile: {
     name: "Zzy",
-    role: "Java 学习者 · 项目实践者",
-    headline: "用项目和文章记录技术成长，持续构建自己的开发者品牌。",
+    role: "Java / Web 项目实践者",
+    headline: "用项目证明学习速度与工程潜力",
+    positioning: "我把代表项目、技术文章和当前重点整理成一个能被快速判断的证据型个人网站。",
     intro:
-      "我正在围绕 Java 和 Web 开发建立自己的技术积累：一边做项目，一边把关键知识整理成博客，形成可展示、可复盘、可持续更新的个人作品集。",
+      "当前重心是把 Java 学习、Web 实践和技术写作串成一条连续的成长证据链。你可以先看我已经做出的东西，再判断我接下来会走到哪里。",
     location: "中国",
     email: {
       user: "zzy19812007",
       domain: "gmail.com"
     },
+    currentFocus: [
+      "Java 项目实践",
+      "Web 交互表达",
+      "技术写作与复盘"
+    ],
     strengths: [
-      "把学习过程沉淀为可复用的知识卡片与文章",
-      "偏爱从小项目切入，边做边理解技术细节",
-      "关注代码表达、页面体验和长期可维护性"
+      "先做可运行项目，再回到原理和细节补深度",
+      "把阶段性学习整理成文章，沉淀成可检索的长期资产",
+      "关注代码表达、界面体验和持续迭代能力"
     ],
     skills: [
       "Java",
@@ -118,6 +131,14 @@ export const siteData: SiteConfig = {
       title: "中国象棋对战网页应用",
       summary:
         "一个支持双人对战的中国象棋 Web 项目，突出规则实现、棋盘交互和前端页面表达。",
+      problem: "把完整中国象棋规则、走子限制和双人对战体验稳定地放进浏览器里。",
+      outcome: "做出了可在线体验的双人对战版本，用真实交互展示规则理解、状态管理和前端表达能力。",
+      highlights: [
+        "独立梳理走子与判定规则",
+        "实现棋盘交互与双人回合切换",
+        "提供可直接访问的线上演示"
+      ],
+      featuredOrder: 1,
       stack: ["HTML", "CSS", "JavaScript", "Game Logic"],
       githubUrl: "https://github.com/Zzy-min/chinese-chess-readme-fix",
       demoUrl: "https://xiangqi-web.onrender.com/",
@@ -129,6 +150,14 @@ export const siteData: SiteConfig = {
       title: "ChineseChess AlphaZero",
       summary:
         "围绕中国象棋 AI 的训练与推理实验，展示对强化学习、策略搜索和 Python 工程化的兴趣。",
+      problem: "在规则项目之外，继续往策略搜索和强化学习方向探索更复杂的问题空间。",
+      outcome: "把中国象棋 AI 训练作为长期实验方向，证明自己愿意处理更抽象、更难验证的技术问题。",
+      highlights: [
+        "围绕 MCTS 和 AlphaZero 思路建模",
+        "结合 Python 与 PyTorch 进行实验",
+        "把研究型项目纳入作品集主线"
+      ],
+      featuredOrder: 2,
       stack: ["Python", "PyTorch", "AlphaZero", "MCTS"],
       githubUrl: "https://github.com/Zzy-min/ChineseChess-AlphaZero",
       demoUrl: "https://github.com/Zzy-min/ChineseChess-AlphaZero",
@@ -140,6 +169,14 @@ export const siteData: SiteConfig = {
       title: "CSDN 技术博客体系",
       summary:
         "持续输出 Java 和基础编程内容，把阶段性学习沉淀为可检索、可复习的文章集合。",
+      problem: "如果学习只停留在代码仓库里，外界很难看见思考过程和进步速度。",
+      outcome: "持续把 Java 与基础编程内容写成文章，形成稳定更新的公开内容资产，补足表达与复盘证据。",
+      highlights: [
+        "长期持续更新而不是一次性堆内容",
+        "覆盖 Java、线程、基础语法和项目拆解",
+        "把学习记录变成可检索的公开入口"
+      ],
+      featuredOrder: 3,
       stack: ["CSDN", "Java", "知识管理"],
       githubUrl: "https://blog.csdn.net/Zzydzyg0618?spm=1000.2115.3001.5343",
       demoUrl: "https://blog.csdn.net/Zzydzyg0618?spm=1000.2115.3001.5343",
@@ -151,6 +188,14 @@ export const siteData: SiteConfig = {
       title: "个人品牌站点（当前）",
       summary:
         "用于聚合 GitHub 项目、博客文章和成长轨迹的个人站点，一站式展示技术能力与内容输出。",
+      problem: "已有项目和文章分散在不同平台上，缺少一个能快速建立判断的统一入口。",
+      outcome: "把项目、文章和成长轨迹整合成单一站点，降低他人理解成本，也倒逼自己整理定位与成果。",
+      highlights: [
+        "统一聚合项目、文章和时间线",
+        "从静态站持续迁移到 Next.js 版本",
+        "围绕招聘方阅读路径重新组织内容"
+      ],
+      featuredOrder: null,
       stack: ["Static Site", "Responsive UI", "SEO", "Vercel"],
       githubUrl: "https://github.com/Zzy-min",
       demoUrl: "https://personal-website-beige-omega.vercel.app",
@@ -163,6 +208,7 @@ export const siteData: SiteConfig = {
     {
       title: "线程进阶: 无人机自动防空平台开发教程V2",
       summary: "基于Java线程的无人机防空平台仿真系统，包含窗体界面、多线程控制和事件监听等模块。",
+      featuredReason: "这篇文章最能说明我不仅会写代码，还会把实战里的线程知识重新组织成可理解的教程。",
       publishedAt: "2026-01-31",
       tags: ["Java", "线程", "项目实战"],
       sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/157543760",
@@ -171,6 +217,7 @@ export const siteData: SiteConfig = {
     {
       title: "线程之舞：程序运行的韵律与光影",
       summary: "介绍单线程程序执行特点及多线程必要性，讲解Java创建线程的第一种方式——继承Thread类。",
+      featuredReason: "它体现了我会把抽象概念拆成更容易读懂的语言，而不是只堆知识点。",
       publishedAt: "2026-01-30",
       tags: ["Java", "线程"],
       sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/157523847",
@@ -179,6 +226,7 @@ export const siteData: SiteConfig = {
     {
       title: "Markdow文档初学",
       summary: "介绍Markdown基础语法，包括标题、文字样式、列表、代码块、引用、分割线以及表格的创建方法。",
+      featuredReason: "这类基础文章证明我在补技术之外，也在补文档表达和知识整理能力。",
       publishedAt: "2026-01-21",
       tags: ["Markdown", "文档"],
       sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/157234875",
@@ -187,6 +235,7 @@ export const siteData: SiteConfig = {
     {
       title: "JAVA实战：文件管理系统1.0",
       summary: "基于Java的文件管理系统，提供文件列表查看、创建、删除、获取路径和多级目录创建功能。",
+      featuredReason: "它能补足我在文件 IO 和命令式逻辑处理上的实战痕迹。",
       publishedAt: "2025-11-30",
       tags: ["Java", "文件IO", "项目实战"],
       sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/156274373",
@@ -195,6 +244,7 @@ export const siteData: SiteConfig = {
     {
       title: "C语言经典算法：汉诺塔问题",
       summary: "通过递归思想解决汉诺塔问题，详细解释递归的核心思想和C语言完整实现代码。",
+      featuredReason: "它说明我不只关注应用层练习，也在持续补算法和基础思维训练。",
       publishedAt: "2025-11-21",
       tags: ["C语言", "算法", "递归"],
       sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/156030641",

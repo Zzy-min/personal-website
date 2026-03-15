@@ -9,31 +9,39 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: '#07111f',
-        panel: 'rgba(11, 28, 51, 0.84)',
-        text: '#eaf2ff',
-        muted: '#93a8c8',
-        line: 'rgba(148, 181, 255, 0.16)',
+        bg: '#f5efe5',
+        panel: '#fffaf2',
+        text: '#1c1a16',
+        muted: '#6e675d',
+        line: '#d8cbbb',
+        paper: {
+          DEFAULT: '#f7f1e8',
+          soft: '#fcf7ef',
+          hover: '#efe4d3',
+          inverse: '#faf4ea',
+        },
         primary: {
-          DEFAULT: '#78f0ff',
-          strong: '#78f0ff',
+          DEFAULT: '#2f5a45',
+          strong: '#1d392b',
         },
         accent: {
-          blue: '#52a7ff',
-          purple: '#78f0ff',
+          sage: '#6f876c',
+          gold: '#b28a55',
         },
       },
       boxShadow: {
-        card: '0 24px 60px rgba(0, 0, 0, 0.24)',
-        glow: '0 0 30px rgba(82, 167, 255, 0.3)',
+        card: '0 24px 60px rgba(66, 47, 25, 0.08)',
+        glow: '0 18px 36px rgba(47, 90, 69, 0.16)',
       },
       borderRadius: {
-        card: '24px',
-        button: '14px',
+        card: '28px',
+        button: '999px',
         badge: '999px',
       },
       fontFamily: {
-        sans: ['"Segoe UI"', '"PingFang SC"', '"Microsoft YaHei"', 'sans-serif'],
+        sans: ['var(--font-sans)', '"PingFang SC"', '"Microsoft YaHei"', 'sans-serif'],
+        serif: ['var(--font-serif)', 'serif'],
+        mono: ['var(--font-mono)', 'monospace'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-out',
