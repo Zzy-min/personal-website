@@ -116,4 +116,18 @@ describe('content page redesign plan', () => {
     expect(text).toContain('阶段意义');
     expect(text).toContain(siteData.timeline[0].title);
   });
+
+  test('projects and timeline pages surface locally discovered project evidence', () => {
+    const { container: projectsContainer } = render(<ProjectsPage />);
+    const projectsText = projectsContainer.textContent ?? '';
+
+    expect(projectsText).toContain('XiangqiGame：Java 双端棋类平台');
+    expect(projectsText).toContain('浏览器版 UI 重构（2026-03）');
+
+    const { container: timelineContainer } = render(<TimelinePage />);
+    const timelineText = timelineContainer.textContent ?? '';
+
+    expect(timelineText).toContain('完成浏览器版 UI 重构');
+    expect(timelineText).toContain('修复浏览器端 AI 队列稳定性');
+  });
 });

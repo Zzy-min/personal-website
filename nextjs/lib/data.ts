@@ -89,62 +89,84 @@ export const siteData: SiteConfig = {
   },
   profile: {
     name: "Zzy",
-    role: "Java / Web 项目实践者",
+    role: "Java / 棋类项目实践者",
     headline: "用项目证明学习速度与工程潜力",
-    positioning: "我把代表项目、技术文章和当前重点整理成一个能被快速判断的证据型个人网站。",
+    positioning: "我把长期迭代的棋类项目、技术文章和当前重点整理成一个能被快速判断的证据型个人网站。",
     intro:
-      "当前重心是把 Java 学习、Web 实践和技术写作串成一条连续的成长证据链。你可以先看我已经做出的东西，再判断我接下来会走到哪里。",
+      "当前重心是把 Java 项目、浏览器交互重构和技术写作串成一条连续的成长证据链。你可以先看我已经做出的东西，再判断我接下来会走到哪里。",
     location: "中国",
     email: {
       user: "zzy19812007",
       domain: "gmail.com"
     },
     currentFocus: [
-      "Java 项目实践",
-      "Web 交互表达",
+      "Java 双端棋类项目",
+      "浏览器 UI 重构与交互表达",
       "技术写作与复盘"
     ],
     strengths: [
-      "先做可运行项目，再回到原理和细节补深度",
+      "先把项目做成可运行系统，再回到搜索算法、规则细节和界面表达补深度",
       "把阶段性学习整理成文章，沉淀成可检索的长期资产",
-      "关注代码表达、界面体验和持续迭代能力"
+      "愿意在同一个长期项目里持续打磨玩法、UI 和稳定性，而不是只做一次性 Demo"
     ],
     skills: [
       "Java",
+      "Swing",
+      "JavaScript",
       "HTML5",
       "CSS3",
-      "JavaScript",
+      "Maven",
       "Git",
       "GitHub",
+      "Render",
       "Vercel",
-      "算法基础",
+      "Alpha-Beta Search",
       "数据结构"
     ]
   },
   metrics: [
     { label: "博客文章", value: "15", key: "posts" },
-    { label: "精选项目", value: "4" },
+    { label: "项目案例", value: "5" },
     { label: "主攻方向", value: "Java" }
   ],
   projects: [
     {
-      title: "中国象棋对战网页应用",
+      title: "XiangqiGame：Java 双端棋类平台",
       summary:
-        "一个支持双人对战的中国象棋 Web 项目，突出规则实现、棋盘交互和前端页面表达。",
-      problem: "把完整中国象棋规则、走子限制和双人对战体验稳定地放进浏览器里。",
-      outcome: "做出了可在线体验的双人对战版本，用真实交互展示规则理解、状态管理和前端表达能力。",
+        "一个同时提供 Swing 桌面版和浏览器版的 Java 棋类项目，已经覆盖中国象棋、五子棋、AI 对战、残局训练和线上部署。",
+      problem: "把传统棋类玩法、规则校验、AI 对战和双端体验收束到同一个可持续迭代的 Java 项目里。",
+      outcome: "形成了桌面 + 浏览器双版本，支持象棋与五子棋、不同 AI 难度、残局复盘和线上试玩，能够持续作为长期工程样本迭代。",
       highlights: [
-        "独立梳理走子与判定规则",
-        "实现棋盘交互与双人回合切换",
-        "提供可直接访问的线上演示"
+        "同一仓库内维护 Swing 桌面版和浏览器版",
+        "支持象棋 / 五子棋、残局练习和复盘流程",
+        "已接入 Render 部署并保留本地独立启动能力"
       ],
       featuredOrder: 1,
-      stack: ["HTML", "CSS", "JavaScript", "Game Logic"],
-      githubUrl: "https://github.com/Zzy-min/chinese-chess-readme-fix",
+      stack: ["Java", "Swing", "Browser UI", "Maven", "Render"],
+      githubUrl: "https://github.com/Zzy-min/Chinese-chess",
       demoUrl: "https://xiangqi-web.onrender.com/",
       featured: true,
-      updatedAt: "2026-03-08",
-      status: "已发布"
+      updatedAt: "2026-03-13",
+      status: "持续迭代"
+    },
+    {
+      title: "浏览器版 UI 重构（2026-03）",
+      summary:
+        "围绕 XiangqiGame 浏览器版做的一轮结构重塑，把旧的超长 HTML 页面拆成独立资源，并重做棋盘主舞台与抽屉侧栏布局。",
+      problem: "旧网页端存在信息堆叠、移动端遮挡和维护成本高的问题，难以继续稳定迭代。",
+      outcome: "完成了“棋盘主舞台 + 局阁抽屉侧栏”的重构，拆分出 index.html、app.css、app.js 三层资源，让手机端和后续 UI 迭代都更顺畅。",
+      highlights: [
+        "把服务端拼接的大段 HTML 拆成独立前端资源",
+        "手机端改为抽屉式侧栏，减少遮挡和误触",
+        "首屏优先突出棋盘、状态、步时和主要操作"
+      ],
+      featuredOrder: 2,
+      stack: ["Java", "HTML", "CSS", "JavaScript", "UI Refactor"],
+      githubUrl: "https://github.com/Zzy-min/Chinese-chess",
+      demoUrl: "https://xiangqi-web.onrender.com/",
+      featured: true,
+      updatedAt: "2026-03-12",
+      status: "已重构"
     },
     {
       title: "ChineseChess AlphaZero",
@@ -157,7 +179,7 @@ export const siteData: SiteConfig = {
         "结合 Python 与 PyTorch 进行实验",
         "把研究型项目纳入作品集主线"
       ],
-      featuredOrder: 2,
+      featuredOrder: 3,
       stack: ["Python", "PyTorch", "AlphaZero", "MCTS"],
       githubUrl: "https://github.com/Zzy-min/ChineseChess-AlphaZero",
       demoUrl: "https://github.com/Zzy-min/ChineseChess-AlphaZero",
@@ -176,7 +198,7 @@ export const siteData: SiteConfig = {
         "覆盖 Java、线程、基础语法和项目拆解",
         "把学习记录变成可检索的公开入口"
       ],
-      featuredOrder: 3,
+      featuredOrder: 4,
       stack: ["CSDN", "Java", "知识管理"],
       githubUrl: "https://blog.csdn.net/Zzydzyg0618?spm=1000.2115.3001.5343",
       demoUrl: "https://blog.csdn.net/Zzydzyg0618?spm=1000.2115.3001.5343",
@@ -356,6 +378,18 @@ export const siteData: SiteConfig = {
     }
   ],
   timeline: [
+    {
+      date: "2026-03-13",
+      title: "修复浏览器端 AI 队列稳定性",
+      description: "在 XiangqiGame 中取消过期异步任务，避免浏览器端 AI 请求堆积，开始把项目推进到更稳定的长期运行状态。",
+      type: "project"
+    },
+    {
+      date: "2026-03-12",
+      title: "完成浏览器版 UI 重构",
+      description: "把网页端改成棋盘主舞台 + 抽屉侧栏结构，并拆分静态资源，让移动端交互和后续维护都更清晰。",
+      type: "project"
+    },
     {
       date: "2026-03-07",
       title: "启动个人品牌网站",
