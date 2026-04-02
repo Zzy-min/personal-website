@@ -128,7 +128,7 @@ export const siteData: SiteConfig = {
   },
   metrics: [
     { label: "博客文章", value: "18", key: "posts" },
-    { label: "项目案例", value: "5" },
+    { label: "项目案例", value: "7" },
     { label: "主攻方向", value: "Java" }
   ],
   projects: [
@@ -148,8 +148,27 @@ export const siteData: SiteConfig = {
       githubUrl: "https://github.com/Zzy-min/Chinese-chess",
       demoUrl: "https://xiangqi-web.onrender.com/",
       featured: true,
-      updatedAt: "2026-03-13",
+      updatedAt: "2026-03-29",
       status: "持续迭代"
+    },
+    {
+      title: "Agent Skill Publisher",
+      summary:
+        "一键发布 Agent Skill 到 GitHub 的自动化工具，支持自动验证、补全文件与仓库创建。",
+      problem: "手动发布 Agent Skill 流程繁琐，容易遗漏必要文件且验证不便。",
+      outcome: "实现了发布流程的自动化，包括文件补全、GitHub 仓库自动创建及安装验证，显著提升了开发效率。",
+      highlights: [
+        "自动化补全 Skill 目录结构与必要元数据",
+        "集成 GitHub API 实现一键创建与推送",
+        "内置安装验证逻辑确保发布的 Skill 可用"
+      ],
+      featuredOrder: 2,
+      stack: ["Python", "Automation", "GitHub API"],
+      githubUrl: "https://github.com/Zzy-min/skill-publisher",
+      demoUrl: "https://github.com/Zzy-min/skill-publisher",
+      featured: true,
+      updatedAt: "2026-03-14",
+      status: "已发布"
     },
     {
       title: "浏览器版 UI 重构（2026-03）",
@@ -162,7 +181,7 @@ export const siteData: SiteConfig = {
         "手机端改为抽屉式侧栏，减少遮挡和误触",
         "首屏优先突出棋盘、状态、步时和主要操作"
       ],
-      featuredOrder: 2,
+      featuredOrder: 3,
       stack: ["Java", "HTML", "CSS", "JavaScript", "UI Refactor"],
       githubUrl: "https://github.com/Zzy-min/Chinese-chess",
       demoUrl: "https://xiangqi-web.onrender.com/",
@@ -181,13 +200,32 @@ export const siteData: SiteConfig = {
         "结合 Python 与 PyTorch 进行实验",
         "把研究型项目纳入作品集主线"
       ],
-      featuredOrder: 3,
+      featuredOrder: 4,
       stack: ["Python", "PyTorch", "AlphaZero", "MCTS"],
       githubUrl: "https://github.com/Zzy-min/ChineseChess-AlphaZero",
       demoUrl: "https://github.com/Zzy-min/ChineseChess-AlphaZero",
       featured: true,
-      updatedAt: "2026-03-07",
+      updatedAt: "2026-02-22",
       status: "研究中"
+    },
+    {
+      title: "Codex App 配置恢复工具",
+      summary:
+        "用于修复 Windows 上 Codex App 配置失效、无法切换模型或沙箱设置问题的辅助脚本。",
+      problem: "Codex App 在 Windows 环境下偶尔会出现配置回退、无法保存设置的情况。",
+      outcome: "开发了一套自动恢复脚本，能够快速重置并修复受损的配置文件，确保开发环境稳定。",
+      highlights: [
+        "针对 Windows 环境的路径与权限优化",
+        "一键式修复逻辑，降低排查成本",
+        "集成到个人工具箱，解决实际生产阻塞"
+      ],
+      featuredOrder: null,
+      stack: ["Shell", "Configuration", "Recovery"],
+      githubUrl: "https://github.com/Zzy-min/codex-app-config-recovery",
+      demoUrl: "https://github.com/Zzy-min/codex-app-config-recovery",
+      featured: false,
+      updatedAt: "2026-03-14",
+      status: "已完成"
     },
     {
       title: "CSDN 技术博客体系",
@@ -200,7 +238,7 @@ export const siteData: SiteConfig = {
         "覆盖 Java、线程、基础语法和项目拆解",
         "把学习记录变成可检索的公开入口"
       ],
-      featuredOrder: 4,
+      featuredOrder: null,
       stack: ["CSDN", "Java", "知识管理"],
       githubUrl: "https://blog.csdn.net/Zzydzyg0618?spm=1000.2115.3001.5343",
       demoUrl: "https://blog.csdn.net/Zzydzyg0618?spm=1000.2115.3001.5343",
@@ -211,7 +249,7 @@ export const siteData: SiteConfig = {
     {
       title: "个人品牌站点（当前）",
       summary:
-        "用于聚合 GitHub 项目、博客文章和成长轨迹的个人站点，一站式展示技术能力与内容输出。",
+        "用于聚合 GitHub 项目、博客文章 and 成长轨迹的个人站点，一站式展示技术能力与内容输出。",
       problem: "已有项目和文章分散在不同平台上，缺少一个能快速建立判断的统一入口。",
       outcome: "把项目、文章和成长轨迹整合成单一站点，降低他人理解成本，也倒逼自己整理定位与成果。",
       highlights: [
@@ -221,10 +259,10 @@ export const siteData: SiteConfig = {
       ],
       featuredOrder: null,
       stack: ["Static Site", "Responsive UI", "SEO", "Vercel"],
-      githubUrl: "https://github.com/Zzy-min",
+      githubUrl: "https://github.com/Zzy-min/personal-website",
       demoUrl: "https://personal-website-beige-omega.vercel.app",
       featured: false,
-      updatedAt: "2026-03-07",
+      updatedAt: "2026-03-15",
       status: "进行中"
     }
   ],
@@ -380,6 +418,18 @@ export const siteData: SiteConfig = {
     }
   ],
   timeline: [
+    {
+      date: "2026-03-29",
+      title: "中国象棋项目多棋种支持",
+      description: "为中国象棋 Web 应用增加五子棋和围棋支持，并优化在线对战体验。",
+      type: "project"
+    },
+    {
+      date: "2026-03-14",
+      title: "开源 Agent Skill Publisher",
+      description: "在 GitHub 发布自动化工具，简化 Agent Skill 的发布与验证流程。",
+      type: "project"
+    },
     {
       date: "2026-03-13",
       title: "修复浏览器端 AI 队列稳定性",
