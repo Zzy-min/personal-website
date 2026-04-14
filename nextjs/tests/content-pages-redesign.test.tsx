@@ -124,7 +124,7 @@ describe('content page redesign plan', () => {
     const { container: projectsContainer } = render(<ProjectsPage />);
     const projectsText = projectsContainer.textContent ?? '';
 
-    expect(projectsText).toContain('XiangqiGame：Java 双端棋类平台');
+    expect(projectsText).toContain('XiangqiArena：Java 三棋 Web 平台');
     expect(projectsText).toContain('浏览器版 UI 重构（2026-03）');
 
     const { container: timelineContainer } = render(<TimelinePage />);

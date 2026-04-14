@@ -8,14 +8,13 @@ import { siteData } from './data.ts';
 
 const currentDir = dirname(fileURLToPath(import.meta.url));
 
-test('featured project copy reflects the current qingju web direction', () => {
+test('featured project copy reflects the current XiangqiArena direction', () => {
   const primaryProject = siteData.projects[0];
 
-  expect(primaryProject.title).toMatch(/轻·棋局|Chinese-chess/);
-  expect(primaryProject.summary).toMatch(/中国象棋/);
-  expect(primaryProject.summary).toMatch(/五子棋/);
-  expect(primaryProject.summary).toMatch(/围棋|三棋/);
+  expect(primaryProject.title).toMatch(/XiangqiArena|三棋/);
+  expect(primaryProject.summary).toMatch(/象棋|五子棋/);
   expect(primaryProject.githubUrl).toBe('https://github.com/Zzy-min/Chinese-chess');
+  expect(primaryProject.demoUrl).toBe('https://www.xiangqiarena.com/');
 });
 
 test('homepage metrics match the currently public evidence counts', () => {

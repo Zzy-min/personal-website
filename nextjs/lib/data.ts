@@ -133,22 +133,24 @@ export const siteData: SiteConfig = {
   ],
   projects: [
     {
-      title: "XiangqiGame：Java 双端棋类平台 / Chinese-chess",
+      title: "XiangqiArena：Java 三棋 Web 平台",
       summary:
-        "一个同时提供 Swing 桌面版和浏览器版的 Java 棋类项目，已经覆盖中国象棋、五子棋、围棋、AI 对战、残局训练和线上部署。",
-      problem: "把传统棋类玩法、规则校验、AI 对战和双端体验收束到同一个可持续迭代的 Java 项目里。",
-      outcome: "形成了桌面 + 浏览器双版本，支持象棋与五子棋、不同 AI 难度、残局复盘和线上试玩，能够持续作为长期工程样本迭代。",
+        "基于 Java 的三棋 Web 平台（中国象棋 / 五子棋 / 围棋），覆盖在线双人对战、人机对弈、残局练习、复盘分析，通过 Cloudflare Worker 前门 + Java 源站部署到 xiangqiarena.com。",
+      problem: "把传统棋类玩法、规则校验、AI 对战和在线体验收束到同一个可持续迭代的 Java Web 项目里，同时覆盖多种棋类。",
+      outcome: "形成了统一的三棋 Web 平台，支持在线房间对战、AI 对弈、残局复盘、外部引擎接入（Pikafish / Rapfi / KataGo），已部署到 xiangqiarena.com。",
       highlights: [
-        "同一仓库内维护 Swing 桌面版和浏览器版",
-        "支持象棋 / 五子棋、残局练习和复盘流程",
-        "已接入 Render 部署并保留本地独立启动能力"
+        "中国象棋 / 五子棋 / 围棋统一站点结构",
+        "在线双人对战（房间邀请制）与人机对弈",
+        "外部引擎接入（Pikafish、Rapfi、KataGo）",
+        "Cloudflare Worker 前门 + Java 源站部署路径",
+        "对局音效、战术播报与结局展示"
       ],
       featuredOrder: 1,
-      stack: ["Java", "Swing", "Browser UI", "Maven", "Render"],
+      stack: ["Java", "Web", "Cloudflare Worker", "Maven", "PostgreSQL"],
       githubUrl: "https://github.com/Zzy-min/Chinese-chess",
-      demoUrl: "https://xiangqi-web.onrender.com/",
+      demoUrl: "https://www.xiangqiarena.com/",
       featured: true,
-      updatedAt: "2026-03-29",
+      updatedAt: "2026-04-14",
       status: "持续迭代"
     },
     {
@@ -262,8 +264,8 @@ export const siteData: SiteConfig = {
       githubUrl: "https://github.com/Zzy-min/personal-website",
       demoUrl: "https://personal-website-beige-omega.vercel.app",
       featured: false,
-      updatedAt: "2026-03-15",
-      status: "进行中"
+      updatedAt: "2026-04-14",
+      status: "已上线"
     }
   ],
   posts: [
@@ -419,9 +421,21 @@ export const siteData: SiteConfig = {
   ],
   timeline: [
     {
+      date: "2026-04-14",
+      title: "XiangqiArena 品牌升级与功能迭代",
+      description: "项目正式定名 XiangqiArena，上线 xiangqiarena.com；新增对局音效、战术播报、结局展示等功能。",
+      type: "project"
+    },
+    {
+      date: "2026-04-10",
+      title: "Cloudflare Worker 部署上线",
+      description: "完成 Cloudflare Worker 前门 + Java 源站部署路径切换，替代旧 Render 部署。",
+      type: "project"
+    },
+    {
       date: "2026-03-29",
-      title: "中国象棋项目多棋种支持",
-      description: "为中国象棋 Web 应用增加五子棋和围棋支持，并优化在线对战体验。",
+      title: "XiangqiArena 多棋种支持上线",
+      description: "为 XiangqiArena 增加五子棋和围棋支持，实现统一三棋站点结构，并优化在线对战体验。",
       type: "project"
     },
     {
