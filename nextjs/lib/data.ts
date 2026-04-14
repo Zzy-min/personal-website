@@ -128,14 +128,14 @@ export const siteData: SiteConfig = {
   },
   metrics: [
     { label: "博客文章", value: "18", key: "posts" },
-    { label: "项目案例", value: "7" },
+    { label: "精选项目", value: "5" },
     { label: "主攻方向", value: "Java" }
   ],
   projects: [
     {
-      title: "XiangqiGame：Java 双端棋类平台",
+      title: "XiangqiGame：Java 双端棋类平台 / Chinese-chess",
       summary:
-        "一个同时提供 Swing 桌面版和浏览器版的 Java 棋类项目，已经覆盖中国象棋、五子棋、AI 对战、残局训练和线上部署。",
+        "一个同时提供 Swing 桌面版和浏览器版的 Java 棋类项目，已经覆盖中国象棋、五子棋、围棋、AI 对战、残局训练和线上部署。",
       problem: "把传统棋类玩法、规则校验、AI 对战和双端体验收束到同一个可持续迭代的 Java 项目里。",
       outcome: "形成了桌面 + 浏览器双版本，支持象棋与五子棋、不同 AI 难度、残局复盘和线上试玩，能够持续作为长期工程样本迭代。",
       highlights: [
@@ -242,14 +242,14 @@ export const siteData: SiteConfig = {
       stack: ["CSDN", "Java", "知识管理"],
       githubUrl: "https://blog.csdn.net/Zzydzyg0618?spm=1000.2115.3001.5343",
       demoUrl: "https://blog.csdn.net/Zzydzyg0618?spm=1000.2115.3001.5343",
-      featured: true,
+      featured: false,
       updatedAt: "2026-01-31",
       status: "持续更新"
     },
     {
       title: "个人品牌站点（当前）",
       summary:
-        "用于聚合 GitHub 项目、博客文章 and 成长轨迹的个人站点，一站式展示技术能力与内容输出。",
+        "用于聚合 GitHub 项目、博客文章和成长轨迹的个人站点，一站式展示技术能力与内容输出。",
       problem: "已有项目和文章分散在不同平台上，缺少一个能快速建立判断的统一入口。",
       outcome: "把项目、文章和成长轨迹整合成单一站点，降低他人理解成本，也倒逼自己整理定位与成果。",
       highlights: [
