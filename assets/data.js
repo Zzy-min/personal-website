@@ -82,6 +82,28 @@ export const siteData = {
       featured: false,
       updatedAt: "2026-03-07",
       status: "进行中"
+    },
+    {
+      title: "轻灵 Qingling — 通用 CLI Agent",
+      summary:
+        "基于 TypeScript 的命令行 AI Agent，集成 DeepSeek API，支持流式 TUI、三层记忆系统、Pipeline 架构和 7 种内置工具。",
+      stack: ["TypeScript", "Node.js", "DeepSeek API", "TUI", "CLI"],
+      githubUrl: "https://github.com/Zzy-min/qingling",
+      demoUrl: "https://github.com/Zzy-min/qingling",
+      featured: true,
+      updatedAt: "2026-04-27",
+      status: "开发中"
+    },
+    {
+      title: "MiniMax 多模态工作台",
+      summary:
+        "集成 MiniMax API 的全功能多模态平台，支持 AI 图片编辑、语音合成、音乐生成、视频生成及 Token 配额管理。",
+      stack: ["React", "Vite", "TailwindCSS", "FastAPI", "Python"],
+      githubUrl: "https://github.com/Zzy-min/minimax-multimodal",
+      demoUrl: "https://github.com/Zzy-min/minimax-multimodal",
+      featured: true,
+      updatedAt: "2026-04-27",
+      status: "已发布"
     }
   ],
   posts: [
