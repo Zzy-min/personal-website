@@ -266,6 +266,48 @@ export const siteData: SiteConfig = {
       featured: false,
       updatedAt: "2026-04-14",
       status: "已上线"
+    },
+    {
+      title: "轻灵 Qingling — 通用 CLI Agent",
+      summary:
+        "基于 TypeScript 的命令行 AI Agent，集成 DeepSeek API，支持流式 TUI、三层记忆系统、Pipeline 架构和 7 种内置工具。",
+      problem: "通用 CLI Agent 缺少轻量级、可本地运行的 TypeScript 实现参考，现有方案多依赖 Python 或闭源服务。",
+      outcome: "独立实现了完整 Agent 框架，包括工具系统、记忆分层、上下文压缩和 Claude Code 风格 TUI，已在本地稳定运行。",
+      highlights: [
+        "7 种内置工具（bash、read、write、todo、skill、planner）",
+        "三层记忆系统（工作记忆 / 长期记忆 / 自动梦境）",
+        "Pipeline 架构（hooks、sections、verification）",
+        "Claude Code 风格流式 TUI 界面",
+        "DeepSeek API 集成，token 预算实时同步"
+      ],
+      featuredOrder: 5,
+      stack: ["TypeScript", "Node.js", "DeepSeek API", "TUI", "CLI"],
+      githubUrl: "https://github.com/Zzy-min/qingling",
+      demoUrl: "https://github.com/Zzy-min/qingling",
+      featured: true,
+      updatedAt: "2026-04-27",
+      status: "开发中"
+    },
+    {
+      title: "MiniMax 多模态工作台",
+      summary:
+        "集成 MiniMax API 的全功能多模态平台，支持 AI 图片编辑、语音合成、音乐生成、视频生成及 Token 配额管理。",
+      problem: "MiniMax 的多模态能力分散在不同 API 中，缺少统一的前端界面和本地部署方案来整合体验。",
+      outcome: "搭建了 React + FastAPI 全栈工作台，把图片、语音、音乐、视频四大模态收束到同一个可本地运行的应用中。",
+      highlights: [
+        "AI 图片编辑（文生图、图生图、本地滤镜）",
+        "语音合成（TTS）与音乐生成",
+        "视频生成管线",
+        "Token Plan 配额实时展示与管理",
+        "React + Vite + TailwindCSS + FastAPI 全栈架构"
+      ],
+      featuredOrder: 6,
+      stack: ["React", "Vite", "TailwindCSS", "FastAPI", "Python"],
+      githubUrl: "https://github.com/Zzy-min/minimax-multimodal",
+      demoUrl: "https://github.com/Zzy-min/minimax-multimodal",
+      featured: true,
+      updatedAt: "2026-04-27",
+      status: "已发布"
     }
   ],
   posts: [
