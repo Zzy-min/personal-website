@@ -6,6 +6,7 @@ interface SiteLinkProps {
   className?: string;
   external?: boolean;
   onClick?: () => void;
+  download?: boolean | string;
 }
 
 export function SiteLink({
@@ -14,6 +15,7 @@ export function SiteLink({
   className,
   external = false,
   onClick,
+  download,
 }: SiteLinkProps) {
   // Static export does not serve RSC payloads for client navigation, so use anchors.
   return (
@@ -23,6 +25,7 @@ export function SiteLink({
       rel={external ? 'noreferrer' : undefined}
       className={cn(className)}
       onClick={onClick}
+      download={download}
     >
       {children}
     </a>

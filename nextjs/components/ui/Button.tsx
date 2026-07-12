@@ -8,6 +8,7 @@ interface ButtonProps {
   external?: boolean;
   className?: string;
   onClick?: () => void;
+  download?: boolean | string;
 }
 
 export function Button({
@@ -17,6 +18,7 @@ export function Button({
   external = false,
   className,
   onClick,
+  download,
 }: ButtonProps) {
   const baseStyles =
     'inline-flex min-h-11 items-center justify-center rounded-button border px-5 py-3 text-sm font-medium transition duration-200 hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/25';
@@ -33,6 +35,7 @@ export function Button({
         external={external}
         className={cn(baseStyles, variantStyles[variant], className)}
         onClick={onClick}
+        download={download}
       >
         {children}
       </SiteLink>

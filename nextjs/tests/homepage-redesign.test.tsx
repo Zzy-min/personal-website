@@ -28,7 +28,7 @@ describe('homepage redesign plan', () => {
 
     expect(
       screen.getByRole('heading', {
-        name: '用项目证明学习速度与工程潜力',
+        name: '把想法做成能运行、能验证的项目',
       })
     ).toBeInTheDocument();
 
@@ -40,6 +40,14 @@ describe('homepage redesign plan', () => {
     expect(positions).toEqual([...positions].sort((left, right) => left - right));
   });
 
+  test('hero makes resume download the only primary action', () => {
+    render(<HomePage />);
+
+    const resumeLink = screen.getByRole('link', { name: '下载简历' });
+    expect(resumeLink).toHaveAttribute('href', siteData.site.resume);
+    expect(resumeLink).toHaveAttribute('download');
+  });
+
   test('homepage header uses the updated personal name and removes the hero eyebrow copy', () => {
     render(
       <>
@@ -49,7 +57,7 @@ describe('homepage redesign plan', () => {
     );
 
     expect(screen.getByText('子阳')).toBeInTheDocument();
-    expect(screen.getByText('Java / 技术探索者')).toBeInTheDocument();
+    expect(screen.getByText('软件工程学生 / AI 协作开发者')).toBeInTheDocument();
     expect(screen.queryByText('面向招聘方的证据型主页')).not.toBeInTheDocument();
   });
 

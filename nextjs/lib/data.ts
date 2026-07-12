@@ -14,6 +14,7 @@ export interface SiteInfo {
   domain: string;
   github: string;
   blog: string;
+  resume: string;
 }
 
 export interface Profile {
@@ -86,58 +87,52 @@ export const siteData: SiteConfig = {
     name: "子阳的个人网站",
     domain: "https://personal-website-beige-omega.vercel.app",
     github: "https://github.com/Zzy-min",
-    blog: "https://blog.csdn.net/Zzydzyg0618?spm=1000.2115.3001.5343"
+    blog: "https://blog.csdn.net/Zzydzyg0618?spm=1000.2115.3001.5343",
+    resume: "/张子阳-AI-Agent开发-MagicCV.json"
   },
   profile: {
     name: "子阳",
     birthday: "2007/5/4",
-    role: "Java / 技术探索者",
-    headline: "用项目证明学习速度与工程潜力",
-    positioning: "我把长期迭代的棋类项目、技术文章和当前重点整理成一个能被快速判断的证据型个人网站。",
+    role: "软件工程学生 / AI 协作开发者",
+    headline: "把想法做成能运行、能验证的项目",
+    positioning: "我掌握 Java、C 和 Python，并使用 AI 协作推进项目；这里诚实呈现我负责的需求、调试、验证与迭代。",
     intro:
-      "当前重心是把 Java 项目、浏览器交互重构和技术写作串成一条连续的成长证据链。你可以先看我已经做出的东西，再判断我接下来会走到哪里。",
+      "面向招聘者，我把轻·棋局、轻灵和 MiniMax 多模态控制台整理成三份项目证据。项目包含大量 AI 参与，技术栈不等同于我已熟练掌握的技能。",
     location: "中国",
     email: {
-      user: "zzy19812007",
-      domain: "gmail.com"
+      user: "2293822701",
+      domain: "qq.com"
     },
     currentFocus: [
-      "Java 双端棋类项目",
-      "浏览器 UI 重构与交互表达",
-      "技术写作与复盘"
+      "Java、C 与 Python",
+      "AI 协作开发与验证",
+      "可运行项目与技术复盘"
     ],
     strengths: [
-      "先把项目做成可运行系统，再回到搜索算法、规则细节和界面表达补深度",
-      "把阶段性学习整理成文章，沉淀成可检索的长期资产",
-      "愿意在同一个长期项目里持续打磨玩法、UI 和稳定性，而不是只做一次性 Demo"
+      "先定义需求与验收标准，再借助 AI 推进实现",
+      "通过日志、构建、测试和真实页面检查结果，而不是只接受代码生成",
+      "清楚区分本人掌握的技能、项目采用的技术与 AI 的参与范围"
     ],
     skills: [
       "Java",
-      "Swing",
-      "JavaScript",
-      "HTML5",
-      "CSS3",
-      "Maven",
-      "Git",
-      "GitHub",
-      "Render",
-      "Vercel",
-      "Alpha-Beta Search",
-      "数据结构"
+      "C",
+      "Python",
+      "AI 协作开发",
+      "调试与测试"
     ]
   },
   metrics: [
     { label: "博客文章", value: "18", key: "posts" },
-    { label: "精选项目", value: "5" },
-    { label: "主攻方向", value: "Java" }
+    { label: "代表项目", value: "3" },
+    { label: "掌握语言", value: "3" }
   ],
   projects: [
     {
-      title: "XiangqiArena：Java 三棋 Web 平台",
+      title: "轻·棋局 XiangqiArena",
       summary:
         "基于 Java 的三棋 Web 平台（中国象棋 / 五子棋 / 围棋），覆盖在线双人对战、人机对弈、残局练习、复盘分析，通过 Cloudflare Worker 前门 + Java 源站部署到 xiangqiarena.com。",
       problem: "把传统棋类玩法、规则校验、AI 对战和在线体验收束到同一个可持续迭代的 Java Web 项目里，同时覆盖多种棋类。",
-      outcome: "形成了统一的三棋 Web 平台，支持在线房间对战、AI 对弈、残局复盘、外部引擎接入（Pikafish / Rapfi / KataGo），已部署到 xiangqiarena.com。",
+      outcome: "在 AI 协作下持续完成需求梳理、Java 服务调试、浏览器流程验证与线上迭代；当前在线主路径支持象棋和五子棋。",
       highlights: [
         "中国象棋 / 五子棋 / 围棋统一站点结构",
         "在线双人对战（房间邀请制）与人机对弈",
@@ -146,11 +141,11 @@ export const siteData: SiteConfig = {
         "对局音效、战术播报与结局展示"
       ],
       featuredOrder: 1,
-      stack: ["Java", "Web", "Cloudflare Worker", "Maven", "PostgreSQL"],
+      stack: ["Java", "AI 协作", "Web 项目", "测试验证"],
       githubUrl: "https://github.com/Zzy-min/Chinese-chess",
       demoUrl: "https://www.xiangqiarena.com/",
       featured: true,
-      updatedAt: "2026-04-14",
+      updatedAt: "2026-07-11",
       status: "持续迭代"
     },
     {
@@ -164,11 +159,11 @@ export const siteData: SiteConfig = {
         "集成 GitHub API 实现一键创建与推送",
         "内置安装验证逻辑确保发布的 Skill 可用"
       ],
-      featuredOrder: 2,
+      featuredOrder: null,
       stack: ["Python", "Automation", "GitHub API"],
       githubUrl: "https://github.com/Zzy-min/skill-publisher",
       demoUrl: "https://github.com/Zzy-min/skill-publisher",
-      featured: true,
+      featured: false,
       updatedAt: "2026-03-14",
       status: "已发布"
     },
@@ -183,11 +178,11 @@ export const siteData: SiteConfig = {
         "手机端改为抽屉式侧栏，减少遮挡和误触",
         "首屏优先突出棋盘、状态、步时和主要操作"
       ],
-      featuredOrder: 3,
+      featuredOrder: null,
       stack: ["Java", "HTML", "CSS", "JavaScript", "UI Refactor"],
       githubUrl: "https://github.com/Zzy-min/Chinese-chess",
       demoUrl: "https://xiangqi-web.onrender.com/",
-      featured: true,
+      featured: false,
       updatedAt: "2026-03-12",
       status: "已重构"
     },
@@ -202,11 +197,11 @@ export const siteData: SiteConfig = {
         "结合 Python 与 PyTorch 进行实验",
         "把研究型项目纳入作品集主线"
       ],
-      featuredOrder: 4,
+      featuredOrder: null,
       stack: ["Python", "PyTorch", "AlphaZero", "MCTS"],
       githubUrl: "https://github.com/Zzy-min/ChineseChess-AlphaZero",
       demoUrl: "https://github.com/Zzy-min/ChineseChess-AlphaZero",
-      featured: true,
+      featured: false,
       updatedAt: "2026-02-22",
       status: "研究中"
     },
@@ -268,11 +263,11 @@ export const siteData: SiteConfig = {
       status: "已上线"
     },
     {
-      title: "轻灵 Qingling — 通用 CLI Agent",
+      title: "轻灵 Qling",
       summary:
         "基于 TypeScript 的命令行 AI Agent，集成 DeepSeek API，支持流式 TUI、三层记忆系统、Pipeline 架构和 7 种内置工具。",
       problem: "通用 CLI Agent 缺少轻量级、可本地运行的 TypeScript 实现参考，现有方案多依赖 Python 或闭源服务。",
-      outcome: "独立实现了完整 Agent 框架，包括工具系统、记忆分层、上下文压缩和 Claude Code 风格 TUI，已在本地稳定运行。",
+      outcome: "在 AI 协作下负责产品方向、功能取舍、运行调试与测试验证，形成可恢复、可审计的本地 Agent 工作台。",
       highlights: [
         "7 种内置工具（bash、read、write、todo、skill、planner）",
         "三层记忆系统（工作记忆 / 长期记忆 / 自动梦境）",
@@ -280,20 +275,20 @@ export const siteData: SiteConfig = {
         "Claude Code 风格流式 TUI 界面",
         "DeepSeek API 集成，token 预算实时同步"
       ],
-      featuredOrder: 5,
-      stack: ["TypeScript", "Node.js", "DeepSeek API", "TUI", "CLI"],
-      githubUrl: "https://github.com/Zzy-min/qingling",
-      demoUrl: "https://github.com/Zzy-min/qingling",
+      featuredOrder: 2,
+      stack: ["AI 协作", "Agent 概念", "CLI/TUI", "测试验证"],
+      githubUrl: "https://github.com/Zzy-min/qling",
+      demoUrl: "https://github.com/Zzy-min/qling",
       featured: true,
-      updatedAt: "2026-04-27",
-      status: "开发中"
+      updatedAt: "2026-07-12",
+      status: "持续迭代"
     },
     {
-      title: "MiniMax 多模态工作台",
+      title: "MiniMax 多模态控制台",
       summary:
         "集成 MiniMax API 的全功能多模态平台，支持 AI 图片编辑、语音合成、音乐生成、视频生成及 Token 配额管理。",
       problem: "MiniMax 的多模态能力分散在不同 API 中，缺少统一的前端界面和本地部署方案来整合体验。",
-      outcome: "搭建了 React + FastAPI 全栈工作台，把图片、语音、音乐、视频四大模态收束到同一个可本地运行的应用中。",
+      outcome: "在 AI 辅助下完成需求拆解、Python 后端调试、接口验证与多模态流程整合，形成可本地运行的统一控制台。",
       highlights: [
         "AI 图片编辑（文生图、图生图、本地滤镜）",
         "语音合成（TTS）与音乐生成",
@@ -301,12 +296,12 @@ export const siteData: SiteConfig = {
         "Token Plan 配额实时展示与管理",
         "React + Vite + TailwindCSS + FastAPI 全栈架构"
       ],
-      featuredOrder: 6,
-      stack: ["React", "Vite", "TailwindCSS", "FastAPI", "Python"],
+      featuredOrder: 3,
+      stack: ["Python", "AI 协作", "MiniMax API", "接口验证"],
       githubUrl: "https://github.com/Zzy-min/minimax-multimodal",
       demoUrl: "https://github.com/Zzy-min/minimax-multimodal",
       featured: true,
-      updatedAt: "2026-04-27",
+      updatedAt: "2026-05-03",
       status: "已发布"
     }
   ],

@@ -106,7 +106,7 @@ describe('content page redesign plan', () => {
     expect(screen.getByRole('heading', { name: '我正在成为什么样的开发者' })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: '当前方向' })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: '为什么做这个站' })).toBeInTheDocument();
-    expect(screen.getByText('Java / 技术探索者')).toBeInTheDocument();
+    expect(screen.getByText('软件工程学生 / AI 协作开发者')).toBeInTheDocument();
     expect(screen.getByText('生日')).toBeInTheDocument();
     expect(screen.getByText('2007/5/4')).toBeInTheDocument();
   });
@@ -124,7 +124,7 @@ describe('content page redesign plan', () => {
     const { container: projectsContainer } = render(<ProjectsPage />);
     const projectsText = projectsContainer.textContent ?? '';
 
-    expect(projectsText).toContain('XiangqiArena：Java 三棋 Web 平台');
+    expect(projectsText).toContain('轻·棋局 XiangqiArena');
     expect(projectsText).toContain('浏览器版 UI 重构（2026-03）');
 
     const { container: timelineContainer } = render(<TimelinePage />);

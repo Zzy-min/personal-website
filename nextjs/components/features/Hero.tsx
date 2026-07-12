@@ -24,9 +24,11 @@ export function Hero() {
           <p className="text-muted mt-4 leading-7">{siteData.profile.intro}</p>
 
           <div className="flex flex-wrap gap-3 mt-7">
-            <Button href="/projects">查看代表项目</Button>
-            <Button href="/blog" variant="secondary">
-              浏览技术文章
+            <Button href={siteData.site.resume} download>
+              下载简历
+            </Button>
+            <Button href="/projects" variant="secondary">
+              查看代表项目
             </Button>
           </div>
 
