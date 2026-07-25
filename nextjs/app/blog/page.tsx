@@ -66,7 +66,9 @@ export default function BlogPage() {
               </div>
               <h2 className="mt-4 text-2xl font-bold">{post.title}</h2>
               <p className="mt-3 text-muted">{post.summary}</p>
-              <p className="mt-4 leading-7">{post.featuredReason ?? '这篇文章对应当前阶段的重要学习节点。'}</p>
+              {post.featuredReason ? (
+                <p className="mt-4 leading-7">{post.featuredReason}</p>
+              ) : null}
               <div className="mt-6">
                 <Button href={post.sourceUrl} external>
                   阅读原文

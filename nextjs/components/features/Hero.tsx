@@ -4,11 +4,14 @@ import { SiteLink } from '@/components/ui/SiteLink';
 
 export function Hero() {
   return (
-    <section data-home-section="hero" className="hero-field mx-auto max-w-7xl px-4 pb-20 pt-16 md:pb-28 md:pt-24">
-      <div className="grid gap-14 md:grid-cols-[minmax(0,1.35fr)_minmax(15rem,0.65fr)] md:items-end">
+    <section data-home-section="hero" className="hero-field mx-auto max-w-7xl px-4 pb-20 pt-14 md:pb-28 md:pt-20">
+      <div className="grid gap-14 md:grid-cols-[minmax(0,1.4fr)_minmax(17rem,0.6fr)] md:items-center">
         <div className="hero-copy">
           <div className="availability"><span aria-hidden="true" /> 正在寻找 AI Agent 开发实践机会</div>
-          <h1>{siteData.profile.headline}</h1>
+          <h1 className="hero-title" aria-label={siteData.profile.headline}>
+            <span className="hero-title-lead">把想法做成</span>
+            <span className="hero-title-focus">能运行、能验证的项目</span>
+          </h1>
           <p className="hero-positioning">{siteData.profile.positioning}</p>
           <div className="hero-actions">
             <Button href={siteData.site.resume} download>下载 PDF 简历</Button>

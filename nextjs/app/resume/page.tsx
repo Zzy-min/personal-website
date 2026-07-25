@@ -9,7 +9,6 @@ export default function ResumePage() {
         <div>
           <Badge>PDF 简历</Badge>
           <h1 className="mt-3 text-3xl font-bold">张子阳 · AI 应用开发实习生</h1>
-          <p className="mt-2 text-muted">可直接在线浏览，也可以下载 PDF 后离线查看。</p>
         </div>
         <Button href={siteData.site.resume} download>
           下载 PDF 简历

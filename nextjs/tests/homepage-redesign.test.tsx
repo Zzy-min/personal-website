@@ -3,6 +3,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { render, screen, within } from '@testing-library/react';
 import HomePage from '@/app/page';
+import BlogPage from '@/app/blog/page';
+import ResumePage from '@/app/resume/page';
 import { Header } from '@/components/layout/Header';
 import { siteData } from '@/lib/data';
 
@@ -47,12 +49,14 @@ describe('homepage redesign plan', () => {
   });
 
   test('hero offers both direct PDF download and an online preview', () => {
-    render(<HomePage />);
+    const { container } = render(<HomePage />);
 
     const resumeLink = screen.getByRole('link', { name: '下载 PDF 简历' });
     expect(resumeLink).toHaveAttribute('href', siteData.site.resume);
     expect(resumeLink).toHaveAttribute('download');
     expect(screen.getByRole('link', { name: '在线预览' })).toHaveAttribute('href', '/resume');
+    expect(container.querySelector('.hero-title-lead')).toHaveTextContent('把想法做成');
+    expect(container.querySelector('.hero-title-focus')).toHaveTextContent('能运行、能验证的项目');
   });
 
   test('homepage header uses the updated personal name and removes the hero eyebrow copy', () => {
@@ -120,5 +124,23 @@ describe('homepage redesign plan', () => {
 
       expect(source).not.toContain("from 'next/link'");
     });
+  });
+
+  test('blog summaries avoid repeated AI-style openings and fallback commentary', () => {
+    render(<BlogPage />);
+
+    const recentSummaries = siteData.posts.slice(0, 12).map((post) => post.summary);
+    const repeatedFirstPersonOpenings = recentSummaries.filter((summary) =>
+      /^我(?:整理|介绍|记录|总结|回顾)/.test(summary)
+    );
+
+    expect(repeatedFirstPersonOpenings).toHaveLength(0);
+    expect(screen.queryByText('这篇文章对应当前阶段的重要学习节点。')).not.toBeInTheDocument();
+  });
+
+  test('resume page removes the redundant online browsing hint', () => {
+    render(<ResumePage />);
+
+    expect(screen.queryByText('可直接在线浏览，也可以下载 PDF 后离线查看。')).not.toBeInTheDocument();
   });
 });
