@@ -20,7 +20,7 @@ test('featured project copy reflects the current XiangqiArena direction', () => 
 test('homepage metrics match the currently public evidence counts', () => {
   expect(siteData.metrics).toEqual([
     { label: '博客文章', value: '18', key: 'posts' },
-    { label: '代表项目', value: '3' },
+    { label: '我的项目', value: '3' },
     { label: '掌握语言', value: '3' }
   ]);
 });
@@ -32,16 +32,19 @@ test('metric card does not hardcode the blog-post count', () => {
 });
 
 test('recruiter-facing profile keeps the honest skill boundary and current contact details', () => {
+  expect(siteData.profile.name).toBe('张子阳');
+  expect(siteData.site.name).toBe('张子阳的个人网站');
   expect(siteData.profile.email).toEqual({
     user: '2293822701',
     domain: 'qq.com'
   });
-  expect(siteData.profile.skills).toEqual(['Java', 'C', 'Python', 'AI 协作开发', '调试与测试']);
-  expect(siteData.site.resume).toBe('/张子阳-AI-Agent开发-MagicCV.json');
+  expect(siteData.profile.additionalEmails).toEqual(['zzy19812007@gmail.com']);
+  expect(siteData.profile.skills).toEqual(['Java', 'C', 'Python', 'AI Agent 开发', '调试与测试']);
+  expect(siteData.site.resume).toBe('/张子阳-AI-Agent实习生.pdf');
   expect(siteData.site.domain).toBe('https://qling.it.com');
 });
 
-test('the three flagship projects reflect the current local repositories and AI collaboration', () => {
+test('the three flagship projects describe my concrete responsibilities and validation work', () => {
   const featuredProjects = siteData.projects
     .filter((project) => project.featured)
     .sort((left, right) => (left.featuredOrder ?? 99) - (right.featuredOrder ?? 99))
@@ -53,9 +56,9 @@ test('the three flagship projects reflect the current local repositories and AI 
     '轻青 Qingqing'
   ]);
   featuredProjects.forEach((project) => {
-    expect(project.outcome).toMatch(/AI 协作|AI 辅助/);
+    expect(project.outcome.length).toBeGreaterThan(30);
     expect(project.slug).toMatch(/^[a-z0-9-]+$/);
-    expect(project.role).toMatch(/AI/);
+    expect(project.role).toMatch(/^我负责/);
     expect(project.verification.length).toBeGreaterThanOrEqual(2);
   });
 });

@@ -50,7 +50,7 @@ export default function BlogPage() {
           <Badge>精选文章</Badge>
           <h1 className="mt-4 text-4xl font-bold">写作是我复盘和表达技术理解的方式</h1>
           <p className="mt-4 text-lg text-muted">
-            这些文章不是简单的笔记归档，而是我把项目实践、基础知识和学习方法重新组织后的公开证据。
+            我会整理项目实践、基础知识和学习方法，也用写作记录自己的理解和思考。
           </p>
         </div>
 

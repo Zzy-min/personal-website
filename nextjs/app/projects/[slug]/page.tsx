@@ -45,7 +45,7 @@ export default async function ProjectCasePage({
         <div>
           <h2 className="text-3xl font-bold">明确个人贡献，也明确 AI 的参与</h2>
           <p className="mt-5 max-w-3xl text-lg leading-8 text-muted">
-            {project.role ?? '负责需求梳理、调试、验证与持续迭代，实现过程包含 AI 协作。'}
+            {project.role ?? '我负责需求梳理、功能实现、调试验证与持续迭代。'}
           </p>
         </div>
       </section>
@@ -63,7 +63,7 @@ export default async function ProjectCasePage({
       </section>
 
       <section className="case-section">
-        <div className="case-label">04 / 如何证明</div>
+          <div className="case-label">04 / 我如何验证</div>
         <div>
           <p className="max-w-3xl text-lg leading-8">{project.outcome}</p>
           <ul className="mt-7 space-y-3">

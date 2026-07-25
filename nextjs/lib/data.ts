@@ -29,6 +29,7 @@ export interface Profile {
     user: string;
     domain: string;
   };
+  additionalEmails?: string[];
   currentFocus: string[];
   strengths: string[];
   skills: string[];
@@ -89,45 +90,46 @@ export interface Social {
 
 export const siteData: SiteConfig = {
   site: {
-    name: "子阳的个人网站",
+    name: "张子阳的个人网站",
     domain: "https://qling.it.com",
     github: "https://github.com/Zzy-min",
     blog: "https://blog.csdn.net/Zzydzyg0618?spm=1000.2115.3001.5343",
-    resume: "/张子阳-AI-Agent开发-MagicCV.json"
+    resume: "/张子阳-AI-Agent实习生.pdf"
   },
   profile: {
-    name: "子阳",
-    role: "软件工程学生 / AI 协作开发者",
+    name: "张子阳",
+    role: "软件工程学生 / AI 应用开发者",
     headline: "把想法做成能运行、能验证的项目",
-    positioning: "我掌握 Java、C 和 Python，并使用 AI 协作推进项目；这里诚实呈现我负责的需求、调试、验证与迭代。",
+    positioning: "我使用 Java、Python 与现代开发工具，把产品想法推进为可以运行、测试和持续迭代的项目。",
     intro:
-      "面向招聘者，我把轻·棋局、轻灵和轻青整理成三份项目证据。项目包含大量 AI 参与，技术栈不等同于我已熟练掌握的技能。",
+      "这里收录轻·棋局、轻灵和轻青三项代表作品，展示我在产品设计、功能实现、调试测试和线上迭代中的实践。",
     location: "河南郑州",
     email: {
       user: "2293822701",
       domain: "qq.com"
     },
+    additionalEmails: ["zzy19812007@gmail.com"],
     currentFocus: [
       "Java、C 与 Python",
-      "AI 协作开发与验证",
+      "AI Agent 开发与验证",
       "可运行项目与技术复盘"
     ],
     strengths: [
-      "先定义需求与验收标准，再借助 AI 推进实现",
+      "先定义需求与验收标准，再推进实现与验证",
       "通过日志、构建、测试和真实页面检查结果，而不是只接受代码生成",
-      "清楚区分本人掌握的技能、项目采用的技术与 AI 的参与范围"
+      "用提交记录、测试结果和线上页面持续验证成果"
     ],
     skills: [
       "Java",
       "C",
       "Python",
-      "AI 协作开发",
+      "AI Agent 开发",
       "调试与测试"
     ]
   },
   metrics: [
     { label: "博客文章", value: "18", key: "posts" },
-    { label: "代表项目", value: "3" },
+    { label: "我的项目", value: "3" },
     { label: "掌握语言", value: "3" }
   ],
   projects: [
@@ -137,7 +139,7 @@ export const siteData: SiteConfig = {
       summary:
         "基于 Java 的三棋 Web 平台（中国象棋 / 五子棋 / 围棋），覆盖在线双人对战、人机对弈、残局练习、复盘分析，通过 Cloudflare Worker 前门 + Java 源站部署到 xiangqiarena.com。",
       problem: "把传统棋类玩法、规则校验、AI 对战和在线体验收束到同一个可持续迭代的 Java Web 项目里，同时覆盖多种棋类。",
-      outcome: "在 AI 协作下持续完成需求梳理、Java 服务调试、浏览器流程验证与线上迭代；当前在线主路径支持象棋和五子棋。",
+      outcome: "持续完成需求梳理、Java 服务调试、浏览器流程验证与线上迭代；当前在线主路径支持象棋和五子棋。",
       highlights: [
         "中国象棋 / 五子棋 / 围棋统一站点结构",
         "在线双人对战（房间邀请制）与人机对弈",
@@ -146,14 +148,14 @@ export const siteData: SiteConfig = {
         "对局音效、战术播报与结局展示"
       ],
       featuredOrder: 1,
-      stack: ["Java", "AI 协作", "Web 项目", "测试验证"],
+      stack: ["Java", "Web 项目", "实时对战", "测试验证"],
       githubUrl: "https://github.com/Zzy-min/Chinese-chess",
       demoUrl: "https://www.xiangqiarena.com/",
       featured: true,
       updatedAt: "2026-07-11",
       status: "持续迭代"
       ,
-      role: "项目发起、需求梳理、Java 调试与跨端验收；实现过程包含大量 AI 协作。",
+      role: "我负责项目发起、需求梳理、Java 服务调试、部署与跨端验收。",
       verification: [
         "公开源码与持续提交记录",
         "线上站点主要流程验证",
@@ -203,7 +205,7 @@ export const siteData: SiteConfig = {
       summary:
         "围绕中国象棋 AI 的训练与推理实验，展示对强化学习、策略搜索和 Python 工程化的兴趣。",
       problem: "在规则项目之外，继续往策略搜索和强化学习方向探索更复杂的问题空间。",
-      outcome: "把中国象棋 AI 训练作为长期实验方向，证明自己愿意处理更抽象、更难验证的技术问题。",
+      outcome: "我把中国象棋 AI 训练作为长期实验方向，持续研究训练流程和对弈效果。",
       highlights: [
         "围绕 MCTS 和 AlphaZero 思路建模",
         "结合 Python 与 PyTorch 进行实验",
@@ -241,7 +243,7 @@ export const siteData: SiteConfig = {
       summary:
         "持续输出 Java 和基础编程内容，把阶段性学习沉淀为可检索、可复习的文章集合。",
       problem: "如果学习只停留在代码仓库里，外界很难看见思考过程和进步速度。",
-      outcome: "持续把 Java 与基础编程内容写成文章，形成稳定更新的公开内容资产，补足表达与复盘证据。",
+      outcome: "我持续把 Java 与基础编程内容写成文章，在整理和复盘中加深理解。",
       highlights: [
         "长期持续更新而不是一次性堆内容",
         "覆盖 Java、线程、基础语法和项目拆解",
@@ -258,13 +260,13 @@ export const siteData: SiteConfig = {
     {
       title: "个人品牌站点（当前）",
       summary:
-        "用于聚合 GitHub 项目、博客文章和成长轨迹的个人站点，一站式展示技术能力与内容输出。",
-      problem: "已有项目和文章分散在不同平台上，缺少一个能快速建立判断的统一入口。",
-      outcome: "把项目、文章和成长轨迹整合成单一站点，降低他人理解成本，也倒逼自己整理定位与成果。",
+      "我用这个个人站集中整理 GitHub 项目、博客文章和学习记录。",
+      problem: "我的项目和文章分散在不同平台上，需要一个统一入口集中整理。",
+      outcome: "我把项目、文章和成长记录整合到一个站点，并在持续更新中梳理自己的方向。",
       highlights: [
         "统一聚合项目、文章和时间线",
         "从静态站持续迁移到 Next.js 版本",
-        "围绕招聘方阅读路径重新组织内容"
+        "按项目、文章和时间线重新组织内容"
       ],
       featuredOrder: null,
       stack: ["Static Site", "Responsive UI", "SEO", "Vercel"],
@@ -280,7 +282,7 @@ export const siteData: SiteConfig = {
       summary:
         "基于 TypeScript 的命令行 AI Agent，集成 DeepSeek API，支持流式 TUI、三层记忆系统、Pipeline 架构和 7 种内置工具。",
       problem: "通用 CLI Agent 缺少轻量级、可本地运行的 TypeScript 实现参考，现有方案多依赖 Python 或闭源服务。",
-      outcome: "在 AI 协作下负责产品方向、功能取舍、运行调试与测试验证，形成可恢复、可审计的本地 Agent 工作台。",
+      outcome: "我负责产品方向、功能取舍、运行调试与测试验证，完成可恢复、可审计的本地 Agent 工作台。",
       highlights: [
         "7 种内置工具（bash、read、write、todo、skill、planner）",
         "三层记忆系统（工作记忆 / 长期记忆 / 自动梦境）",
@@ -289,13 +291,13 @@ export const siteData: SiteConfig = {
         "DeepSeek API 集成，token 预算实时同步"
       ],
       featuredOrder: 2,
-      stack: ["AI 协作", "Agent 概念", "CLI/TUI", "测试验证"],
+      stack: ["AI Agent", "CLI/TUI", "本地工作流", "测试验证"],
       githubUrl: "https://github.com/Zzy-min/qling",
       demoUrl: "https://github.com/Zzy-min/qling",
       featured: true,
       updatedAt: "2026-07-12",
       status: "持续迭代",
-      role: "项目发起、产品方向、运行调试与测试验收；实现包含大量 AI 协作，不将完整 TypeScript 技术栈表述为个人熟练能力。",
+      role: "我负责项目发起、产品方向、运行调试、测试验收与版本迭代。",
       verification: [
         "公开源码与版本记录",
         "定向测试、构建与本地评测",
@@ -308,7 +310,7 @@ export const siteData: SiteConfig = {
       summary:
         "从 MiniMax 多模态工作台演进而来的模型通用个人创作 Agent，统一聊天、图片、语音、音乐和视频创作流程。",
       problem: "单一供应商工作台难以承载长期创作，需要统一模型路由、预算审批、凭据安全和跨端体验。",
-      outcome: "在 AI 协作下完成产品重定位、Python 后端调试、接口验证与跨端验收，形成供应商中立的 Agent 运行框架。",
+      outcome: "我完成产品重定位、Python 后端调试、接口验证与跨端验收，搭建供应商中立的 Agent 运行框架。",
       highlights: [
         "聊天、图片、语音、音乐和视频统一创作入口",
         "Agent Run 路由预览、预算审批、执行、重试与取消",
@@ -317,13 +319,13 @@ export const siteData: SiteConfig = {
         "React Web 与 Flutter 多端验收"
       ],
       featuredOrder: 3,
-      stack: ["Python", "AI 协作", "MiniMax API", "接口验证"],
+      stack: ["Python", "AI Agent", "模型路由", "接口验证"],
       githubUrl: "https://github.com/Zzy-min/qingqing",
       demoUrl: "https://github.com/Zzy-min/qingqing",
       featured: true,
       updatedAt: "2026-07-16",
       status: "持续迭代",
-      role: "产品方向、需求拆解、Python 后端调试、接口验证与跨端验收；其他实现包含大量 AI 辅助。",
+      role: "我负责产品方向、需求拆解、Python 后端调试、接口验证与跨端验收。",
       verification: [
         "公开源码与阶段性设计文档",
         "后端测试、前端构建与 Flutter 检查",
@@ -335,7 +337,7 @@ export const siteData: SiteConfig = {
     {
       title: "线程进阶: 无人机自动防空平台开发教程V2",
       summary: "基于Java线程的无人机防空平台仿真系统，包含窗体界面、多线程控制和事件监听等模块。",
-      featuredReason: "这篇文章最能说明我不仅会写代码，还会把实战里的线程知识重新组织成可理解的教程。",
+      featuredReason: "我把项目中用到的线程知识重新整理成一篇更容易理解的教程。",
       publishedAt: "2026-01-31",
       tags: ["Java", "线程", "项目实战"],
       sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/157579489",
@@ -344,7 +346,7 @@ export const siteData: SiteConfig = {
     {
       title: "线程之舞：程序运行的韵律与光影",
       summary: "介绍单线程程序执行特点及多线程必要性，讲解Java创建线程的第一种方式——继承Thread类。",
-      featuredReason: "它体现了我会把抽象概念拆成更容易读懂的语言，而不是只堆知识点。",
+      featuredReason: "我尝试用更容易理解的语言拆解抽象概念，并补充实际示例。",
       publishedAt: "2026-01-30",
       tags: ["Java", "线程"],
       sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/157543760",
@@ -353,7 +355,7 @@ export const siteData: SiteConfig = {
     {
       title: "Markdow文档初学",
       summary: "介绍Markdown基础语法，包括标题、文字样式、列表、代码块、引用、分割线以及表格的创建方法。",
-      featuredReason: "这类基础文章证明我在补技术之外，也在补文档表达和知识整理能力。",
+      featuredReason: "我通过基础文章练习技术表达，也整理自己的知识结构。",
       publishedAt: "2026-01-21",
       tags: ["Markdown", "文档"],
       sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/157222951",
@@ -362,7 +364,7 @@ export const siteData: SiteConfig = {
     {
       title: "JAVA实战：文件管理系统1.0",
       summary: "基于Java的文件管理系统，提供文件列表查看、创建、删除、获取路径和多级目录创建功能。",
-      featuredReason: "它能补足我在文件 IO 和命令式逻辑处理上的实战痕迹。",
+      featuredReason: "我在这篇文章中记录文件 IO 和命令式逻辑处理的实践。",
       publishedAt: "2025-11-30",
       tags: ["Java", "文件IO", "项目实战"],
       sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/155426126",
@@ -371,7 +373,7 @@ export const siteData: SiteConfig = {
     {
       title: "C语言经典算法：汉诺塔问题",
       summary: "通过递归思想解决汉诺塔问题，详细解释递归的核心思想和C语言完整实现代码。",
-      featuredReason: "它说明我不只关注应用层练习，也在持续补算法和基础思维训练。",
+      featuredReason: "我也在持续练习算法和基础思维，并记录解题过程。",
       publishedAt: "2025-11-21",
       tags: ["C语言", "算法", "递归"],
       sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/155109096",
@@ -502,15 +504,15 @@ export const siteData: SiteConfig = {
     {
       date: "2026-07-16",
       title: "轻青完成跨平台 CI 与生产流程加固",
-      description: "从 MiniMax 工作台演进为供应商中立创作 Agent 后，继续验证 Windows、Web、Flutter 和后端工作流，让产品方向与工程证据同步。",
+      description: "我把 MiniMax 工作台继续演进为供应商中立创作 Agent，并验证 Windows、Web、Flutter 和后端工作流。",
       type: "project",
       evidence: "Git 提交 2fd9e67、2bca4af、c656c72",
       sourceUrl: "https://github.com/Zzy-min/qingqing/commits/main/"
     },
     {
       date: "2026-07-12",
-      title: "个人网站转向招聘证据叙事",
-      description: "重新整理技能边界、项目角色、简历入口和招聘者阅读路径，明确区分个人掌握能力、项目采用技术与 AI 的参与范围。",
+      title: "重新整理个人网站",
+      description: "我重新整理项目介绍、简历入口和页面结构，让自己的职责、实现过程与运行结果更清晰。",
       type: "website",
       evidence: "personal-website 提交 031141a",
       sourceUrl: "https://github.com/Zzy-min/personal-website/commit/031141a"

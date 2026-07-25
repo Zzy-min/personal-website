@@ -36,10 +36,10 @@ export default function ProjectsPage() {
     <div className="min-h-screen px-4 py-12">
       <section className="mx-auto max-w-7xl">
         <div className="max-w-3xl">
-          <Badge>代表案例</Badge>
-          <h1 className="mt-4 text-4xl font-bold">项目不是列表，而是解决问题的证据</h1>
+          <Badge>我的项目</Badge>
+          <h1 className="mt-4 text-4xl font-bold">我把想法做成可以运行的项目</h1>
           <p className="mt-4 text-lg text-muted">
-            我更在意一个项目能不能清楚回答三个问题：它解决了什么、我怎么做的、最后留下了什么证明。
+            我会介绍每个项目解决的问题、我承担的工作，以及目前已经完成的功能和验证。
           </p>
         </div>
 
@@ -96,7 +96,7 @@ export default function ProjectsPage() {
               <div className="mt-6 flex flex-wrap gap-3">
                 {project.slug ? (
                   <Button href={`/projects/${project.slug}`}>
-                    阅读完整案例
+                  查看项目详情
                   </Button>
                 ) : null}
                 <Button href={project.githubUrl} external>
@@ -116,7 +116,7 @@ export default function ProjectsPage() {
           <Badge variant="outline">项目档案</Badge>
           <h2 className="mt-4 text-3xl font-bold">继续看完整项目谱系</h2>
           <p className="mt-3 text-muted">
-            下面保留筛选能力，方便快速查看我涉及过的技术方向和项目类型。
+          你也可以按技术方向和项目类型浏览我的其他实践。
           </p>
         </div>
 
@@ -177,7 +177,7 @@ export default function ProjectsPage() {
             <article className="rounded-card border border-dashed border-line bg-panel p-6 shadow-card md:col-span-2">
               <h3 className="text-2xl font-bold">当前筛选下还没有项目</h3>
               <p className="mt-3 text-muted">
-                可以切换其它技术标签，或者先查看上面的代表案例了解我的主要项目方向。
+            可以切换其他技术标签，或者先查看上面的项目了解我当前的开发方向。
               </p>
             </article>
           )}

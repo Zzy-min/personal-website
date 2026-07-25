@@ -17,10 +17,10 @@ export default function TimelinePage() {
     <div className="min-h-screen px-4 py-12">
       <section className="mx-auto max-w-7xl">
         <div className="max-w-3xl">
-          <Badge>成长证明</Badge>
-          <h1 className="mt-4 text-4xl font-bold">成长证明</h1>
+          <Badge>我的时间线</Badge>
+          <h1 className="mt-4 text-4xl font-bold">我的学习与开发记录</h1>
           <p className="mt-4 text-lg text-muted">
-            把阶段性节点串起来，才能看见真正的上升曲线。我不想只展示最后的成果，也希望别人看到每个阶段我在补什么、做什么、把什么真正留下来了。
+            我把每个阶段完成的项目、文章和学习内容记录下来，也会继续更新新的进展。
           </p>
         </div>
 
@@ -46,7 +46,7 @@ export default function TimelinePage() {
                 {item.evidence ? (
                   <div className="mt-5 border-t border-line pt-4">
                     <div className="font-mono text-xs uppercase tracking-[0.16em] text-primary">
-                      可核验证据
+                      相关记录
                     </div>
                     {item.sourceUrl ? (
                       <SiteLink

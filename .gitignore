@@ -1,5 +1,6 @@
 .vercel/
 node_modules/
 nextjs/output/
+tmp/
 .DS_Store
 Thumbs.db

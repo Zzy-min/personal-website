@@ -28,9 +28,16 @@ export default function AboutPage() {
               </div>
               <div className="flex items-center gap-2 text-muted">
                 <Mail size={16} />
-                <span>
-                  {siteData.profile.email.user}@{siteData.profile.email.domain}
-                </span>
+                <div className="flex flex-col gap-1">
+                  <a className="hover:text-foreground" href={`mailto:${siteData.profile.email.user}@${siteData.profile.email.domain}`}>
+                    {siteData.profile.email.user}@{siteData.profile.email.domain}
+                  </a>
+                  {siteData.profile.additionalEmails?.map((email) => (
+                    <a className="hover:text-foreground" href={`mailto:${email}`} key={email}>
+                      {email}
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
           </article>
@@ -69,9 +76,9 @@ export default function AboutPage() {
           <article className="rounded-card border border-line bg-panel p-6 shadow-card">
             <Badge variant="outline">为什么做这个站</Badge>
             <h2 className="mt-4 text-3xl font-bold">为什么做这个站</h2>
-            <p className="mt-4">我希望别人先看到证据，再决定要不要继续了解我。</p>
+            <p className="mt-4">我在这里集中介绍自己的项目、文章和学习经历。</p>
             <p className="mt-4 leading-8 text-muted">
-              这个站的意义不是包装，而是把分散在 GitHub、CSDN 和不同阶段项目里的内容重新组织，让招聘方和合作方可以更快判断我的潜力、方法和长期性。
+              我把分散在 GitHub、CSDN 和不同阶段项目里的内容整理到一起，方便你了解我正在做什么、做过什么，以及我接下来想继续深入的方向。
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Button href={siteData.site.github} external>

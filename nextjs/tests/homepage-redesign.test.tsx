@@ -33,19 +33,20 @@ describe('homepage redesign plan', () => {
     ).toBeInTheDocument();
 
     const text = container.textContent ?? '';
-    const narrativeAnchors = ['代表项目', '能力证据', '精选文章', '成长轨迹', '联系我'];
+    const narrativeAnchors = ['代表项目', '我的能力', '精选文章', '成长轨迹', '联系我'];
     const positions = narrativeAnchors.map((anchor) => text.indexOf(anchor));
 
     expect(positions.every((position) => position >= 0)).toBe(true);
     expect(positions).toEqual([...positions].sort((left, right) => left - right));
   });
 
-  test('hero makes resume download the only primary action', () => {
+  test('hero offers both direct PDF download and an online preview', () => {
     render(<HomePage />);
 
-    const resumeLink = screen.getByRole('link', { name: '下载简历' });
+    const resumeLink = screen.getByRole('link', { name: '下载 PDF 简历' });
     expect(resumeLink).toHaveAttribute('href', siteData.site.resume);
     expect(resumeLink).toHaveAttribute('download');
+    expect(screen.getByRole('link', { name: '在线预览简历' })).toHaveAttribute('href', '/resume');
   });
 
   test('homepage header uses the updated personal name and removes the hero eyebrow copy', () => {
@@ -56,8 +57,8 @@ describe('homepage redesign plan', () => {
       </>
     );
 
-    expect(screen.getByText('子阳')).toBeInTheDocument();
-    expect(screen.getByText('软件工程学生 / AI 协作开发者')).toBeInTheDocument();
+    expect(screen.getByText('张子阳')).toBeInTheDocument();
+    expect(screen.getByText('软件工程学生 / AI 应用开发者')).toBeInTheDocument();
     expect(screen.queryByText('面向招聘方的证据型主页')).not.toBeInTheDocument();
   });
 

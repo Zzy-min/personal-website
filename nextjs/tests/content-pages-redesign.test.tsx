@@ -11,9 +11,9 @@ describe('content page redesign plan', () => {
     const { container } = render(<ProjectsPage />);
     const text = container.textContent ?? '';
 
-    expect(screen.getByRole('heading', { name: '项目不是列表，而是解决问题的证据' })).toBeInTheDocument();
-    expect(text.indexOf('代表案例')).toBeGreaterThanOrEqual(0);
-    expect(text.indexOf('项目档案')).toBeGreaterThan(text.indexOf('代表案例'));
+    expect(screen.getByRole('heading', { name: '我把想法做成可以运行的项目' })).toBeInTheDocument();
+    expect(text.indexOf('我的项目')).toBeGreaterThanOrEqual(0);
+    expect(text.indexOf('项目档案')).toBeGreaterThan(text.indexOf('我的项目'));
     expect(text).toContain(siteData.projects[0].problem);
     expect(text).toContain(siteData.projects[0].outcome);
   });
@@ -106,18 +106,18 @@ describe('content page redesign plan', () => {
     expect(screen.getByRole('heading', { name: '我正在成为什么样的开发者' })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: '当前方向' })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: '为什么做这个站' })).toBeInTheDocument();
-    expect(screen.getByText('软件工程学生 / AI 协作开发者')).toBeInTheDocument();
+    expect(screen.getByText('软件工程学生 / AI 应用开发者')).toBeInTheDocument();
     expect(screen.queryByText('生日')).not.toBeInTheDocument();
     expect(screen.queryByText('2007/5/4')).not.toBeInTheDocument();
     expect(screen.getByText('河南郑州')).toBeInTheDocument();
   });
 
-  test('timeline page frames milestones as growth evidence', () => {
+  test('timeline page presents milestones as a first-person development record', () => {
     const { container } = render(<TimelinePage />);
     const text = container.textContent ?? '';
 
-    expect(screen.getByRole('heading', { name: '成长证明' })).toBeInTheDocument();
-    expect(text).toContain('阶段意义');
+    expect(screen.getByRole('heading', { name: '我的学习与开发记录' })).toBeInTheDocument();
+    expect(text).toContain('相关记录');
     expect(text).toContain(siteData.timeline[0].title);
   });
 

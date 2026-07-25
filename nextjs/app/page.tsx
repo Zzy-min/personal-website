@@ -27,7 +27,7 @@ export default function HomePage() {
             <Badge>代表项目</Badge>
             <h2 className="text-3xl font-bold mt-3">先看已经做出来的东西</h2>
             <p className="text-muted mt-3">
-              我把最能说明问题理解、实现深度和表达能力的项目放在最前面，而不是先讲泛化的自我介绍。
+            我先介绍自己持续投入的项目，以及我在其中解决的问题和完成的工作。
             </p>
           </div>
           <SiteLink href="/projects" className="text-muted hover:text-text transition-colors">
@@ -127,8 +127,8 @@ export default function HomePage() {
 
       <section className="py-12 px-4 max-w-7xl mx-auto">
         <div className="max-w-2xl mb-6">
-          <Badge>能力证据</Badge>
-          <h2 className="text-3xl font-bold mt-3">我希望被看到的不只是会什么，而是怎么持续变强</h2>
+            <Badge>我的能力</Badge>
+            <h2 className="text-3xl font-bold mt-3">我在项目中持续学习，也把学到的内容真正用起来</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -143,7 +143,7 @@ export default function HomePage() {
             <div className="text-xs uppercase tracking-[0.18em] text-muted">持续输出</div>
             <strong className="block text-4xl mt-4">{siteData.metrics[0].value}</strong>
             <p className="text-muted mt-3">
-              我把做过的内容重新写成文章，让学习过程可以被复查、被理解，也能反过来强化自己。
+              我把做过的内容整理成文章，在写作和复盘中继续加深理解。
             </p>
           </article>
           <article className="bg-panel border border-line rounded-card p-6 shadow-card">
@@ -164,7 +164,7 @@ export default function HomePage() {
         <div className="flex items-end justify-between gap-4 mb-6 flex-wrap">
           <div className="max-w-2xl">
             <Badge>精选文章</Badge>
-            <h2 className="text-3xl font-bold mt-3">文章不是附属品，而是第二层能力证据</h2>
+            <h2 className="text-3xl font-bold mt-3">我也会把开发中的收获写成文章</h2>
           </div>
           <SiteLink href="/blog" className="text-muted hover:text-text transition-colors">
             查看全部文章 →
@@ -205,7 +205,7 @@ export default function HomePage() {
         <div className="flex items-end justify-between gap-4 mb-6 flex-wrap">
           <div className="max-w-2xl">
             <Badge>成长轨迹</Badge>
-            <h2 className="text-3xl font-bold mt-3">我想让别人看见的是稳定上升，而不是一次性展示</h2>
+            <h2 className="text-3xl font-bold mt-3">我会持续记录每个阶段完成的事情</h2>
           </div>
           <SiteLink href="/timeline" className="text-muted hover:text-text transition-colors">
             查看完整时间线 →
@@ -238,8 +238,13 @@ export default function HomePage() {
             </p>
             <div className="flex flex-wrap gap-3 mt-6">
               <Button href={`mailto:${siteData.profile.email.user}@${siteData.profile.email.domain}`}>
-                发送邮件
+                QQ 邮箱
               </Button>
+              {siteData.profile.additionalEmails?.map((email) => (
+                <Button href={`mailto:${email}`} key={email} variant="secondary">
+                  Gmail
+                </Button>
+              ))}
               <Button href={siteData.site.github} variant="secondary" external>
                 GitHub
               </Button>
@@ -251,11 +256,11 @@ export default function HomePage() {
 
           <article className="bg-panel border border-line rounded-card p-6 shadow-card">
             <Badge>下一步</Badge>
-            <h2 className="text-3xl font-bold mt-3">接下来我会继续把证据链补完整</h2>
+            <h2 className="text-3xl font-bold mt-3">接下来我会继续完善这些项目</h2>
             <ul className="space-y-3 mt-4">
-              <li>补充更多能体现实现细节的项目说明，而不只展示标题和链接。</li>
+              <li>补充更多项目实现细节、问题处理过程和运行结果。</li>
               <li>继续整理 Java 与基础编程文章，让内容输出和项目实践彼此支撑。</li>
-              <li>持续迭代这个个人站，让它更像一个可信的长期成长记录，而不是一次性的包装页。</li>
+              <li>持续迭代这个个人站，记录我的学习、开发和内容更新。</li>
             </ul>
           </article>
         </div>

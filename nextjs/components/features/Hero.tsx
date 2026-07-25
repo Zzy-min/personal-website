@@ -28,9 +28,12 @@ export function Hero() {
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <Button href={siteData.site.resume} download>
-              下载简历
+              下载 PDF 简历
             </Button>
-            <SiteLink href="/projects" className="evidence-link">查看项目证据 <span aria-hidden="true">↗</span></SiteLink>
+            <Button href="/resume" variant="secondary">
+              在线预览简历
+            </Button>
+            <SiteLink href="/projects" className="evidence-link">查看我的项目 <span aria-hidden="true">↗</span></SiteLink>
           </div>
 
           <div className="mt-7">
@@ -51,7 +54,7 @@ export function Hero() {
           <p className="text-muted mt-3">{flagshipProject.problem}</p>
 
           <div className="mt-6 border-t border-line pt-5">
-            <div className="text-xs uppercase tracking-[0.18em] text-muted">最近证明</div>
+            <div className="text-xs uppercase tracking-[0.18em] text-muted">最近进展</div>
             <p className="mt-3 leading-7">{flagshipProject.outcome}</p>
           </div>
 
