@@ -128,7 +128,7 @@ export const siteData: SiteConfig = {
     ]
   },
   metrics: [
-    { label: "博客文章", value: "18", key: "posts" },
+    { label: "博客文章", value: "48", key: "posts" },
     { label: "我的项目", value: "3" },
     { label: "掌握语言", value: "3" }
   ],
@@ -334,6 +334,7 @@ export const siteData: SiteConfig = {
     }
   ],
   posts: [
+    ...latestCsdnPosts,
     {
       title: "线程进阶: 无人机自动防空平台开发教程V2",
       summary: "基于Java线程的无人机防空平台仿真系统，包含窗体界面、多线程控制和事件监听等模块。",
@@ -485,6 +486,14 @@ export const siteData: SiteConfig = {
     }
   ],
   timeline: [
+    {
+      date: "2026-07-24",
+      title: "开始整理 MySQL 学习笔记系列",
+      description: "我发布系列第一篇，整理数据库概念、安装连接、DDL、数据类型和主外键约束，并列出后续四篇的学习计划。",
+      type: "blog",
+      evidence: "CSDN 原创文章 163161740",
+      sourceUrl: "https://blog.csdn.net/Zzydzyg0618/article/details/163161740"
+    },
     {
       date: "2026-07-25",
       title: "轻·棋局继续完善实时对战与移动端体验",
@@ -657,3 +666,4 @@ export const siteData: SiteConfig = {
     { label: "Email", href: "mailto:zzy19812007@gmail.com" }
   ]
 };
+import { latestCsdnPosts } from './csdn-posts';
