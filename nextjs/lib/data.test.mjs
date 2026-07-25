@@ -40,7 +40,7 @@ test('recruiter-facing profile keeps the honest skill boundary and current conta
   });
   expect(siteData.profile.additionalEmails).toEqual(['zzy19812007@gmail.com']);
   expect(siteData.profile.skills).toEqual(['Java', 'C', 'Python', 'AI Agent 开发', '调试与测试']);
-  expect(siteData.site.resume).toBe('/张子阳-AI-Agent实习生-20260725.pdf');
+  expect(siteData.site.resume).toBe('/张子阳-AI-Agent实习生-20260725-v2.pdf');
   expect(siteData.site.domain).toBe('https://qling.it.com');
 });
 

@@ -94,7 +94,7 @@ export const siteData: SiteConfig = {
     domain: "https://qling.it.com",
     github: "https://github.com/Zzy-min",
     blog: "https://blog.csdn.net/Zzydzyg0618?spm=1000.2115.3001.5343",
-    resume: "/张子阳-AI-Agent实习生-20260725.pdf"
+    resume: "/张子阳-AI-Agent实习生-20260725-v2.pdf"
   },
   profile: {
     name: "张子阳",
