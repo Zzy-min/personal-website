@@ -94,6 +94,11 @@ export default function ProjectsPage() {
               </div>
 
               <div className="mt-6 flex flex-wrap gap-3">
+                {project.slug ? (
+                  <Button href={`/projects/${project.slug}`}>
+                    阅读完整案例
+                  </Button>
+                ) : null}
                 <Button href={project.githubUrl} external>
                   查看源码
                 </Button>

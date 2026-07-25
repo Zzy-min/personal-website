@@ -10,9 +10,17 @@
   body {
     @apply bg-bg text-text;
     background:
-      radial-gradient(circle at top left, rgba(178, 138, 85, 0.16), transparent 22%),
-      radial-gradient(circle at top right, rgba(47, 90, 69, 0.12), transparent 28%),
-      linear-gradient(180deg, #faf4ea 0%, #f5efe5 52%, #efe6d8 100%);
+      linear-gradient(rgba(47, 90, 69, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(47, 90, 69, 0.045) 1px, transparent 1px),
+      linear-gradient(180deg, #faf6ee 0%, #f3ecdf 100%);
+    background-size: 32px 32px, 32px 32px, auto;
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+
+  :focus-visible {
+    outline: 3px solid #2f5a45;
+    outline-offset: 3px;
   }
 
   ::selection {
@@ -36,6 +44,95 @@
 }
 
 @layer utilities {
+  .brand-mark {
+    @apply inline-flex h-11 w-11 items-center justify-center border border-primary bg-primary font-serif text-lg text-paper-inverse;
+    border-radius: 50% 50% 50% 12%;
+  }
+
+  .hero-field {
+    position: relative;
+  }
+
+  .hero-field::before {
+    content: "";
+    position: absolute;
+    inset: 1.5rem 1rem auto auto;
+    width: clamp(6rem, 14vw, 11rem);
+    height: 0.45rem;
+    background: #b28a55;
+    transform: rotate(-2deg);
+    opacity: 0.75;
+  }
+
+  .hero-copy {
+    max-width: 54rem;
+  }
+
+  .status-pulse {
+    width: 0.65rem;
+    height: 0.65rem;
+    border-radius: 999px;
+    background: #2f5a45;
+    box-shadow: 0 0 0 0.35rem #dce4db;
+  }
+
+  .evidence-link {
+    @apply inline-flex min-h-11 items-center gap-2 px-1 font-medium text-primary underline decoration-1 underline-offset-4 transition-transform;
+  }
+
+  .evidence-link:hover {
+    transform: translateX(0.25rem);
+  }
+
+  .evidence-sheet {
+    @apply border border-line bg-panel p-6;
+    border-radius: 0.25rem 2rem 0.25rem 0.25rem;
+    box-shadow: 0.9rem 0.9rem 0 #d8cbbb;
+    transform: rotate(0.7deg);
+  }
+
+  .sheet-index {
+    @apply font-mono text-xs font-medium tracking-[0.2em] text-primary;
+  }
+
+  .skip-link {
+    position: fixed;
+    left: 1rem;
+    top: 1rem;
+    z-index: 100;
+    transform: translateY(-200%);
+    background: #1d392b;
+    color: #faf4ea;
+    padding: 0.75rem 1rem;
+  }
+
+  .skip-link:focus {
+    transform: translateY(0);
+  }
+
+  .case-masthead {
+    @apply border-b border-line pb-14;
+  }
+
+  .case-section {
+    @apply grid gap-6 border-b border-line py-12 md:grid-cols-[11rem_1fr] md:py-16;
+  }
+
+  .case-label {
+    @apply font-mono text-xs font-medium uppercase tracking-[0.2em] text-primary;
+  }
+
+  .case-list {
+    @apply space-y-0 border-t border-line;
+  }
+
+  .case-list li {
+    @apply grid grid-cols-[3rem_1fr] gap-4 border-b border-line py-5;
+  }
+
+  .case-list span {
+    @apply font-mono text-sm text-muted;
+  }
   .animate-fade-in {
     animation: fadeIn 0.5s ease-out;
   }
@@ -72,6 +169,15 @@
     100% {
       opacity: 1;
       transform: scale(1);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms !important;
     }
   }
 }

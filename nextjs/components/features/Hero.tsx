@@ -2,7 +2,6 @@
 
 import { Github, ExternalLink } from 'lucide-react';
 import { siteData } from '@/lib/data';
-import { MetricCard } from '@/components/features/MetricCard';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { SiteLink } from '@/components/ui/SiteLink';
@@ -14,22 +13,24 @@ export function Hero() {
   const flagshipProject = featuredProjects[0];
 
   return (
-    <section className="py-20 px-4 max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-[1.15fr_0.85fr] gap-6">
-        <div className="bg-panel border border-line rounded-card p-6 shadow-card">
+    <section className="hero-field mx-auto max-w-7xl px-4 pb-16 pt-14 md:pb-24 md:pt-20">
+      <div className="grid grid-cols-1 gap-10 md:grid-cols-[1.25fr_0.75fr] md:items-end">
+        <div className="hero-copy">
+          <div className="mb-7 flex items-center gap-3 text-xs font-medium uppercase tracking-[0.22em] text-primary">
+            <span className="status-pulse" aria-hidden="true" />
+            正在寻找 AI Agent 开发实践机会
+          </div>
           <h1 className="text-[clamp(2.3rem,6vw,4.4rem)] font-bold leading-tight">
             {siteData.profile.headline}
           </h1>
           <p className="text-lg mt-4">{siteData.profile.positioning}</p>
           <p className="text-muted mt-4 leading-7">{siteData.profile.intro}</p>
 
-          <div className="flex flex-wrap gap-3 mt-7">
+          <div className="mt-8 flex flex-wrap items-center gap-4">
             <Button href={siteData.site.resume} download>
               下载简历
             </Button>
-            <Button href="/projects" variant="secondary">
-              查看代表项目
-            </Button>
+            <SiteLink href="/projects" className="evidence-link">查看项目证据 <span aria-hidden="true">↗</span></SiteLink>
           </div>
 
           <div className="mt-7">
@@ -44,20 +45,14 @@ export function Hero() {
           </div>
         </div>
 
-        <aside className="bg-panel border border-line rounded-card p-6 shadow-card">
-          <Badge variant="outline">证据面板</Badge>
+        <aside className="evidence-sheet">
+          <div className="sheet-index">01 / CASE NOTE</div>
           <h2 className="text-2xl font-bold mt-4">{flagshipProject.title}</h2>
           <p className="text-muted mt-3">{flagshipProject.problem}</p>
 
-          <div className="mt-5 rounded-card border border-line bg-paper p-4">
-            <div className="text-xs uppercase tracking-[0.18em] text-muted">结果与价值</div>
+          <div className="mt-6 border-t border-line pt-5">
+            <div className="text-xs uppercase tracking-[0.18em] text-muted">最近证明</div>
             <p className="mt-3 leading-7">{flagshipProject.outcome}</p>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-5">
-            {siteData.metrics.map((metric, index) => (
-              <MetricCard key={index} metric={metric} />
-            ))}
           </div>
 
           <div className="flex flex-wrap gap-3 mt-5">

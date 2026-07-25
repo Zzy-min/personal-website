@@ -19,7 +19,7 @@ export interface SiteInfo {
 
 export interface Profile {
   name: string;
-  birthday: string;
+  birthday?: string;
   role: string;
   headline: string;
   positioning: string;
@@ -41,6 +41,7 @@ export interface Metric {
 }
 
 export interface Project {
+  slug?: string;
   title: string;
   summary: string;
   problem: string;
@@ -53,6 +54,8 @@ export interface Project {
   featured: boolean;
   updatedAt: string;
   status: string;
+  role?: string;
+  verification?: string[];
 }
 
 export interface Post {
@@ -70,6 +73,8 @@ export interface TimelineItem {
   title: string;
   description: string;
   type: 'blog' | 'learning' | 'project' | 'website';
+  evidence?: string;
+  sourceUrl?: string;
 }
 
 export interface Navigation {
@@ -85,20 +90,19 @@ export interface Social {
 export const siteData: SiteConfig = {
   site: {
     name: "子阳的个人网站",
-    domain: "https://personal-website-beige-omega.vercel.app",
+    domain: "https://qling.it.com",
     github: "https://github.com/Zzy-min",
     blog: "https://blog.csdn.net/Zzydzyg0618?spm=1000.2115.3001.5343",
     resume: "/张子阳-AI-Agent开发-MagicCV.json"
   },
   profile: {
     name: "子阳",
-    birthday: "2007/5/4",
     role: "软件工程学生 / AI 协作开发者",
     headline: "把想法做成能运行、能验证的项目",
     positioning: "我掌握 Java、C 和 Python，并使用 AI 协作推进项目；这里诚实呈现我负责的需求、调试、验证与迭代。",
     intro:
-      "面向招聘者，我把轻·棋局、轻灵和 MiniMax 多模态控制台整理成三份项目证据。项目包含大量 AI 参与，技术栈不等同于我已熟练掌握的技能。",
-    location: "中国",
+      "面向招聘者，我把轻·棋局、轻灵和轻青整理成三份项目证据。项目包含大量 AI 参与，技术栈不等同于我已熟练掌握的技能。",
+    location: "河南郑州",
     email: {
       user: "2293822701",
       domain: "qq.com"
@@ -128,6 +132,7 @@ export const siteData: SiteConfig = {
   ],
   projects: [
     {
+      slug: "xiangqi-arena",
       title: "轻·棋局 XiangqiArena",
       summary:
         "基于 Java 的三棋 Web 平台（中国象棋 / 五子棋 / 围棋），覆盖在线双人对战、人机对弈、残局练习、复盘分析，通过 Cloudflare Worker 前门 + Java 源站部署到 xiangqiarena.com。",
@@ -147,6 +152,13 @@ export const siteData: SiteConfig = {
       featured: true,
       updatedAt: "2026-07-11",
       status: "持续迭代"
+      ,
+      role: "项目发起、需求梳理、Java 调试与跨端验收；实现过程包含大量 AI 协作。",
+      verification: [
+        "公开源码与持续提交记录",
+        "线上站点主要流程验证",
+        "Maven、浏览器与移动端检查"
+      ]
     },
     {
       title: "Agent Skill Publisher",
@@ -263,6 +275,7 @@ export const siteData: SiteConfig = {
       status: "已上线"
     },
     {
+      slug: "qling",
       title: "轻灵 Qling",
       summary:
         "基于 TypeScript 的命令行 AI Agent，集成 DeepSeek API，支持流式 TUI、三层记忆系统、Pipeline 架构和 7 种内置工具。",
@@ -281,28 +294,41 @@ export const siteData: SiteConfig = {
       demoUrl: "https://github.com/Zzy-min/qling",
       featured: true,
       updatedAt: "2026-07-12",
-      status: "持续迭代"
+      status: "持续迭代",
+      role: "项目发起、产品方向、运行调试与测试验收；实现包含大量 AI 协作，不将完整 TypeScript 技术栈表述为个人熟练能力。",
+      verification: [
+        "公开源码与版本记录",
+        "定向测试、构建与本地评测",
+        "可恢复任务和本地优先流程验证"
+      ]
     },
     {
-      title: "MiniMax 多模态控制台",
+      slug: "qingqing",
+      title: "轻青 Qingqing",
       summary:
-        "集成 MiniMax API 的全功能多模态平台，支持 AI 图片编辑、语音合成、音乐生成、视频生成及 Token 配额管理。",
-      problem: "MiniMax 的多模态能力分散在不同 API 中，缺少统一的前端界面和本地部署方案来整合体验。",
-      outcome: "在 AI 辅助下完成需求拆解、Python 后端调试、接口验证与多模态流程整合，形成可本地运行的统一控制台。",
+        "从 MiniMax 多模态工作台演进而来的模型通用个人创作 Agent，统一聊天、图片、语音、音乐和视频创作流程。",
+      problem: "单一供应商工作台难以承载长期创作，需要统一模型路由、预算审批、凭据安全和跨端体验。",
+      outcome: "在 AI 协作下完成产品重定位、Python 后端调试、接口验证与跨端验收，形成供应商中立的 Agent 运行框架。",
       highlights: [
-        "AI 图片编辑（文生图、图生图、本地滤镜）",
-        "语音合成（TTS）与音乐生成",
-        "视频生成管线",
-        "Token Plan 配额实时展示与管理",
-        "React + Vite + TailwindCSS + FastAPI 全栈架构"
+        "聊天、图片、语音、音乐和视频统一创作入口",
+        "Agent Run 路由预览、预算审批、执行、重试与取消",
+        "平台额度与 BYOK 组合路由",
+        "凭据加密与自定义端点安全校验",
+        "React Web 与 Flutter 多端验收"
       ],
       featuredOrder: 3,
       stack: ["Python", "AI 协作", "MiniMax API", "接口验证"],
-      githubUrl: "https://github.com/Zzy-min/minimax-multimodal",
-      demoUrl: "https://github.com/Zzy-min/minimax-multimodal",
+      githubUrl: "https://github.com/Zzy-min/qingqing",
+      demoUrl: "https://github.com/Zzy-min/qingqing",
       featured: true,
-      updatedAt: "2026-05-03",
-      status: "已发布"
+      updatedAt: "2026-07-16",
+      status: "持续迭代",
+      role: "产品方向、需求拆解、Python 后端调试、接口验证与跨端验收；其他实现包含大量 AI 辅助。",
+      verification: [
+        "公开源码与阶段性设计文档",
+        "后端测试、前端构建与 Flutter 检查",
+        "跨平台 CI 与接口契约验证"
+      ]
     }
   ],
   posts: [
@@ -457,6 +483,38 @@ export const siteData: SiteConfig = {
     }
   ],
   timeline: [
+    {
+      date: "2026-07-25",
+      title: "轻·棋局继续完善实时对战与移动端体验",
+      description: "围绕公开房间实时刷新、对手走子通知、移动端棋谱和观战学习页面连续迭代，把线上问题落实为可复查的提交。",
+      type: "project",
+      evidence: "Git 提交 fb64145、20ac3d7、715910a",
+      sourceUrl: "https://github.com/Zzy-min/Chinese-chess/commits/main/"
+    },
+    {
+      date: "2026-07-22",
+      title: "轻灵完成本地 Agent 工作流加固",
+      description: "集中处理安全网关、原子状态、并发会话顺序、安全流式输出和 Windows 启动问题，并同步公开文档与真实运行能力。",
+      type: "project",
+      evidence: "Git 提交 ffa8947 及其前序提交",
+      sourceUrl: "https://github.com/Zzy-min/qling/commits/main/"
+    },
+    {
+      date: "2026-07-16",
+      title: "轻青完成跨平台 CI 与生产流程加固",
+      description: "从 MiniMax 工作台演进为供应商中立创作 Agent 后，继续验证 Windows、Web、Flutter 和后端工作流，让产品方向与工程证据同步。",
+      type: "project",
+      evidence: "Git 提交 2fd9e67、2bca4af、c656c72",
+      sourceUrl: "https://github.com/Zzy-min/qingqing/commits/main/"
+    },
+    {
+      date: "2026-07-12",
+      title: "个人网站转向招聘证据叙事",
+      description: "重新整理技能边界、项目角色、简历入口和招聘者阅读路径，明确区分个人掌握能力、项目采用技术与 AI 的参与范围。",
+      type: "website",
+      evidence: "personal-website 提交 031141a",
+      sourceUrl: "https://github.com/Zzy-min/personal-website/commit/031141a"
+    },
     {
       date: "2026-04-14",
       title: "XiangqiArena 品牌升级与功能迭代",

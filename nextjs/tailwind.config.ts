@@ -39,9 +39,9 @@ const config: Config = {
         badge: '999px',
       },
       fontFamily: {
-        sans: ['var(--font-sans)', '"PingFang SC"', '"Microsoft YaHei"', 'sans-serif'],
-        serif: ['var(--font-serif)', 'serif'],
-        mono: ['var(--font-mono)', 'monospace'],
+        sans: ['"Alibaba PuHuiTi"', '"PingFang SC"', '"Microsoft YaHei UI"', '"Microsoft YaHei"', 'sans-serif'],
+        serif: ['"Source Han Serif SC"', '"Noto Serif CJK SC"', '"Songti SC"', 'SimSun', 'serif'],
+        mono: ['"Cascadia Code"', '"JetBrains Mono"', 'Consolas', 'monospace'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-out',

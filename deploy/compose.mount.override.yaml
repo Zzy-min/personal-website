@@ -1,0 +1,4 @@
+services:
+  caddy:
+    volumes:
+      - /opt/sites/personal-website/current:/srv/personal-website:ro

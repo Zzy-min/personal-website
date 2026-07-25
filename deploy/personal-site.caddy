@@ -1,0 +1,15 @@
+qling.it.com {
+	root * /srv/personal-website
+	encode zstd gzip
+	file_server
+
+	header {
+		X-Content-Type-Options nosniff
+		Referrer-Policy strict-origin-when-cross-origin
+		Permissions-Policy "camera=(), microphone=(), geolocation=()"
+	}
+}
+
+www.qling.it.com {
+	redir https://qling.it.com{uri} permanent
+}

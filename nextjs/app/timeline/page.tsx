@@ -1,5 +1,6 @@
 import { siteData } from '@/lib/data';
 import { Badge } from '@/components/ui/Badge';
+import { SiteLink } from '@/components/ui/SiteLink';
 import { formatDate, sortByDateDesc } from '@/lib/utils';
 
 const typeLabels: Record<(typeof siteData.timeline)[number]['type'], string> = {
@@ -42,6 +43,24 @@ export default function TimelinePage() {
                 <h2 className="text-2xl font-bold">{item.title}</h2>
                 <div className="mt-3 text-xs uppercase tracking-[0.16em] text-muted">阶段意义</div>
                 <p className="mt-3 leading-8 text-muted">{item.description}</p>
+                {item.evidence ? (
+                  <div className="mt-5 border-t border-line pt-4">
+                    <div className="font-mono text-xs uppercase tracking-[0.16em] text-primary">
+                      可核验证据
+                    </div>
+                    {item.sourceUrl ? (
+                      <SiteLink
+                        href={item.sourceUrl}
+                        external
+                        className="mt-2 inline-flex min-h-11 items-center text-sm underline decoration-1 underline-offset-4"
+                      >
+                        {item.evidence} ↗
+                      </SiteLink>
+                    ) : (
+                      <p className="mt-2 text-sm">{item.evidence}</p>
+                    )}
+                  </div>
+                ) : null}
               </div>
             </article>
           ))}

@@ -22,10 +22,6 @@ export default function AboutPage() {
                 <div className="text-xs uppercase tracking-[0.14em] text-muted">角色</div>
                 <div className="mt-1 text-lg">{siteData.profile.role}</div>
               </div>
-              <div>
-                <div className="text-xs uppercase tracking-[0.14em] text-muted">生日</div>
-                <div className="mt-1 text-lg">{siteData.profile.birthday}</div>
-              </div>
               <div className="flex items-center gap-2 text-muted">
                 <MapPin size={16} />
                 <span>{siteData.profile.location}</span>

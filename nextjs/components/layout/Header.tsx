@@ -11,12 +11,10 @@ export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-20 border-b border-line bg-bg/92 backdrop-blur-md">
+    <header className="sticky top-0 z-20 border-b border-line bg-bg/95 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4">
         <SiteLink href="/" className="flex items-center gap-3 transition-opacity hover:opacity-80">
-          <span className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-primary/15 bg-primary/10 font-serif text-lg text-primary-strong">
-            {siteData.profile.name[0].toUpperCase()}
-          </span>
+          <span className="brand-mark" aria-hidden="true">Z.</span>
           <div>
             <strong className="block font-serif text-lg">{siteData.profile.name}</strong>
             <div className="text-xs uppercase tracking-[0.16em] text-muted">{siteData.profile.role}</div>
@@ -32,8 +30,8 @@ export function Header() {
                 href={item.href}
                 className={`rounded-full px-4 py-2 text-sm transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/25 ${
                   isActive
-                    ? 'bg-primary text-paper-inverse'
-                    : 'text-muted hover:bg-paper-hover hover:text-text'
+                    ? 'text-primary underline decoration-2 underline-offset-8'
+                    : 'text-muted hover:text-text'
                 }`}
               >
                 {item.label}

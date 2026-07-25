@@ -38,6 +38,7 @@ test('recruiter-facing profile keeps the honest skill boundary and current conta
   });
   expect(siteData.profile.skills).toEqual(['Java', 'C', 'Python', 'AI 协作开发', '调试与测试']);
   expect(siteData.site.resume).toBe('/张子阳-AI-Agent开发-MagicCV.json');
+  expect(siteData.site.domain).toBe('https://qling.it.com');
 });
 
 test('the three flagship projects reflect the current local repositories and AI collaboration', () => {
@@ -49,9 +50,22 @@ test('the three flagship projects reflect the current local repositories and AI 
   expect(featuredProjects.map((project) => project.title)).toEqual([
     '轻·棋局 XiangqiArena',
     '轻灵 Qling',
-    'MiniMax 多模态控制台'
+    '轻青 Qingqing'
   ]);
   featuredProjects.forEach((project) => {
     expect(project.outcome).toMatch(/AI 协作|AI 辅助/);
+    expect(project.slug).toMatch(/^[a-z0-9-]+$/);
+    expect(project.role).toMatch(/AI/);
+    expect(project.verification.length).toBeGreaterThanOrEqual(2);
+  });
+});
+
+test('recent timeline entries distinguish claims from verifiable evidence', () => {
+  const recentEntries = siteData.timeline.filter((item) => item.date >= '2026-07-01');
+
+  expect(recentEntries.length).toBeGreaterThanOrEqual(4);
+  recentEntries.forEach((item) => {
+    expect(item.evidence).toBeTruthy();
+    expect(item.sourceUrl).toMatch(/^https:\/\/github\.com\/Zzy-min\//);
   });
 });
