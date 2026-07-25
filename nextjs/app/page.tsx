@@ -1,268 +1,85 @@
 import { Hero } from '@/components/features/Hero';
 import { siteData } from '@/lib/data';
-import { Badge } from '@/components/ui/Badge';
-import { Button } from '@/components/ui/Button';
 import { SiteLink } from '@/components/ui/SiteLink';
 import { formatDate, sortByDateDesc } from '@/lib/utils';
 
 export default function HomePage() {
-  const featuredProjects = siteData.projects
+  const projects = siteData.projects
     .filter((project) => project.featured)
-    .sort((left, right) => (left.featuredOrder ?? 99) - (right.featuredOrder ?? 99));
-  const flagshipProject = featuredProjects[0];
-  const supportingProjects = featuredProjects.slice(1);
-  const featuredPosts = sortByDateDesc(
-    siteData.posts.filter((post) => post.featured),
-    'publishedAt'
-  ).slice(0, 3);
-  const timelinePreview = sortByDateDesc(siteData.timeline, 'date').slice(0, 4);
+    .sort((left, right) => (left.featuredOrder ?? 99) - (right.featuredOrder ?? 99))
+    .slice(0, 3);
+  const posts = sortByDateDesc(siteData.posts, 'publishedAt').slice(0, 3);
 
   return (
     <div className="min-h-screen">
       <Hero />
 
-      <section className="py-12 px-4 max-w-7xl mx-auto">
-        <div className="flex items-end justify-between gap-4 mb-6 flex-wrap">
-          <div className="max-w-2xl">
-            <Badge>代表项目</Badge>
-            <h2 className="text-3xl font-bold mt-3">先看已经做出来的东西</h2>
-            <p className="text-muted mt-3">
-            我先介绍自己持续投入的项目，以及我在其中解决的问题和完成的工作。
-            </p>
+      <section data-home-section="projects" className="home-section mx-auto max-w-7xl px-4">
+        <div className="section-heading">
+          <div>
+            <p className="section-kicker">01 / PROJECTS</p>
+            <h2>精选项目</h2>
           </div>
-          <SiteLink href="/projects" className="text-muted hover:text-text transition-colors">
-            查看全部项目 →
-          </SiteLink>
+          <SiteLink href="/projects" className="text-link">全部项目 <span aria-hidden="true">↗</span></SiteLink>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_0.9fr] gap-6">
-          <article className="bg-panel border border-line rounded-card p-6 shadow-card">
-            <div className="flex items-center justify-between gap-4 flex-wrap">
-              <Badge>{flagshipProject.status}</Badge>
-              <span className="text-xs uppercase tracking-[0.2em] text-muted">
-                Updated {flagshipProject.updatedAt}
-              </span>
-            </div>
-            <h3 className="text-3xl font-bold mt-4">{flagshipProject.title}</h3>
-            <p className="text-lg mt-4">{flagshipProject.summary}</p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-              <div className="rounded-card border border-line bg-paper p-5">
-                <div className="text-xs uppercase tracking-[0.18em] text-muted">问题定义</div>
-                <p className="mt-3 leading-7">{flagshipProject.problem}</p>
-              </div>
-              <div className="rounded-card border border-line bg-paper p-5">
-                <div className="text-xs uppercase tracking-[0.18em] text-muted">结果与价值</div>
-                <p className="mt-3 leading-7">{flagshipProject.outcome}</p>
-              </div>
-            </div>
-
-            <div className="mt-6">
-              <div className="text-xs uppercase tracking-[0.18em] text-muted">关键亮点</div>
-              <ul className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-3">
-                {flagshipProject.highlights.map((highlight) => (
-                  <li
-                    key={highlight}
-                    className="rounded-card border border-line bg-paper-soft px-4 py-4"
-                  >
-                    {highlight}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="flex flex-wrap gap-2 mt-6">
-              {flagshipProject.stack.map((tech) => (
-                <Badge key={tech} variant="outline">
-                  {tech}
-                </Badge>
-              ))}
-            </div>
-
-            <div className="flex flex-wrap gap-3 mt-6">
-              <Button href={flagshipProject.githubUrl} external>
-                查看源码
-              </Button>
-              <Button href={flagshipProject.demoUrl} variant="secondary" external>
-                打开演示
-              </Button>
-            </div>
-          </article>
-
-          <div className="space-y-4">
-            {supportingProjects.map((project) => (
-              <article
-                key={project.title}
-                className="bg-panel border border-line rounded-card p-5 shadow-card"
-              >
-                <div className="flex items-center justify-between gap-3 flex-wrap">
-                  <Badge variant="outline">{project.status}</Badge>
-                  <span className="text-xs uppercase tracking-[0.18em] text-muted">
-                    {project.updatedAt}
-                  </span>
+        <div className="project-list">
+          {projects.map((project, index) => (
+            <article key={project.title} className="project-row">
+              <span className="project-index">{String(index + 1).padStart(2, '0')}</span>
+              <div className="project-body">
+                <div className="flex flex-wrap items-baseline justify-between gap-3">
+                  <h3>{project.title}</h3>
+                  <span className="project-status">{project.status}</span>
                 </div>
-                <h3 className="text-xl font-bold mt-3">{project.title}</h3>
-                <p className="text-muted mt-3">{project.problem}</p>
-                <p className="mt-3">{project.outcome}</p>
-                <div className="flex flex-wrap gap-2 mt-4">
-                  {project.stack.slice(0, 3).map((tech) => (
-                    <Badge key={tech} variant="outline">
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-                <div className="mt-5 flex flex-wrap gap-3">
-                  <Button href={project.githubUrl} external>
-                    查看源码
-                  </Button>
-                  <Button href={project.demoUrl} variant="secondary" external>
-                    打开链接
-                  </Button>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-12 px-4 max-w-7xl mx-auto">
-        <div className="max-w-2xl mb-6">
-            <Badge>我的能力</Badge>
-            <h2 className="text-3xl font-bold mt-3">我在项目中持续学习，也把学到的内容真正用起来</h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <article className="bg-panel border border-line rounded-card p-6 shadow-card">
-            <div className="text-xs uppercase tracking-[0.18em] text-muted">项目实践</div>
-            <strong className="block text-4xl mt-4">{siteData.metrics[1].value}</strong>
-            <p className="text-muted mt-3">
-              代表项目覆盖规则实现、界面交互、研究实验和个人站搭建，不停留在单一练习题层面。
-            </p>
-          </article>
-          <article className="bg-panel border border-line rounded-card p-6 shadow-card">
-            <div className="text-xs uppercase tracking-[0.18em] text-muted">持续输出</div>
-            <strong className="block text-4xl mt-4">{siteData.metrics[0].value}</strong>
-            <p className="text-muted mt-3">
-              我把做过的内容整理成文章，在写作和复盘中继续加深理解。
-            </p>
-          </article>
-          <article className="bg-panel border border-line rounded-card p-6 shadow-card">
-            <div className="text-xs uppercase tracking-[0.18em] text-muted">当前重点</div>
-            <ul className="space-y-3 mt-4">
-              {siteData.profile.currentFocus.map((focus) => (
-                <li key={focus} className="flex items-start gap-3">
-                  <span className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
-                  <span>{focus}</span>
-                </li>
-              ))}
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section className="py-12 px-4 max-w-7xl mx-auto">
-        <div className="flex items-end justify-between gap-4 mb-6 flex-wrap">
-          <div className="max-w-2xl">
-            <Badge>精选文章</Badge>
-            <h2 className="text-3xl font-bold mt-3">我也会把开发中的收获写成文章</h2>
-          </div>
-          <SiteLink href="/blog" className="text-muted hover:text-text transition-colors">
-            查看全部文章 →
-          </SiteLink>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-          {featuredPosts.map((post) => (
-            <article
-              key={post.title}
-              className="bg-panel border border-line rounded-card p-6 shadow-card"
-            >
-              <div className="flex items-center justify-between gap-4">
-                <Badge variant="outline">{post.tags.join(' · ')}</Badge>
-                <span className="text-sm text-muted">{formatDate(post.publishedAt)}</span>
+                <p>{project.outcome}</p>
+                <ul className="tag-list" aria-label={`${project.title} 技术标签`}>
+                  {project.stack.slice(0, 4).map((item) => <li key={item}>{item}</li>)}
+                </ul>
               </div>
-              <h3 className="text-xl font-bold mt-4">{post.title}</h3>
-              <p className="text-muted mt-3">{post.summary}</p>
-              <p className="mt-4 leading-7">{post.featuredReason ?? '这篇文章对应我当前阶段的重要学习节点。'}</p>
-              <div className="flex flex-wrap gap-2 mt-4">
-                {post.tags.map((tag) => (
-                  <Badge key={tag} variant="outline">
-                    {tag}
-                  </Badge>
-                ))}
-              </div>
-              <div className="mt-6">
-                <Button href={post.sourceUrl} external>
-                  阅读原文
-                </Button>
+              <div className="project-actions">
+                <SiteLink href={project.githubUrl} external>源码</SiteLink>
+                <SiteLink href={project.demoUrl} external>项目链接</SiteLink>
               </div>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="py-12 px-4 max-w-7xl mx-auto">
-        <div className="flex items-end justify-between gap-4 mb-6 flex-wrap">
-          <div className="max-w-2xl">
-            <Badge>成长轨迹</Badge>
-            <h2 className="text-3xl font-bold mt-3">我会持续记录每个阶段完成的事情</h2>
+      <section data-home-section="writing" className="home-section mx-auto max-w-7xl px-4">
+        <div className="section-heading">
+          <div>
+            <p className="section-kicker">02 / WRITING</p>
+            <h2>最近文章</h2>
           </div>
-          <SiteLink href="/timeline" className="text-muted hover:text-text transition-colors">
-            查看完整时间线 →
-          </SiteLink>
+          <SiteLink href="/blog" className="text-link">全部文章 <span aria-hidden="true">↗</span></SiteLink>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {timelinePreview.map((item) => (
-            <article
-              key={`${item.date}-${item.title}`}
-              className="bg-panel border border-line rounded-card p-6 shadow-card"
-            >
-              <div className="text-xs uppercase tracking-[0.18em] text-muted">
-                {formatDate(item.date)} · {item.type}
+        <div className="article-list">
+          {posts.map((post) => (
+            <article key={post.title} className="article-row">
+              <time dateTime={post.publishedAt}>{formatDate(post.publishedAt)}</time>
+              <div>
+                <h3><SiteLink href={post.sourceUrl} external>{post.title}</SiteLink></h3>
+                <p>{post.summary}</p>
               </div>
-              <h3 className="text-xl font-bold mt-3">{item.title}</h3>
-              <p className="text-muted mt-3">{item.description}</p>
+              <span className="article-arrow" aria-hidden="true">↗</span>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="py-12 px-4 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <article className="bg-panel border border-line rounded-card p-6 shadow-card">
-            <Badge>联系我</Badge>
-            <h2 className="text-3xl font-bold mt-3">欢迎直接看项目、看文章，再来找我交流</h2>
-            <p className="text-muted mt-4 leading-7">
-              如果你想讨论 Java 学习路径、项目实践、内容输出方法，或者希望进一步了解我的代表作品，可以通过下面的入口联系我。
-            </p>
-            <div className="flex flex-wrap gap-3 mt-6">
-              <Button href={`mailto:${siteData.profile.email.user}@${siteData.profile.email.domain}`}>
-                QQ 邮箱
-              </Button>
-              {siteData.profile.additionalEmails?.map((email) => (
-                <Button href={`mailto:${email}`} key={email} variant="secondary">
-                  Gmail
-                </Button>
-              ))}
-              <Button href={siteData.site.github} variant="secondary" external>
-                GitHub
-              </Button>
-              <Button href={siteData.site.blog} variant="secondary" external>
-                CSDN
-              </Button>
-            </div>
-          </article>
-
-          <article className="bg-panel border border-line rounded-card p-6 shadow-card">
-            <Badge>下一步</Badge>
-            <h2 className="text-3xl font-bold mt-3">接下来我会继续完善这些项目</h2>
-            <ul className="space-y-3 mt-4">
-              <li>补充更多项目实现细节、问题处理过程和运行结果。</li>
-              <li>继续整理 Java 与基础编程文章，让内容输出和项目实践彼此支撑。</li>
-              <li>持续迭代这个个人站，记录我的学习、开发和内容更新。</li>
-            </ul>
-          </article>
+      <section data-home-section="contact" className="home-section mx-auto max-w-7xl px-4 pb-24 md:pb-32">
+        <div className="contact-block">
+          <p className="section-kicker">03 / CONTACT</p>
+          <h2>如果我的项目与你正在做的事情有关，欢迎联系我。</h2>
+          <p>我目前在寻找 AI Agent 开发相关的实习与项目实践机会。</p>
+          <div className="contact-links">
+            <SiteLink href={`mailto:${siteData.profile.email.user}@${siteData.profile.email.domain}`}>QQ 邮箱</SiteLink>
+            {siteData.profile.additionalEmails?.map((email) => <SiteLink href={`mailto:${email}`} key={email}>Gmail</SiteLink>)}
+            <SiteLink href={siteData.site.github} external>GitHub</SiteLink>
+            <SiteLink href={siteData.site.blog} external>CSDN</SiteLink>
+          </div>
         </div>
       </section>
     </div>

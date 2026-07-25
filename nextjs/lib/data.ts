@@ -94,7 +94,7 @@ export const siteData: SiteConfig = {
     domain: "https://qling.it.com",
     github: "https://github.com/Zzy-min",
     blog: "https://blog.csdn.net/Zzydzyg0618?spm=1000.2115.3001.5343",
-    resume: "/张子阳-AI-Agent实习生-20260725-v2.pdf"
+    resume: "/张子阳-AI-Agent实习生-20260725-v3.pdf"
   },
   profile: {
     name: "张子阳",
@@ -269,9 +269,9 @@ export const siteData: SiteConfig = {
         "按项目、文章和时间线重新组织内容"
       ],
       featuredOrder: null,
-      stack: ["Static Site", "Responsive UI", "SEO", "Vercel"],
+      stack: ["Static Site", "Responsive UI", "SEO", "Self-hosted"],
       githubUrl: "https://github.com/Zzy-min/personal-website",
-      demoUrl: "https://personal-website-beige-omega.vercel.app",
+      demoUrl: "https://qling.it.com",
       featured: false,
       updatedAt: "2026-04-14",
       status: "已上线"
@@ -657,8 +657,8 @@ export const siteData: SiteConfig = {
     { label: "首页", href: "/" },
     { label: "项目", href: "/projects" },
     { label: "博客", href: "/blog" },
-    { label: "关于我", href: "/about" },
-    { label: "时间线", href: "/timeline" }
+    { label: "时间线", href: "/timeline" },
+    { label: "简历", href: "/resume" }
   ],
   socials: [
     { label: "GitHub", href: "https://github.com/Zzy-min" },

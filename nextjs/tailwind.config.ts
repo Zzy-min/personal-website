@@ -9,20 +9,20 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: '#f5efe5',
-        panel: '#fffaf2',
-        text: '#1c1a16',
-        muted: '#6e675d',
-        line: '#d8cbbb',
+        bg: '#f6f6f1',
+        panel: '#fbfbf7',
+        text: '#20231f',
+        muted: '#6b7068',
+        line: '#d9ddd4',
         paper: {
-          DEFAULT: '#f7f1e8',
-          soft: '#fcf7ef',
-          hover: '#efe4d3',
-          inverse: '#faf4ea',
+          DEFAULT: '#f6f6f1',
+          soft: '#fafaf6',
+          hover: '#ecefe8',
+          inverse: '#f8faf7',
         },
         primary: {
-          DEFAULT: '#2f5a45',
-          strong: '#1d392b',
+          DEFAULT: '#315c45',
+          strong: '#234633',
         },
         accent: {
           sage: '#6f876c',
@@ -30,12 +30,12 @@ const config: Config = {
         },
       },
       boxShadow: {
-        card: '0 24px 60px rgba(66, 47, 25, 0.08)',
+        card: '0 14px 40px rgba(32, 35, 31, 0.05)',
         glow: '0 18px 36px rgba(47, 90, 69, 0.16)',
       },
       borderRadius: {
-        card: '28px',
-        button: '999px',
+        card: '14px',
+        button: '10px',
         badge: '999px',
       },
       fontFamily: {

@@ -23,7 +23,7 @@ describe('homepage redesign plan', () => {
     });
   });
 
-  test('homepage follows the evidence-first narrative order', () => {
+  test('homepage contains exactly four focused sections', () => {
     const { container } = render(<HomePage />);
 
     expect(
@@ -32,12 +32,18 @@ describe('homepage redesign plan', () => {
       })
     ).toBeInTheDocument();
 
-    const text = container.textContent ?? '';
-    const narrativeAnchors = ['代表项目', '我的能力', '精选文章', '成长轨迹', '联系我'];
-    const positions = narrativeAnchors.map((anchor) => text.indexOf(anchor));
-
-    expect(positions.every((position) => position >= 0)).toBe(true);
-    expect(positions).toEqual([...positions].sort((left, right) => left - right));
+    const sections = [...container.querySelectorAll('[data-home-section]')];
+    expect(sections.map((section) => section.getAttribute('data-home-section'))).toEqual([
+      'hero',
+      'projects',
+      'writing',
+      'contact',
+    ]);
+    expect(screen.getByRole('heading', { name: '精选项目' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: '最近文章' })).toBeInTheDocument();
+    expect(screen.queryByText('我的能力')).not.toBeInTheDocument();
+    expect(screen.queryByText('成长轨迹')).not.toBeInTheDocument();
+    expect(screen.queryByText('下一步')).not.toBeInTheDocument();
   });
 
   test('hero offers both direct PDF download and an online preview', () => {
@@ -46,7 +52,7 @@ describe('homepage redesign plan', () => {
     const resumeLink = screen.getByRole('link', { name: '下载 PDF 简历' });
     expect(resumeLink).toHaveAttribute('href', siteData.site.resume);
     expect(resumeLink).toHaveAttribute('download');
-    expect(screen.getByRole('link', { name: '在线预览简历' })).toHaveAttribute('href', '/resume');
+    expect(screen.getByRole('link', { name: '在线预览' })).toHaveAttribute('href', '/resume');
   });
 
   test('homepage header uses the updated personal name and removes the hero eyebrow copy', () => {
@@ -58,11 +64,11 @@ describe('homepage redesign plan', () => {
     );
 
     expect(screen.getByText('张子阳')).toBeInTheDocument();
-    expect(screen.getByText('软件工程学生 / AI 应用开发者')).toBeInTheDocument();
+    expect(screen.getByText('AI 应用开发者')).toBeInTheDocument();
     expect(screen.queryByText('面向招聘方的证据型主页')).not.toBeInTheDocument();
   });
 
-  test('homepage supporting project cards still expose outbound project links', () => {
+  test('homepage project rows expose outbound project links', () => {
     render(<HomePage />);
 
     const supportingProject = siteData.projects
@@ -75,17 +81,31 @@ describe('homepage redesign plan', () => {
     const card = cardHeading.closest('article');
 
     expect(card).not.toBeNull();
-    expect(within(card!).getByRole('link', { name: '查看源码' })).toHaveAttribute(
+    expect(within(card!).getByRole('link', { name: '源码' })).toHaveAttribute(
       'href',
       supportingProject!.githubUrl
     );
-    expect(within(card!).getByRole('link', { name: '打开链接' })).toHaveAttribute(
+    expect(within(card!).getByRole('link', { name: '项目链接' })).toHaveAttribute(
       'href',
       supportingProject!.demoUrl
     );
   });
 
-  test('static export navigation avoids next/link imports that trigger RSC fetches on Vercel', () => {
+  test('header keeps exactly five requested navigation destinations', () => {
+    render(<Header />);
+
+    const navigation = screen.getByRole('navigation', { name: '主导航' });
+    expect(within(navigation).getAllByRole('link').map((link) => link.textContent)).toEqual([
+      '首页',
+      '项目',
+      '博客',
+      '时间线',
+      '简历',
+    ]);
+    expect(within(navigation).queryByRole('link', { name: '关于我' })).not.toBeInTheDocument();
+  });
+
+  test('static export navigation avoids next/link imports', () => {
     const files = [
       'app/page.tsx',
       'components/features/Hero.tsx',

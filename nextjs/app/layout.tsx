@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   },
   description: siteData.profile.positioning,
   metadataBase: new URL(siteData.site.domain),
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: siteData.profile.name + ' 的个人网站',
     description: siteData.profile.positioning,
@@ -22,7 +25,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#f5efe5',
+  themeColor: '#f6f6f1',
   width: 'device-width',
   initialScale: 1,
   viewportFit: 'cover',

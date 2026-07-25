@@ -16,22 +16,24 @@ export default function ResumePage() {
         </Button>
       </section>
 
-      <section className="overflow-hidden rounded-card border border-line bg-panel shadow-card">
-        <object
-          aria-label="张子阳 AI 应用开发实习生 PDF 简历"
-          className="h-[78vh] min-h-[640px] w-full"
-          data={siteData.site.resume}
-          type="application/pdf"
-        >
-          <div className="p-8 text-center">
-            <p>当前浏览器无法直接显示 PDF。</p>
-            <div className="mt-4">
-              <Button href={siteData.site.resume} download>
-                下载后查看
-              </Button>
-            </div>
+      <section className="overflow-hidden rounded-card border border-line bg-panel p-3 shadow-card md:p-6">
+        <figure>
+          <div className="overflow-hidden rounded-lg border border-line bg-white">
+            {/* The generated preview avoids browser-specific PDF plugin failures. */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              alt="张子阳 AI 应用开发实习生简历预览"
+              className="h-auto w-full"
+              src="/张子阳-AI-Agent实习生-20260725-v3-preview.png"
+            />
           </div>
-        </object>
+          <figcaption className="flex flex-col gap-3 px-1 pb-1 pt-4 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
+            <span>以上为 PDF 第一页的高清预览。</span>
+            <Button href={siteData.site.resume} external variant="secondary">
+              打开 PDF 原文件
+            </Button>
+          </figcaption>
+        </figure>
       </section>
     </main>
   );

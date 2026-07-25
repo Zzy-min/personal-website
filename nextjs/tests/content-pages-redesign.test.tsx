@@ -3,6 +3,7 @@ import { fireEvent, render, screen, within } from '@testing-library/react';
 import AboutPage from '@/app/about/page';
 import BlogPage from '@/app/blog/page';
 import ProjectsPage from '@/app/projects/page';
+import ResumePage from '@/app/resume/page';
 import TimelinePage from '@/app/timeline/page';
 import { siteData } from '@/lib/data';
 
@@ -56,11 +57,11 @@ describe('content page redesign plan', () => {
     render(<ProjectsPage />);
 
     expect(screen.getByRole('button', { name: '更多技术' })).toBeInTheDocument();
-    expect(screen.queryByRole('button', { name: 'Vercel' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'Self-hosted' })).not.toBeInTheDocument();
 
     fireEvent.click(screen.getByRole('button', { name: '更多技术' }));
 
-    expect(screen.getByRole('button', { name: 'Vercel' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Self-hosted' })).toBeInTheDocument();
   });
 
   test('blog archive entries keep article links and show an empty state for unmatched search', () => {
@@ -119,6 +120,19 @@ describe('content page redesign plan', () => {
     expect(screen.getByRole('heading', { name: '我的学习与开发记录' })).toBeInTheDocument();
     expect(text).toContain('相关记录');
     expect(text).toContain(siteData.timeline[0].title);
+  });
+
+  test('resume page uses a browser-independent image preview instead of an embedded PDF plugin', () => {
+    const { container } = render(<ResumePage />);
+
+    expect(
+      screen.getByRole('img', { name: '张子阳 AI 应用开发实习生简历预览' })
+    ).toHaveAttribute('src', '/张子阳-AI-Agent实习生-20260725-v3-preview.png');
+    expect(container.querySelector('object[type="application/pdf"]')).not.toBeInTheDocument();
+    expect(screen.getByRole('link', { name: '打开 PDF 原文件' })).toHaveAttribute(
+      'href',
+      siteData.site.resume
+    );
   });
 
   test('projects and timeline pages surface locally discovered project evidence', () => {

@@ -11,67 +11,31 @@ export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-20 border-b border-line bg-bg/95 backdrop-blur-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4">
-        <SiteLink href="/" className="flex items-center gap-3 transition-opacity hover:opacity-80">
-          <span className="brand-mark" aria-hidden="true">Z.</span>
-          <div>
-            <strong className="block font-serif text-lg">{siteData.profile.name}</strong>
-            <div className="text-xs uppercase tracking-[0.16em] text-muted">{siteData.profile.role}</div>
-          </div>
+    <header className="sticky top-0 z-20 border-b border-line bg-bg/90 backdrop-blur-xl">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 md:py-5">
+        <SiteLink href="/" className="group flex items-baseline gap-3 focus-visible:outline-none">
+          <strong className="font-serif text-xl tracking-tight">{siteData.profile.name}</strong>
+          <span className="hidden text-xs text-muted transition-colors group-hover:text-text sm:inline">AI 应用开发者</span>
         </SiteLink>
 
-        <nav className="hidden items-center gap-2 md:flex" aria-label="主导航">
+        <nav className="hidden items-center gap-7 md:flex" aria-label="主导航">
           {siteData.navigation.map((item) => {
             const isActive = pathname === item.href;
-            return (
-              <SiteLink
-                key={item.href}
-                href={item.href}
-                className={`rounded-full px-4 py-2 text-sm transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/25 ${
-                  isActive
-                    ? 'text-primary underline decoration-2 underline-offset-8'
-                    : 'text-muted hover:text-text'
-                }`}
-              >
-                {item.label}
-              </SiteLink>
-            );
+            return <SiteLink key={item.href} href={item.href} className={`nav-link ${isActive ? 'nav-link-active' : ''}`}>{item.label}</SiteLink>;
           })}
         </nav>
 
-        <button
-          type="button"
-          className="rounded-full border border-line bg-panel px-3 py-3 text-text transition-colors hover:bg-paper-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/25 md:hidden"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-expanded={isMobileMenuOpen}
-          aria-label="菜单"
-        >
+        <button type="button" className="menu-button md:hidden" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} aria-expanded={isMobileMenuOpen} aria-controls="mobile-navigation" aria-label={isMobileMenuOpen ? '关闭菜单' : '打开菜单'}>
           {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
 
-      <div className={`px-4 pb-4 md:hidden ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
-        <nav className="mx-auto max-w-7xl" aria-label="移动导航">
-          {siteData.navigation.map((item) => {
-            const isActive = pathname === item.href;
-            return (
-              <SiteLink
-                key={item.href}
-                href={item.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`mt-2 block rounded-[18px] px-4 py-3 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/25 ${
-                  isActive
-                    ? 'bg-primary text-paper-inverse'
-                    : 'text-muted hover:bg-paper-hover hover:text-text'
-                }`}
-              >
-                {item.label}
-              </SiteLink>
-            );
-          })}
-        </nav>
-      </div>
+      <nav id="mobile-navigation" className={`border-t border-line px-4 py-3 md:hidden ${isMobileMenuOpen ? 'grid' : 'hidden'}`} aria-label="移动导航">
+        {siteData.navigation.map((item) => {
+          const isActive = pathname === item.href;
+          return <SiteLink key={item.href} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className={`mobile-nav-link ${isActive ? 'text-primary' : ''}`}>{item.label}</SiteLink>;
+        })}
+      </nav>
     </header>
   );
 }

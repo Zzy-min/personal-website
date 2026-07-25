@@ -40,8 +40,21 @@ test('recruiter-facing profile keeps the honest skill boundary and current conta
   });
   expect(siteData.profile.additionalEmails).toEqual(['zzy19812007@gmail.com']);
   expect(siteData.profile.skills).toEqual(['Java', 'C', 'Python', 'AI Agent 开发', '调试与测试']);
-  expect(siteData.site.resume).toBe('/张子阳-AI-Agent实习生-20260725-v2.pdf');
+  expect(siteData.site.resume).toBe('/张子阳-AI-Agent实习生-20260725-v3.pdf');
   expect(siteData.site.domain).toBe('https://qling.it.com');
+  expect(siteData.navigation).toEqual([
+    { label: '首页', href: '/' },
+    { label: '项目', href: '/projects' },
+    { label: '博客', href: '/blog' },
+    { label: '时间线', href: '/timeline' },
+    { label: '简历', href: '/resume' }
+  ]);
+});
+
+test('the current website project only points to the official domain', () => {
+  const currentWebsite = siteData.projects.find((project) => project.title === '个人品牌站点（当前）');
+
+  expect(currentWebsite?.demoUrl).toBe('https://qling.it.com');
 });
 
 test('latest CSDN article is included with its public metadata', () => {
