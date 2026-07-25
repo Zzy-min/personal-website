@@ -33,8 +33,12 @@
 
    ```sh
    cd /opt/chinese-chess
-   docker compose -f compose.yaml -f compose.mount.override.yaml up -d caddy
+   docker compose -f compose.yaml -f compose.mount.override.yaml up -d \
+     --force-recreate --no-deps caddy
    ```
+
+   `current` 是软链接，而 Docker 会在创建容器时解析绑定挂载的源路径。每次切换
+   release 后都必须重新创建 Caddy 容器，否则容器可能继续读取旧 release。
 
 ## 发布前检查
 
