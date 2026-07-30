@@ -30,4 +30,15 @@ describe('portfolio content model', () => {
       }
     }
   });
+
+  it('provides six complete onsite article summaries', () => {
+    const summaries = siteData.posts.filter((post) => post.slug);
+    expect(summaries).toHaveLength(6);
+    expect(new Set(summaries.map((post) => post.slug)).size).toBe(6);
+    for (const post of summaries) {
+      expect(post.takeaways?.length).toBeGreaterThanOrEqual(3);
+      expect(post.sections?.length).toBeGreaterThanOrEqual(2);
+      expect(() => new URL(post.sourceUrl)).not.toThrow();
+    }
+  });
 });

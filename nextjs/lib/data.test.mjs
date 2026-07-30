@@ -19,7 +19,7 @@ test('featured project copy reflects the current XiangqiArena direction', () => 
 
 test('homepage metrics match the currently public evidence counts', () => {
   expect(siteData.metrics).toEqual([
-    { label: '博客文章', value: '48', key: 'posts' },
+    { label: '博客文章', value: String(siteData.posts.length), key: 'posts' },
     { label: '我的项目', value: '3' },
     { label: '掌握语言', value: '3' }
   ]);
@@ -58,9 +58,10 @@ test('the current website project only points to the official domain', () => {
 });
 
 test('latest CSDN article is included with its public metadata', () => {
-  expect(siteData.posts).toHaveLength(48);
-  expect(new Set(siteData.posts.map((post) => post.sourceUrl)).size).toBe(48);
-  expect(siteData.posts[0]).toMatchObject({
+  const externalPosts = siteData.posts.filter((post) => !post.slug);
+  expect(externalPosts).toHaveLength(48);
+  expect(new Set(externalPosts.map((post) => post.sourceUrl)).size).toBe(48);
+  expect(externalPosts[0]).toMatchObject({
     title: 'MySQL 学习笔记 01：从概念到约束，搭好库表骨架',
     publishedAt: '2026-07-24',
     sourceUrl: 'https://blog.csdn.net/Zzydzyg0618/article/details/163161740'

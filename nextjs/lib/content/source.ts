@@ -100,6 +100,7 @@ export interface ProjectMetric {
 }
 
 export interface Post {
+  slug?: string;
   title: string;
   summary: string;
   featuredReason?: string;
@@ -107,6 +108,9 @@ export interface Post {
   tags: string[];
   sourceUrl: string;
   featured: boolean;
+  takeaways?: string[];
+  relatedProjectSlugs?: string[];
+  sections?: Array<{ heading: string; body: string }>;
 }
 
 export interface TimelineItem {

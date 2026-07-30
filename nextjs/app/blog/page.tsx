@@ -36,7 +36,8 @@ export default function BlogPage() {
         (post) =>
           post.title.toLowerCase().includes(query) ||
           post.summary.toLowerCase().includes(query) ||
-          post.tags.some((tag) => tag.toLowerCase().includes(query))
+          post.tags.some((tag) => tag.toLowerCase().includes(query)) ||
+          post.takeaways?.some((item) => item.toLowerCase().includes(query))
       );
     }
 
@@ -70,8 +71,8 @@ export default function BlogPage() {
                 <p className="mt-4 leading-7">{post.featuredReason}</p>
               ) : null}
               <div className="mt-6">
-                <Button href={post.sourceUrl} external>
-                  阅读原文
+                <Button href={post.slug ? `/blog/${post.slug}` : post.sourceUrl} external={!post.slug}>
+                  {post.slug ? '阅读摘要' : '阅读原文'}
                 </Button>
               </div>
             </article>
@@ -127,8 +128,8 @@ export default function BlogPage() {
                 <h3 className="mt-4 text-2xl font-bold">{post.title}</h3>
                 <p className="mt-3 text-muted">{post.summary}</p>
                 <div className="mt-5">
-                  <Button href={post.sourceUrl} external variant="secondary">
-                    阅读原文
+                  <Button href={post.slug ? `/blog/${post.slug}` : post.sourceUrl} external={!post.slug} variant="secondary">
+                    {post.slug ? '阅读摘要' : '阅读原文'}
                   </Button>
                 </div>
               </article>

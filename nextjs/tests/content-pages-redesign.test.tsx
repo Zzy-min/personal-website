@@ -67,7 +67,7 @@ describe('content page redesign plan', () => {
   test('blog archive entries keep article links and show an empty state for unmatched search', () => {
     render(<BlogPage />);
 
-    const archivePost = siteData.posts.find((post) => !post.featured);
+    const archivePost = siteData.posts.find((post) => !post.featured && !post.slug);
 
     expect(archivePost).toBeDefined();
 

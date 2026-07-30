@@ -7,7 +7,8 @@ export const dynamic = 'force-static';
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = ['/', '/about/', '/projects/', '/blog/', '/timeline/', '/resume/'];
   const projects = siteData.projects.filter((project) => project.slug).map((project) => `/projects/${project.slug}/`);
-  return [...routes, ...projects].map((route) => ({
+  const summaries = siteData.posts.filter((post) => post.slug).map((post) => `/blog/${post.slug}/`);
+  return [...routes, ...projects, ...summaries].map((route) => ({
     url: `${SITE_URL}${route}`,
     lastModified: new Date('2026-07-30'),
     changeFrequency: route === '/' ? 'weekly' : 'monthly',
