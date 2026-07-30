@@ -15,6 +15,15 @@ describe('portfolio content model', () => {
     for (const project of featured) {
       expect(project.slug).toMatch(/^[a-z0-9-]+$/);
       expect(project.verification?.length).toBeGreaterThanOrEqual(2);
+      expect(project.contributions?.length).toBeGreaterThanOrEqual(2);
+      expect(project.aiContribution?.owned.length).toBeGreaterThanOrEqual(1);
+      expect(project.architecture?.alt.trim()).not.toBe('');
+      expect(project.challenges?.length).toBeGreaterThanOrEqual(1);
+      expect(project.screenshots?.length).toBeGreaterThanOrEqual(1);
+      for (const screenshot of project.screenshots ?? []) {
+        expect(screenshot.src).toMatch(/^\/projects\//);
+        expect(screenshot.alt.length).toBeGreaterThan(8);
+      }
       for (const evidence of project.verification ?? []) {
         expect(evidence.label.trim()).not.toBe('');
         expect(() => new URL(evidence.url)).not.toThrow();

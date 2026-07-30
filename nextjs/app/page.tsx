@@ -28,16 +28,24 @@ export default function HomePage() {
             <article key={project.title} className="project-row">
               <span className="project-index">{String(index + 1).padStart(2, '0')}</span>
               <div className="project-body">
+                {project.screenshots?.[0] && (
+                  <div className="mb-6 overflow-hidden rounded-lg border border-line bg-panel">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img alt={project.screenshots[0].alt} className="aspect-[16/9] w-full object-cover object-top" src={project.screenshots[0].src} />
+                  </div>
+                )}
                 <div className="flex flex-wrap items-baseline justify-between gap-3">
                   <h3>{project.title}</h3>
                   <span className="project-status">{project.status}</span>
                 </div>
-                <p>{project.outcome}</p>
+                <p><strong className="text-text">问题：</strong>{project.problem}</p>
+                <p className="mt-2"><strong className="text-text">我的职责：</strong>{project.role}</p>
                 <ul className="tag-list" aria-label={`${project.title} 技术标签`}>
                   {project.stack.slice(0, 4).map((item) => <li key={item}>{item}</li>)}
                 </ul>
               </div>
               <div className="project-actions">
+                <SiteLink href={`/projects/${project.slug}`}>查看案例</SiteLink>
                 <SiteLink href={project.githubUrl} external>源码</SiteLink>
                 <SiteLink href={project.demoUrl} external>项目链接</SiteLink>
               </div>

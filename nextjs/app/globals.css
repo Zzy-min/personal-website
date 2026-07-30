@@ -27,6 +27,46 @@
   .shell { @apply min-h-screen; }
 }
 
+.challenge-flow {
+  display: grid;
+  gap: 1px;
+  overflow: hidden;
+  @apply border border-line bg-line;
+}
+
+.challenge-flow > div {
+  display: grid;
+  gap: 0.75rem;
+  @apply bg-panel;
+  padding: 1.25rem;
+}
+
+.challenge-flow span {
+  @apply text-primary;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.challenge-flow p {
+  line-height: 1.8;
+}
+
+@media (min-width: 768px) {
+  .challenge-flow {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 @layer utilities {
   .nav-link {
     @apply relative py-2 text-sm text-muted transition-colors hover:text-text focus-visible:outline-none;

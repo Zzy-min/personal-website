@@ -196,6 +196,22 @@ export const sourceData: SiteConfig = {
       status: "持续迭代"
       ,
       role: "我负责项目发起、需求梳理、Java 服务调试、部署与跨端验收。",
+      contributions: ["梳理三棋统一站点与房间对战需求", "调试 Java 服务、规则流程和引擎接入", "完成 VPS/Cloudflare 部署与桌面、手机验收"],
+      aiContribution: {
+        assisted: ["辅助生成局部实现草案、测试建议和排查假设"],
+        owned: ["需求取舍、架构选择、问题复现、代码审查、部署与最终验收"]
+      },
+      screenshots: [
+        { src: "/projects/xiangqi-arena/home-desktop.png", alt: "轻棋局线上首页桌面端真实截图", caption: "已验收的生产首页，展示三棋入口与主导航。", type: "runtime" },
+        { src: "/projects/xiangqi-arena/home-mobile.png", alt: "轻棋局线上首页手机端真实截图", caption: "390px 手机视口的生产验收记录。", type: "runtime" }
+      ],
+      architecture: { image: "/projects/xiangqi-arena/architecture.svg", alt: "轻棋局 Cloudflare 与 Java 服务部署架构图", description: "浏览器通过 Cloudflare Worker 前门访问 Java 源站，规则服务再连接不同棋类引擎。" },
+      challenges: [{
+        problem: "公开房间与对手走子在移动端不能稳定刷新。",
+        investigation: "用真实双端房间流程复现，结合请求日志和浏览器状态定位刷新与通知链路。",
+        fix: "收敛房间状态更新路径，并针对移动端棋谱与观战页面补充适配。",
+        result: "桌面与 390px 手机流程完成重复验收，对应提交记录可公开复查。"
+      }],
       verification: [
         { label: "公开源码", description: "持续提交记录与实现代码", url: "https://github.com/Zzy-min/Chinese-chess", kind: "source" },
         { label: "线上站点", description: "可直接验证主要对局流程", url: "https://www.xiangqiarena.com/", kind: "demo" },
@@ -338,6 +354,21 @@ export const sourceData: SiteConfig = {
       updatedAt: "2026-07-12",
       status: "持续迭代",
       role: "我负责项目发起、产品方向、运行调试、测试验收与版本迭代。",
+      contributions: ["定义本地优先的 Agent 工作台方向", "推进 Agent Loop、Pipeline 与三层记忆系统", "维护跨平台构建、测试、恢复和安全门禁"],
+      aiContribution: {
+        assisted: ["协助分析实现方案、生成局部代码与测试草案"],
+        owned: ["产品方向、接口约束、风险判断、变更审查、真实运行和回归验证"]
+      },
+      screenshots: [
+        { src: "/projects/qling/verification.svg", alt: "轻灵项目工程验证记录", caption: "没有伪造终端 UI；这里展示仓库真实采用的测试、构建与恢复门禁。", type: "terminal" }
+      ],
+      architecture: { image: "/projects/qling/architecture.svg", alt: "轻灵 Agent Loop、工具与分层记忆架构图", description: "流式 TUI 进入 Pipeline 和 Agent Loop，工具结果与会话状态按层写入记忆。" },
+      challenges: [{
+        problem: "Windows 并发会话、流式输出与恢复状态之间出现顺序和一致性风险。",
+        investigation: "通过定向测试、临时运行目录和失败轨迹区分环境问题与状态机缺陷。",
+        fix: "加固安全网关、原子状态、会话顺序和恢复路径，并把检查纳入 CI 门禁。",
+        result: "构建、定向测试、ci:check 与本地评测形成可重复的验证链。"
+      }],
       verification: [
         { label: "公开源码", description: "版本记录与实现代码", url: "https://github.com/Zzy-min/qling", kind: "source" },
         { label: "提交记录", description: "测试、构建与工作流加固", url: "https://github.com/Zzy-min/qling/commits/main/", kind: "commit" },
@@ -366,6 +397,22 @@ export const sourceData: SiteConfig = {
       updatedAt: "2026-07-16",
       status: "持续迭代",
       role: "我负责产品方向、需求拆解、Python 后端调试、接口验证与跨端验收。",
+      contributions: ["把单供应商工作台重定位为供应商中立创作 Agent", "调试 Python Agent API、模型路由与预算审批", "完成 React、Flutter 与后端契约的跨端验证"],
+      aiContribution: {
+        assisted: ["辅助生成界面与接口实现草案、梳理失败路径"],
+        owned: ["产品重定位、路由规则、凭据安全边界、故障归因和跨端验收"]
+      },
+      screenshots: [
+        { src: "/projects/qingqing/desktop.png", alt: "轻青创作工作台桌面端真实验收截图", caption: "1440px 桌面端最终验收记录。", type: "runtime" },
+        { src: "/projects/qingqing/mobile.png", alt: "轻青创作工作台手机端真实验收截图", caption: "390px 手机端最终验收记录。", type: "runtime" }
+      ],
+      architecture: { image: "/projects/qingqing/architecture.svg", alt: "轻青 React、Flutter、Python API 与模型路由架构图", description: "跨端客户端共用 Python Agent API，由预算、凭据和任务状态约束多供应商模型路由。" },
+      challenges: [{
+        problem: "供应商失败容易被错误归因，跨端又可能呈现不一致状态。",
+        investigation: "检查 Agent Run、SQLite invocation 的 model、provider 与 error_code，再分别跑后端、Web 和 Flutter 验证。",
+        fix: "统一运行状态与接口契约，保留可追踪错误码，并补齐跨平台 CI。",
+        result: "供应商故障、业务错误和界面状态可以分层定位，跨端验收记录可复查。"
+      }],
       verification: [
         { label: "公开源码", description: "阶段性设计与实现代码", url: "https://github.com/Zzy-min/qingqing", kind: "source" },
         { label: "提交记录", description: "后端、Web 与 Flutter 验证", url: "https://github.com/Zzy-min/qingqing/commits/main/", kind: "commit" },
