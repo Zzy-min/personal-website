@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">张子阳的开发者作品集</title><desc id="desc">可运行、可验证的项目与技术复盘</desc>
+  <rect width="1200" height="630" fill="#f6f4ed"/><path d="M70 72h1060v486H70z" fill="#fffdf7" stroke="#cfd5ca" stroke-width="2"/>
+  <path d="M70 72h18v486H70z" fill="#285943"/>
+  <text x="140" y="185" fill="#285943" font-family="Georgia, Songti SC, serif" font-size="26" letter-spacing="8">DEVELOPER PORTFOLIO</text>
+  <text x="140" y="310" fill="#1f2923" font-family="Georgia, Songti SC, serif" font-size="76" font-weight="700">张子阳</text>
+  <text x="140" y="388" fill="#1f2923" font-family="Microsoft YaHei, sans-serif" font-size="38">把想法做成能运行、能验证的项目</text>
+  <line x1="140" y1="446" x2="1060" y2="446" stroke="#cfd5ca" stroke-width="2"/>
+  <text x="140" y="505" fill="#647067" font-family="Microsoft YaHei, sans-serif" font-size="25">轻·棋局 · 轻灵 · 轻青</text>
+</svg>
