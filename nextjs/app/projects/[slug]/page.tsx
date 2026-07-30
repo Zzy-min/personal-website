@@ -67,10 +67,12 @@ export default async function ProjectCasePage({
         <div>
           <p className="max-w-3xl text-lg leading-8">{project.outcome}</p>
           <ul className="mt-7 space-y-3">
-            {(project.verification ?? ['公开源码', '构建与运行检查']).map((item) => (
-              <li key={item} className="flex items-start gap-3">
+            {(project.verification ?? []).map((item) => (
+              <li key={item.url} className="flex items-start gap-3">
                 <span className="mt-2 h-2 w-2 rounded-full bg-primary" />
-                <span>{item}</span>
+                <a className="hover:text-primary" href={item.url} rel="noreferrer" target="_blank">
+                  <strong>{item.label}</strong> · {item.description}
+                </a>
               </li>
             ))}
           </ul>
