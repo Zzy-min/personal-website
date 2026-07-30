@@ -9,7 +9,10 @@
     "start": "next start",
     "lint": "eslint .",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "check:out": "node scripts/check-static-output.mjs",
+    "e2e": "playwright test",
+    "lighthouse": "lhci autorun"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -21,6 +24,8 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.5",
+    "@lhci/cli": "^0.15.1",
+    "@playwright/test": "^1.62.0",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@types/node": "^22.10.2",
@@ -32,6 +37,7 @@
     "eslint-config-next": "15.5.21",
     "jsdom": "^28.1.0",
     "postcss": "^8.4.49",
+    "serve": "^14.2.6",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.7.2",
     "vitest": "^4.1.0"

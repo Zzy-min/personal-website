@@ -1,0 +1,14 @@
+name: External links
+on:
+  schedule:
+    - cron: '15 2 * * 1'
+  workflow_dispatch:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check public destinations without blocking normal commits
+        run: |
+          curl --fail --location --retry 2 --max-time 30 https://qling.it.com/
+          curl --fail --location --retry 2 --max-time 30 https://github.com/Zzy-min
+          curl --fail --location --retry 2 --max-time 30 https://blog.csdn.net/Zzydzyg0618
