@@ -4,8 +4,8 @@ import { SiteLink } from '@/components/ui/SiteLink';
 
 export function Hero() {
   return (
-    <section data-home-section="hero" className="hero-field mx-auto max-w-7xl px-4 pb-20 pt-14 md:pb-28 md:pt-20">
-      <div className="grid gap-14 md:grid-cols-[minmax(0,1.4fr)_minmax(17rem,0.6fr)] md:items-center">
+    <section data-home-section="hero" className="hero-field mx-auto max-w-7xl px-4 pb-20 pt-14 md:pb-32 md:pt-24">
+      <div className="grid gap-14 md:grid-cols-[minmax(0,1.45fr)_minmax(18rem,0.55fr)] md:items-center md:gap-16">
         <div className="hero-copy">
           <div className="availability"><span aria-hidden="true" /> 正在寻找 AI Agent 开发实践机会</div>
           <h1 className="hero-title" aria-label={siteData.profile.headline}>

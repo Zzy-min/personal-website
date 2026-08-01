@@ -5,17 +5,17 @@ import { Button } from '@/components/ui/Button';
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen px-4 py-12">
+    <div className="page-shell">
       <section className="mx-auto max-w-7xl">
         <div className="grid gap-6 md:grid-cols-[1.2fr_0.8fr]">
-          <article className="rounded-card border border-line bg-panel p-6 shadow-card">
+          <article className="content-card p-6 md:p-8">
             <Badge>关于我</Badge>
             <h1 className="mt-4 text-4xl font-bold">我正在成为什么样的开发者</h1>
             <p className="mt-4 text-lg">{siteData.profile.positioning}</p>
             <p className="mt-4 leading-8 text-muted">{siteData.profile.intro}</p>
           </article>
 
-          <article className="rounded-card border border-line bg-panel p-6 shadow-card">
+          <article className="content-card p-6 md:p-8">
             <div className="text-xs uppercase tracking-[0.16em] text-muted">基础信息</div>
             <div className="mt-4 space-y-4">
               <div>
@@ -23,11 +23,11 @@ export default function AboutPage() {
                 <div className="mt-1 text-lg">{siteData.profile.role}</div>
               </div>
               <div className="flex items-center gap-2 text-muted">
-                <MapPin size={16} />
+                <MapPin aria-hidden="true" size={17} strokeWidth={1.75} />
                 <span>{siteData.profile.location}</span>
               </div>
               <div className="flex items-center gap-2 text-muted">
-                <Mail size={16} />
+                <Mail aria-hidden="true" size={17} strokeWidth={1.75} />
                 <div className="flex flex-col gap-1">
                   <a className="hover:text-foreground" href={`mailto:${siteData.profile.email.user}@${siteData.profile.email.domain}`}>
                     {siteData.profile.email.user}@{siteData.profile.email.domain}
@@ -44,9 +44,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="mx-auto mt-14 max-w-7xl">
+      <section className="mx-auto mt-16 max-w-7xl md:mt-20">
         <div className="grid gap-6 md:grid-cols-3">
-          <article className="rounded-card border border-line bg-panel p-6 shadow-card">
+          <article className="content-card p-6 md:p-7">
             <Badge variant="outline">当前方向</Badge>
             <h2 className="mt-4 text-3xl font-bold">当前方向</h2>
             <p className="mt-4 text-muted">我正在把学习重心收束成几个清晰方向。</p>
@@ -60,7 +60,7 @@ export default function AboutPage() {
             </ul>
           </article>
 
-          <article className="rounded-card border border-line bg-panel p-6 shadow-card">
+          <article className="content-card p-6 md:p-7">
             <Badge variant="outline">我的方法</Badge>
             <h2 className="mt-4 text-3xl font-bold">我更相信边做边理解，而不是只堆概念</h2>
             <ul className="mt-5 space-y-3">
@@ -73,7 +73,7 @@ export default function AboutPage() {
             </ul>
           </article>
 
-          <article className="rounded-card border border-line bg-panel p-6 shadow-card">
+          <article className="content-card p-6 md:p-7">
             <Badge variant="outline">为什么做这个站</Badge>
             <h2 className="mt-4 text-3xl font-bold">为什么做这个站</h2>
             <p className="mt-4">我在这里集中介绍自己的项目、文章和学习经历。</p>

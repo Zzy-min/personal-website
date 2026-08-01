@@ -14,21 +14,21 @@ export default function TimelinePage() {
   const timeline = sortByDateDesc(siteData.timeline, 'date');
 
   return (
-    <div className="min-h-screen px-4 py-12">
+    <div className="page-shell">
       <section className="mx-auto max-w-7xl">
-        <div className="max-w-3xl">
+        <div className="page-intro">
           <Badge>我的时间线</Badge>
-          <h1 className="mt-4 text-4xl font-bold">我的学习与开发记录</h1>
-          <p className="mt-4 text-lg text-muted">
+          <h1>我的学习与开发记录</h1>
+          <p>
             我把每个阶段完成的项目、文章和学习内容记录下来，也会继续更新新的进展。
           </p>
         </div>
 
-        <div className="mt-8 space-y-4">
+        <div className="mt-10 space-y-5">
           {timeline.map((item) => (
             <article
               key={`${item.date}-${item.title}`}
-              className="grid gap-4 rounded-card border border-line bg-panel p-6 shadow-card md:grid-cols-[180px_1fr]"
+              className="content-card grid gap-5 p-6 md:grid-cols-[180px_1fr] md:p-7"
             >
               <div>
                 <div className="font-mono text-sm uppercase tracking-[0.16em] text-muted">

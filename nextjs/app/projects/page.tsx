@@ -33,21 +33,21 @@ export default function ProjectsPage() {
   }, [filter]);
 
   return (
-    <div className="min-h-screen px-4 py-12">
+    <div className="page-shell">
       <section className="mx-auto max-w-7xl">
-        <div className="max-w-3xl">
+        <div className="page-intro">
           <Badge>我的项目</Badge>
-          <h1 className="mt-4 text-4xl font-bold">我把想法做成可以运行的项目</h1>
-          <p className="mt-4 text-lg text-muted">
+          <h1>我把想法做成可以运行的项目</h1>
+          <p>
             我会介绍每个项目解决的问题、我承担的工作，以及目前已经完成的功能和验证。
           </p>
         </div>
 
-        <div className="mt-8 space-y-6">
+        <div className="mt-10 space-y-7">
           {featuredProjects.map((project) => (
             <article
               key={project.title}
-              className="rounded-card border border-line bg-panel p-6 shadow-card"
+              className="content-card p-6 md:p-8"
             >
               <div className="flex flex-wrap items-center justify-between gap-4">
                 <div className="flex flex-wrap items-center gap-3">
@@ -69,11 +69,11 @@ export default function ProjectsPage() {
               <p className="mt-3 text-lg">{project.summary}</p>
 
               <div className="mt-6 grid gap-4 md:grid-cols-2">
-                <div className="rounded-card border border-line bg-paper p-5">
+                <div className="rounded-card border border-line bg-paper p-5 md:p-6">
                   <div className="text-xs uppercase tracking-[0.16em] text-muted">问题定义</div>
                   <p className="mt-3 leading-7">{project.problem}</p>
                 </div>
-                <div className="rounded-card border border-line bg-paper p-5">
+                <div className="rounded-card border border-line bg-paper p-5 md:p-6">
                   <div className="text-xs uppercase tracking-[0.16em] text-muted">结果与价值</div>
                   <p className="mt-3 leading-7">{project.outcome}</p>
                 </div>
@@ -85,7 +85,7 @@ export default function ProjectsPage() {
                   {project.highlights.map((highlight) => (
                     <li
                       key={highlight}
-                      className="rounded-[20px] border border-line bg-paper-soft px-4 py-4"
+                      className="rounded-button border border-line bg-paper-soft px-4 py-4 leading-7"
                     >
                       {highlight}
                     </li>
@@ -111,7 +111,7 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      <section className="mx-auto mt-14 max-w-7xl">
+      <section className="mx-auto mt-20 max-w-7xl md:mt-24">
         <div className="max-w-3xl">
           <Badge variant="outline">项目档案</Badge>
           <h2 className="mt-4 text-3xl font-bold">继续看完整项目谱系</h2>
@@ -128,12 +128,12 @@ export default function ProjectsPage() {
           lessLabel="收起技术"
         />
 
-        <div className="mt-6 grid gap-4 md:grid-cols-2">
+        <div className="mt-8 grid gap-5 md:grid-cols-2">
           {archiveProjects.length > 0 ? (
             archiveProjects.map((project) => (
               <article
                 key={project.title}
-                className="rounded-card border border-line bg-panel p-5 shadow-card"
+                className="content-card p-5 md:p-6"
               >
                 <div className="flex items-center justify-between gap-3">
                   <Badge variant="outline">{project.status}</Badge>
@@ -145,11 +145,11 @@ export default function ProjectsPage() {
                 <p className="mt-3 text-muted">{project.summary}</p>
 
                 <div className="mt-5 space-y-4">
-                  <div className="rounded-[20px] border border-line bg-paper p-4">
+                  <div className="rounded-button border border-line bg-paper p-4">
                     <div className="text-xs uppercase tracking-[0.16em] text-muted">问题定义</div>
                     <p className="mt-3 leading-7">{project.problem}</p>
                   </div>
-                  <div className="rounded-[20px] border border-line bg-paper-soft p-4">
+                  <div className="rounded-button border border-line bg-paper-soft p-4">
                     <div className="text-xs uppercase tracking-[0.16em] text-muted">结果与价值</div>
                     <p className="mt-3 leading-7">{project.outcome}</p>
                   </div>

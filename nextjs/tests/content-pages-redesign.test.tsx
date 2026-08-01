@@ -127,7 +127,7 @@ describe('content page redesign plan', () => {
 
     expect(
       screen.getByRole('img', { name: '张子阳 AI 应用开发实习生简历预览' })
-    ).toHaveAttribute('src', '/张子阳-AI-Agent实习生-20260725-v3-preview.png');
+    ).toHaveAttribute('src', '/张子阳-AI-Agent实习生-20260725-v3-preview.jpg');
     expect(container.querySelector('object[type="application/pdf"]')).not.toBeInTheDocument();
     expect(screen.getByRole('link', { name: '打开 PDF 原文件' })).toHaveAttribute(
       'href',

@@ -41,14 +41,14 @@ export function FilterGroup({
 
   const pillClassName = (isActive: boolean) =>
     cn(
-      'rounded-full px-4 py-2 text-sm transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/25',
+      'min-h-10 rounded-button border px-4 py-2 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 focus-visible:ring-offset-2 focus-visible:ring-offset-bg active:translate-y-px',
       isActive
-        ? 'bg-primary text-paper-inverse'
-        : 'bg-panel text-muted hover:bg-paper-hover hover:text-text'
+        ? 'border-primary bg-primary text-paper-inverse shadow-card'
+        : 'border-line bg-panel text-muted shadow-card transition-[border-color,background-color,color] duration-200 ease-out hover:border-primary/30 hover:bg-paper-hover hover:text-text'
     );
 
   return (
-    <div className="mt-4 flex flex-wrap gap-2">
+    <div className="mt-6 flex flex-wrap gap-2.5">
       <button
         type="button"
         aria-pressed={activeItem === 'all'}
