@@ -181,15 +181,15 @@ export const sourceData: SiteConfig = {
       slug: "xiangqi-arena",
       title: "轻·棋局 XiangqiArena",
       summary:
-        "基于 Java 的三棋 Web 平台（中国象棋 / 五子棋 / 围棋），覆盖在线双人对战、人机对弈、残局练习、复盘分析，通过 Cloudflare Worker 前门 + Java 源站部署到 xiangqiarena.com。",
+        "基于 Java 的三棋 Web 平台（中国象棋 / 五子棋 / 围棋），覆盖在线双人对战、房间重开机制、人机对弈、残局练习与复盘分析，通过 Cloudflare Worker 前门 + Java 源站部署到 xiangqiarena.com。",
       problem: "把传统棋类玩法、规则校验、AI 对战和在线体验收束到同一个可持续迭代的 Java Web 项目里，同时覆盖多种棋类。",
-      outcome: "持续完成需求梳理、Java 服务调试、浏览器流程验证与线上迭代；当前在线主路径支持象棋和五子棋。",
+      outcome: "持续完成需求梳理、Java 服务调试、浏览器流程验证与线上迭代；支持象棋/五子棋双人对战、再来一局机制与引擎深度接入。",
       highlights: [
         "中国象棋 / 五子棋 / 围棋统一站点结构",
-        "在线双人对战（房间邀请制）与人机对弈",
+        "在线双人对战（房间邀请与重开机制）与人机对弈",
         "外部引擎接入（Pikafish、Rapfi、KataGo）",
         "Cloudflare Worker 前门 + Java 源站部署路径",
-        "对局音效、战术播报与结局展示"
+        "走子路径高亮、将军通知、对局音效与战术播报"
       ],
       featuredOrder: 1,
       stack: ["Java", "Web 项目", "实时对战", "测试验证"],
@@ -340,22 +340,22 @@ export const sourceData: SiteConfig = {
       slug: "qling",
       title: "轻灵 Qling",
       summary:
-        "基于 TypeScript 的命令行 AI Agent，集成 DeepSeek API，支持流式 TUI、三层记忆系统、Pipeline 架构和 7 种内置工具。",
+        "基于 TypeScript 的命令行 AI Agent，集成 DeepSeek API，支持流式 TUI、三层记忆系统、Pipeline 架构、SWE-bench 评测闭环和 7 种内置工具。",
       problem: "通用 CLI Agent 缺少轻量级、可本地运行的 TypeScript 实现参考，现有方案多依赖 Python 或闭源服务。",
-      outcome: "我负责产品方向、功能取舍、运行调试与测试验证，完成可恢复、可审计的本地 Agent 工作台。",
+      outcome: "我负责产品方向、功能取舍、运行调试与测试验证，完成可恢复、可审计、支持自动化评测的本地 Agent 工作台。",
       highlights: [
-        "7 种内置工具（bash、read、write、todo、skill、planner）",
+        "7 种内置工具（bash、read、write、todo、skill、planner 等）",
         "三层记忆系统（工作记忆 / 长期记忆 / 自动梦境）",
-        "Pipeline 架构（hooks、sections、verification）",
-        "Claude Code 风格流式 TUI 界面",
-        "DeepSeek API 集成，token 预算实时同步"
+        "Pipeline 架构（hooks、sections、verification 审计）",
+        "支持 SWE-bench 评测闭环与降级验证",
+        "Claude Code 风格流式 TUI 界面与实时 token 预算同步"
       ],
       featuredOrder: 2,
       stack: ["AI Agent", "CLI/TUI", "本地工作流", "测试验证"],
       githubUrl: "https://github.com/Zzy-min/qling",
       demoUrl: "https://github.com/Zzy-min/qling",
       featured: true,
-      updatedAt: "2026-08-21",
+      updatedAt: "2026-08-22",
       status: "持续迭代",
       role: "我负责项目发起、产品方向、运行调试、测试验收与版本迭代。",
       contributions: ["定义本地优先的 Agent 工作台方向", "推进 Agent Loop、Pipeline 与三层记忆系统", "维护跨平台构建、测试、恢复和安全门禁"],
@@ -383,15 +383,15 @@ export const sourceData: SiteConfig = {
       slug: "qingqing",
       title: "轻青 Qingqing",
       summary:
-        "从 MiniMax 多模态工作台演进而来的模型通用个人创作 Agent，统一聊天、图片、语音、音乐和视频创作流程。",
+        "从 MiniMax 多模态工作台演进而来的模型通用个人创作 Agent，统一聊天、图片、语音、音乐和视频创作流程，完成 Windows 与 Flutter 跨端验收。",
       problem: "单一供应商工作台难以承载长期创作，需要统一模型路由、预算审批、凭据安全和跨端体验。",
-      outcome: "我完成产品重定位、Python 后端调试、接口验证与跨端验收，搭建供应商中立的 Agent 运行框架。",
+      outcome: "我完成产品重定位、Python 后端调试、接口验证与跨端验收，搭建供应商中立的 Agent 运行框架与跨平台 CI 流程。",
       highlights: [
         "聊天、图片、语音、音乐和视频统一创作入口",
         "Agent Run 路由预览、预算审批、执行、重试与取消",
         "平台额度与 BYOK 组合路由",
         "凭据加密与自定义端点安全校验",
-        "React Web 与 Flutter 多端验收"
+        "React Web 与 Flutter / Windows 跨端真实验收"
       ],
       featuredOrder: 3,
       stack: ["Python", "AI Agent", "模型路由", "接口验证"],
