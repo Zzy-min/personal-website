@@ -25,25 +25,25 @@ export default async function SummaryPage({ params }: { params: Promise<{ slug: 
 
   return (
     <article className="mx-auto max-w-4xl px-4 py-14">
-      <header className="border-b border-line pb-10">
+      <header className="border-b border-zinc-200 pb-10">
         <div className="flex flex-wrap gap-2">{post.tags.map((tag) => <Badge key={tag} variant="outline">{tag}</Badge>)}</div>
-        <h1 className="mt-6 text-[clamp(2.5rem,7vw,4.8rem)] font-bold leading-[1.08] tracking-tight">{post.title}</h1>
-        <p className="mt-5 max-w-3xl text-xl leading-9 text-muted">{post.summary}</p>
-        <time className="mt-5 block font-mono text-sm text-muted" dateTime={post.publishedAt}>发布于 {formatDate(post.publishedAt)}</time>
+        <h1 className="mt-6 text-[clamp(2.5rem,7vw,4.8rem)] font-bold leading-[1.08] tracking-tight text-zinc-950">{post.title}</h1>
+        <p className="mt-5 max-w-3xl text-xl leading-9 text-zinc-700">{post.summary}</p>
+        <time className="mt-5 block font-mono text-sm font-semibold text-zinc-600" dateTime={post.publishedAt}>发布于 {formatDate(post.publishedAt)}</time>
       </header>
       <div className="py-10">
         {post.sections?.map((section) => (
           <section className="mb-12" key={section.heading}>
-            <h2 className="text-3xl font-bold tracking-tight">{section.heading}</h2>
-            <p className="mt-4 text-lg leading-9 text-muted">{section.body}</p>
+            <h2 className="text-3xl font-bold tracking-tight text-zinc-950">{section.heading}</h2>
+            <p className="mt-4 text-lg leading-9 text-zinc-700">{section.body}</p>
           </section>
         ))}
-        <section className="border-y border-line py-8">
-          <h2 className="text-3xl font-bold tracking-tight">关键收获</h2>
+        <section className="border-y border-zinc-200 py-8">
+          <h2 className="text-3xl font-bold tracking-tight text-zinc-950">关键收获</h2>
           <ul className="mt-5 space-y-4">
             {post.takeaways?.map((takeaway) => (
-              <li className="flex gap-4 text-lg text-text" key={takeaway}>
-                <span className="text-primary font-bold">—</span>
+              <li className="flex gap-4 text-lg text-zinc-900 font-medium" key={takeaway}>
+                <span className="text-zinc-900 font-bold">—</span>
                 <span>{takeaway}</span>
               </li>
             ))}
@@ -51,10 +51,10 @@ export default async function SummaryPage({ params }: { params: Promise<{ slug: 
         </section>
         {projects.length > 0 && (
           <section className="mt-10">
-            <h2 className="text-3xl font-bold tracking-tight">关联项目</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-zinc-950">关联项目</h2>
             <div className="mt-5 flex flex-wrap gap-4">
               {projects.map((project) => (
-                <Link className="border-b border-primary pb-1 font-semibold text-primary hover:text-primary-strong transition-colors" href={`/projects/${project.slug}`} key={project.slug}>
+                <Link className="border-b border-zinc-900 pb-1 font-semibold text-zinc-950 hover:text-blue-600 transition-colors" href={`/projects/${project.slug}`} key={project.slug}>
                   {project.title} ↗
                 </Link>
               ))}
@@ -62,7 +62,7 @@ export default async function SummaryPage({ params }: { params: Promise<{ slug: 
           </section>
         )}
       </div>
-      <footer className="flex flex-wrap gap-3 border-t border-line pt-8">
+      <footer className="flex flex-wrap gap-3 border-t border-zinc-200 pt-8">
         <Button href={post.sourceUrl} external>查看原始来源</Button>
         <Button href="/blog" variant="secondary">返回文章列表</Button>
       </footer>

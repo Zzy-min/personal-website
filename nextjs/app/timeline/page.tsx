@@ -30,8 +30,8 @@ export default function TimelinePage() {
               key={`${item.date}-${item.title}`}
               className="content-card grid gap-6 p-6 md:grid-cols-[180px_1fr] md:p-8"
             >
-              <div className="border-b border-line/60 pb-4 md:border-b-0 md:border-r md:border-line/60 md:pb-0 md:pr-6">
-                <div className="font-mono text-sm font-semibold uppercase tracking-[0.16em] text-muted">
+              <div className="border-b border-zinc-200 pb-4 md:border-b-0 md:border-r md:border-zinc-200 md:pb-0 md:pr-6">
+                <div className="font-mono text-sm font-semibold uppercase tracking-[0.16em] text-zinc-600">
                   {formatDate(item.date)}
                 </div>
                 <div className="mt-3">
@@ -40,24 +40,24 @@ export default function TimelinePage() {
               </div>
 
               <div>
-                <h2 className="text-2xl font-bold tracking-tight">{item.title}</h2>
-                <div className="font-mono text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-primary mt-3">阶段意义</div>
-                <p className="mt-2.5 leading-relaxed text-muted">{item.description}</p>
+                <h2 className="text-2xl font-bold tracking-tight text-zinc-950">{item.title}</h2>
+                <div className="font-mono text-[0.72rem] font-bold uppercase tracking-[0.16em] text-zinc-600 mt-3">阶段意义</div>
+                <p className="mt-2.5 leading-relaxed text-zinc-700">{item.description}</p>
                 {item.evidence ? (
-                  <div className="mt-5 rounded-button border border-line bg-paper-soft p-4">
-                    <div className="font-mono text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-primary">
+                  <div className="mt-5 rounded-button border border-zinc-200 bg-zinc-50 p-4">
+                    <div className="font-mono text-[0.7rem] font-bold uppercase tracking-[0.16em] text-zinc-600">
                       相关记录
                     </div>
                     {item.sourceUrl ? (
                       <SiteLink
                         href={item.sourceUrl}
                         external
-                        className="mt-1.5 inline-flex min-h-11 items-center font-medium text-sm text-primary hover:text-primary-strong underline decoration-1 underline-offset-4"
+                        className="mt-1.5 inline-flex min-h-11 items-center font-semibold text-sm text-zinc-900 hover:text-blue-600 underline decoration-1 underline-offset-4"
                       >
                         {item.evidence} ↗
                       </SiteLink>
                     ) : (
-                      <p className="mt-1.5 text-sm text-text font-medium">{item.evidence}</p>
+                      <p className="mt-1.5 text-sm text-zinc-900 font-semibold">{item.evidence}</p>
                     )}
                   </div>
                 ) : null}

@@ -8,7 +8,7 @@ export default function ResumePage() {
       <section className="content-card mb-8 flex flex-col gap-5 p-6 md:flex-row md:items-center md:justify-between md:p-8">
         <div>
           <Badge>PDF 简历</Badge>
-          <h1 className="mt-3 text-3xl font-bold md:text-4xl">张子阳 · AI 应用开发实习生</h1>
+          <h1 className="mt-3 text-3xl font-bold text-zinc-950 md:text-4xl">张子阳 · AI 应用开发实习生</h1>
         </div>
         <Button href={siteData.site.resume} download>
           下载 PDF 简历
@@ -17,7 +17,7 @@ export default function ResumePage() {
 
       <section className="content-card overflow-hidden p-4 md:p-8 shadow-card">
         <figure>
-          <div className="overflow-hidden rounded-button border border-line bg-[#fdfdf9] shadow-subtle">
+          <div className="overflow-hidden rounded-button border border-zinc-200 bg-white shadow-subtle">
             {/* The generated preview avoids browser-specific PDF plugin failures. */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -29,8 +29,8 @@ export default function ResumePage() {
               width="1325"
             />
           </div>
-          <figcaption className="flex flex-col gap-3 px-1 pb-1 pt-6 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
-            <span className="font-medium">以上为 PDF 第一页的高清预览。</span>
+          <figcaption className="flex flex-col gap-3 px-1 pb-1 pt-6 text-sm text-zinc-600 sm:flex-row sm:items-center sm:justify-between">
+            <span className="font-semibold text-zinc-800">以上为 PDF 第一页的高清预览。</span>
             <Button href={siteData.site.resume} external variant="secondary">
               打开 PDF 原文件
             </Button>

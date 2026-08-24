@@ -64,17 +64,17 @@ export default function BlogPage() {
               <div>
                 <div className="flex items-center justify-between gap-4">
                   <Badge variant="outline">{post.tags.join(" · ")}</Badge>
-                  <span className="font-mono text-xs text-muted">{formatDate(post.publishedAt)}</span>
+                  <span className="font-mono text-xs font-semibold text-zinc-600">{formatDate(post.publishedAt)}</span>
                 </div>
-                <h2 className="mt-5 text-2xl font-bold leading-snug">{post.title}</h2>
-                <p className="mt-3.5 text-sm leading-relaxed text-muted">{post.summary}</p>
+                <h2 className="mt-5 text-2xl font-bold leading-snug text-zinc-950">{post.title}</h2>
+                <p className="mt-3.5 text-sm leading-relaxed text-zinc-600">{post.summary}</p>
                 {post.featuredReason ? (
-                  <p className="mt-4 rounded-button border border-line bg-paper-soft p-3.5 text-sm leading-relaxed text-text/90 shadow-subtle">
+                  <p className="mt-4 rounded-button border border-zinc-200 bg-zinc-50 p-3.5 text-sm leading-relaxed text-zinc-800 shadow-subtle">
                     {post.featuredReason}
                   </p>
                 ) : null}
               </div>
-              <div className="mt-8 border-t border-line/70 pt-5">
+              <div className="mt-8 border-t border-zinc-200 pt-5">
                 <Button href={post.slug ? `/blog/${post.slug}` : post.sourceUrl} external={!post.slug}>
                   {post.slug ? "阅读摘要" : "阅读原文"}
                 </Button>
@@ -87,14 +87,14 @@ export default function BlogPage() {
       <section className="mx-auto mt-20 max-w-7xl md:mt-28">
         <div className="max-w-3xl">
           <Badge variant="outline">全部文章</Badge>
-          <h2 className="mt-4 text-3xl font-bold tracking-tight md:text-4xl">继续查看完整写作档案</h2>
-          <p className="mt-3 text-muted">
+          <h2 className="mt-4 text-3xl font-bold tracking-tight text-zinc-950 md:text-4xl">继续查看完整写作档案</h2>
+          <p className="mt-3 text-zinc-600">
             保留搜索和标签筛选，方便快速定位你更关心的主题。
           </p>
         </div>
 
         <div className="relative mt-7">
-          <Search aria-hidden="true" className="absolute left-4 top-1/2 -translate-y-1/2 text-muted" size={18} strokeWidth={2} />
+          <Search aria-hidden="true" className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500" size={18} strokeWidth={2} />
           <input
             type="text"
             placeholder="搜索文章..."
@@ -129,10 +129,10 @@ export default function BlogPage() {
                         </Badge>
                       ))}
                     </div>
-                    <span className="font-mono text-xs text-muted">{formatDate(post.publishedAt)}</span>
+                    <span className="font-mono text-xs font-semibold text-zinc-600">{formatDate(post.publishedAt)}</span>
                   </div>
-                  <h3 className="mt-3 text-xl font-bold leading-snug md:text-2xl">{post.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted">{post.summary}</p>
+                  <h3 className="mt-3 text-xl font-bold leading-snug text-zinc-950 md:text-2xl">{post.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-zinc-600">{post.summary}</p>
                 </div>
                 <div className="flex-shrink-0">
                   <Button href={post.slug ? `/blog/${post.slug}` : post.sourceUrl} external={!post.slug} variant="secondary">
@@ -142,9 +142,9 @@ export default function BlogPage() {
               </article>
             ))
           ) : (
-            <article className="rounded-card border border-dashed border-line bg-panel p-8 text-center">
-              <h3 className="text-2xl font-bold">没有找到相关文章</h3>
-              <p className="mt-3 text-muted max-w-md mx-auto">
+            <article className="rounded-card border border-dashed border-zinc-300 bg-white p-8 text-center">
+              <h3 className="text-2xl font-bold text-zinc-950">没有找到相关文章</h3>
+              <p className="mt-3 text-zinc-600 max-w-md mx-auto">
                 可以换一个关键词，或者直接浏览精选文章了解我的主要输出方向。
               </p>
             </article>

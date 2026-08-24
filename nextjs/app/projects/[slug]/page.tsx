@@ -39,10 +39,10 @@ export default async function ProjectCasePage({ params }: { params: Promise<{ sl
       <header className="case-masthead">
         <div className="flex flex-wrap items-center gap-3">
           <Badge>{project.status}</Badge>
-          <span className="font-mono text-sm text-muted">最近更新 {project.updatedAt}</span>
+          <span className="font-mono text-sm font-semibold text-zinc-600">最近更新 {project.updatedAt}</span>
         </div>
-        <h1 className="mt-5 max-w-5xl text-[clamp(2.7rem,7vw,5.7rem)] font-bold leading-[1.02] tracking-tight">{project.title}</h1>
-        <p className="mt-6 max-w-3xl text-xl leading-9 text-muted">{project.summary}</p>
+        <h1 className="mt-5 max-w-5xl text-[clamp(2.7rem,7vw,5.7rem)] font-bold leading-[1.02] tracking-tight text-zinc-950">{project.title}</h1>
+        <p className="mt-6 max-w-3xl text-xl leading-9 text-zinc-700">{project.summary}</p>
         <div className="mt-8 flex flex-wrap gap-3.5">
           <Button href={project.demoUrl} external>打开项目</Button>
           <Button href={project.githubUrl} external variant="secondary">查看源码</Button>
@@ -50,13 +50,13 @@ export default async function ProjectCasePage({ params }: { params: Promise<{ sl
       </header>
 
       <CaseSection index="01" label="项目概览与状态">
-        <p className="text-lg leading-8 text-text">{project.outcome}</p>
+        <p className="text-lg leading-8 text-zinc-900 font-medium">{project.outcome}</p>
       </CaseSection>
       <CaseSection index="02" label="要解决的问题">
-        <p className="text-lg leading-8 text-muted">{project.problem}</p>
+        <p className="text-lg leading-8 text-zinc-700">{project.problem}</p>
       </CaseSection>
       <CaseSection index="03" label="我的职责">
-        <p className="text-lg leading-8 font-medium">{project.role}</p>
+        <p className="text-lg leading-8 font-semibold text-zinc-950">{project.role}</p>
         <ul className="case-list mt-6">{project.contributions?.map((item, index) => <li key={item}><span>{String(index + 1).padStart(2, "0")}</span><strong>{item}</strong></li>)}</ul>
       </CaseSection>
       <CaseSection index="04" label="AI 参与边界">
@@ -67,9 +67,9 @@ export default async function ProjectCasePage({ params }: { params: Promise<{ sl
       </CaseSection>
       <CaseSection index="05" label="系统架构">
         {project.architecture && (
-          <figure className="overflow-hidden rounded-xl border border-line bg-panel p-2 shadow-subtle">
+          <figure className="overflow-hidden rounded-xl border border-zinc-200 bg-white p-2 shadow-subtle">
             <img alt={project.architecture.alt} className="w-full rounded-lg" src={project.architecture.image}/>
-            <figcaption className="p-3 text-sm leading-6 text-muted">{project.architecture.description}</figcaption>
+            <figcaption className="p-3 text-sm leading-6 text-zinc-600">{project.architecture.description}</figcaption>
           </figure>
         )}
       </CaseSection>
@@ -89,12 +89,12 @@ export default async function ProjectCasePage({ params }: { params: Promise<{ sl
         ))}
       </CaseSection>
       <CaseSection index="08" label="验证证据">
-        <div className="divide-y divide-line border-y border-line">
+        <div className="divide-y divide-zinc-200 border-y border-zinc-200">
           {project.verification?.map((evidence) => (
-            <a className="grid gap-2 py-5 transition-colors hover:text-primary md:grid-cols-[11rem_1fr_auto]" href={evidence.url} key={evidence.url} rel="noreferrer" target="_blank">
-              <strong className="font-semibold text-text">{evidence.label}</strong>
-              <span className="text-muted">{evidence.description}</span>
-              <span aria-hidden className="text-primary font-bold">↗</span>
+            <a className="grid gap-2 py-5 transition-colors hover:text-blue-600 md:grid-cols-[11rem_1fr_auto]" href={evidence.url} key={evidence.url} rel="noreferrer" target="_blank">
+              <strong className="font-semibold text-zinc-950">{evidence.label}</strong>
+              <span className="text-zinc-600">{evidence.description}</span>
+              <span aria-hidden className="text-zinc-900 font-bold">↗</span>
             </a>
           ))}
         </div>
@@ -102,11 +102,11 @@ export default async function ProjectCasePage({ params }: { params: Promise<{ sl
       <CaseSection index="09" label="截图与运行记录">
         <div className="grid gap-8 md:grid-cols-2">
           {project.screenshots?.map((shot) => (
-            <figure className="overflow-hidden rounded-xl border border-line bg-panel shadow-subtle" key={shot.src}>
+            <figure className="overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-subtle" key={shot.src}>
               <img alt={shot.alt} className="h-auto w-full" src={shot.src}/>
-              <figcaption className="border-t border-line p-4 text-sm leading-6 text-muted flex items-center justify-between">
+              <figcaption className="border-t border-zinc-200 p-4 text-sm leading-6 text-zinc-600 flex items-center justify-between">
                 <Badge variant="outline">{shot.type}</Badge>
-                <span className="ml-3 text-right">{shot.caption}</span>
+                <span className="ml-3 text-right font-medium text-zinc-800">{shot.caption}</span>
               </figcaption>
             </figure>
           ))}
@@ -128,7 +128,7 @@ function CaseSection({ children, index, label }: { children: React.ReactNode; in
     <section className="case-section">
       <div className="case-label">{index} / {label}</div>
       <div>
-        <h2 className="mb-6 text-3xl font-bold tracking-tight">{label}</h2>
+        <h2 className="mb-6 text-3xl font-bold tracking-tight text-zinc-950">{label}</h2>
         {children}
       </div>
     </section>
@@ -137,13 +137,13 @@ function CaseSection({ children, index, label }: { children: React.ReactNode; in
 
 function Boundary({ items, title }: { items: string[]; title: string }) {
   return (
-    <div className="rounded-card border border-line bg-panel p-6 shadow-subtle">
-      <h3 className="font-serif text-2xl font-bold">{title}</h3>
-      <ul className="mt-4 space-y-3 text-muted">
+    <div className="rounded-card border border-zinc-200 bg-white p-6 shadow-subtle">
+      <h3 className="font-serif text-2xl font-bold text-zinc-950">{title}</h3>
+      <ul className="mt-4 space-y-3 text-zinc-700">
         {items.map((item) => (
           <li className="flex gap-3 text-sm leading-relaxed" key={item}>
-            <span className="text-primary font-bold">—</span>
-            <span>{item}</span>
+            <span className="text-zinc-900 font-bold">—</span>
+            <span className="font-medium">{item}</span>
           </li>
         ))}
       </ul>
