@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useMemo, useState } from 'react';
-import { cn } from '@/lib/utils';
+import { useMemo, useState } from "react";
+import { cn } from "@/lib/utils";
 
 interface FilterGroupProps {
   items: string[];
@@ -18,7 +18,7 @@ export function FilterGroup({
   activeItem,
   onChange,
   collapsedCount = 8,
-  defaultLabel = '全部',
+  defaultLabel = "全部",
   moreLabel,
   lessLabel,
 }: FilterGroupProps) {
@@ -32,7 +32,7 @@ export function FilterGroup({
 
     const initialItems = items.slice(0, collapsedCount);
 
-    if (activeItem !== 'all' && !initialItems.includes(activeItem)) {
+    if (activeItem !== "all" && !initialItems.includes(activeItem)) {
       return [...initialItems.slice(0, collapsedCount - 1), activeItem];
     }
 
@@ -41,19 +41,19 @@ export function FilterGroup({
 
   const pillClassName = (isActive: boolean) =>
     cn(
-      'min-h-10 rounded-button border px-4 py-2 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 focus-visible:ring-offset-2 focus-visible:ring-offset-bg active:translate-y-px',
+      "min-h-10 rounded-button border px-4 py-2 text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-900 focus-visible:ring-offset-2 focus-visible:ring-offset-bg active:translate-y-px transition-all duration-180",
       isActive
-        ? 'border-primary bg-primary text-paper-inverse shadow-card'
-        : 'border-line bg-panel text-muted shadow-card transition-[border-color,background-color,color] duration-200 ease-out hover:border-primary/30 hover:bg-paper-hover hover:text-text'
+        ? "border-zinc-900 bg-zinc-900 text-white shadow-card"
+        : "border-zinc-300 bg-white text-zinc-800 shadow-subtle hover:border-zinc-500 hover:bg-zinc-50 hover:text-black"
     );
 
   return (
     <div className="mt-6 flex flex-wrap gap-2.5">
       <button
         type="button"
-        aria-pressed={activeItem === 'all'}
-        className={pillClassName(activeItem === 'all')}
-        onClick={() => onChange('all')}
+        aria-pressed={activeItem === "all"}
+        className={pillClassName(activeItem === "all")}
+        onClick={() => onChange("all")}
       >
         {defaultLabel}
       </button>

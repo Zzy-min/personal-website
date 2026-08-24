@@ -1,19 +1,19 @@
-'use client';
+"use client";
 
-import { useMemo, useState } from 'react';
-import { Search } from 'lucide-react';
-import { siteData } from '@/lib/data';
-import { Badge } from '@/components/ui/Badge';
-import { Button } from '@/components/ui/Button';
-import { FilterGroup } from '@/components/ui/FilterGroup';
-import { formatDate, sortByDateDesc } from '@/lib/utils';
+import { useMemo, useState } from "react";
+import { Search } from "lucide-react";
+import { siteData } from "@/lib/data";
+import { Badge } from "@/components/ui/Badge";
+import { Button } from "@/components/ui/Button";
+import { FilterGroup } from "@/components/ui/FilterGroup";
+import { formatDate, sortByDateDesc } from "@/lib/utils";
 
 export default function BlogPage() {
-  const [filter, setFilter] = useState<string>('all');
-  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [filter, setFilter] = useState<string>("all");
+  const [searchQuery, setSearchQuery] = useState<string>("");
 
   const featuredPosts = useMemo(
-    () => sortByDateDesc(siteData.posts.filter((post) => post.featured), 'publishedAt').slice(0, 3),
+    () => sortByDateDesc(siteData.posts.filter((post) => post.featured), "publishedAt").slice(0, 3),
     []
   );
 
@@ -24,9 +24,9 @@ export default function BlogPage() {
   }, []);
 
   const filteredPosts = useMemo(() => {
-    let posts = sortByDateDesc(siteData.posts, 'publishedAt');
+    let posts = sortByDateDesc(siteData.posts, "publishedAt");
 
-    if (filter !== 'all') {
+    if (filter !== "all") {
       posts = posts.filter((post) => post.tags.includes(filter));
     }
 
@@ -55,24 +55,28 @@ export default function BlogPage() {
           </p>
         </div>
 
-        <div className="mt-10 grid gap-5 lg:grid-cols-3">
+        <div className="mt-12 grid gap-6 lg:grid-cols-3">
           {featuredPosts.map((post) => (
             <article
               key={post.title}
-              className="content-card flex h-full flex-col p-6 md:p-7"
+              className="content-card flex h-full flex-col justify-between p-6 md:p-8"
             >
-              <div className="flex items-center justify-between gap-4">
-                <Badge variant="outline">{post.tags.join(' · ')}</Badge>
-                <span className="text-sm text-muted">{formatDate(post.publishedAt)}</span>
+              <div>
+                <div className="flex items-center justify-between gap-4">
+                  <Badge variant="outline">{post.tags.join(" · ")}</Badge>
+                  <span className="font-mono text-xs text-muted">{formatDate(post.publishedAt)}</span>
+                </div>
+                <h2 className="mt-5 text-2xl font-bold leading-snug">{post.title}</h2>
+                <p className="mt-3.5 text-sm leading-relaxed text-muted">{post.summary}</p>
+                {post.featuredReason ? (
+                  <p className="mt-4 rounded-button border border-line bg-paper-soft p-3.5 text-sm leading-relaxed text-text/90 shadow-subtle">
+                    {post.featuredReason}
+                  </p>
+                ) : null}
               </div>
-              <h2 className="mt-4 text-2xl font-bold">{post.title}</h2>
-              <p className="mt-3 text-muted">{post.summary}</p>
-              {post.featuredReason ? (
-                <p className="mt-4 leading-7">{post.featuredReason}</p>
-              ) : null}
-              <div className="mt-auto pt-7">
+              <div className="mt-8 border-t border-line/70 pt-5">
                 <Button href={post.slug ? `/blog/${post.slug}` : post.sourceUrl} external={!post.slug}>
-                  {post.slug ? '阅读摘要' : '阅读原文'}
+                  {post.slug ? "阅读摘要" : "阅读原文"}
                 </Button>
               </div>
             </article>
@@ -80,17 +84,17 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <section className="mx-auto mt-20 max-w-7xl md:mt-24">
+      <section className="mx-auto mt-20 max-w-7xl md:mt-28">
         <div className="max-w-3xl">
           <Badge variant="outline">全部文章</Badge>
-          <h2 className="mt-4 text-3xl font-bold">继续查看完整写作档案</h2>
+          <h2 className="mt-4 text-3xl font-bold tracking-tight md:text-4xl">继续查看完整写作档案</h2>
           <p className="mt-3 text-muted">
             保留搜索和标签筛选，方便快速定位你更关心的主题。
           </p>
         </div>
 
-        <div className="relative mt-6">
-          <Search aria-hidden="true" className="absolute left-4 top-1/2 -translate-y-1/2 text-muted" size={18} strokeWidth={1.75} />
+        <div className="relative mt-7">
+          <Search aria-hidden="true" className="absolute left-4 top-1/2 -translate-y-1/2 text-muted" size={18} strokeWidth={2} />
           <input
             type="text"
             placeholder="搜索文章..."
@@ -109,36 +113,38 @@ export default function BlogPage() {
           lessLabel="收起标签"
         />
 
-        <div className="mt-8 space-y-5">
+        <div className="mt-8 space-y-4">
           {filteredPosts.length > 0 ? (
             filteredPosts.map((post) => (
               <article
                 key={post.title}
-                className="content-card p-5 md:p-6"
+                className="content-card flex flex-col justify-between gap-4 p-5 md:flex-row md:items-center md:p-6"
               >
-                <div className="flex flex-wrap items-center justify-between gap-3">
-                  <div className="flex flex-wrap gap-2">
-                    {post.tags.map((tag) => (
-                      <Badge key={tag} variant="outline">
-                        {tag}
-                      </Badge>
-                    ))}
+                <div className="max-w-3xl">
+                  <div className="flex flex-wrap items-center gap-3">
+                    <div className="flex flex-wrap gap-1.5">
+                      {post.tags.map((tag) => (
+                        <Badge key={tag} variant="outline">
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                    <span className="font-mono text-xs text-muted">{formatDate(post.publishedAt)}</span>
                   </div>
-                  <span className="text-sm text-muted">{formatDate(post.publishedAt)}</span>
+                  <h3 className="mt-3 text-xl font-bold leading-snug md:text-2xl">{post.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted">{post.summary}</p>
                 </div>
-                <h3 className="mt-4 text-2xl font-bold">{post.title}</h3>
-                <p className="mt-3 text-muted">{post.summary}</p>
-                <div className="mt-5">
+                <div className="flex-shrink-0">
                   <Button href={post.slug ? `/blog/${post.slug}` : post.sourceUrl} external={!post.slug} variant="secondary">
-                    {post.slug ? '阅读摘要' : '阅读原文'}
+                    {post.slug ? "阅读摘要" : "阅读原文"}
                   </Button>
                 </div>
               </article>
             ))
           ) : (
-            <article className="rounded-card border border-dashed border-line bg-panel p-7">
+            <article className="rounded-card border border-dashed border-line bg-panel p-8 text-center">
               <h3 className="text-2xl font-bold">没有找到相关文章</h3>
-              <p className="mt-3 text-muted">
+              <p className="mt-3 text-muted max-w-md mx-auto">
                 可以换一个关键词，或者直接浏览精选文章了解我的主要输出方向。
               </p>
             </article>

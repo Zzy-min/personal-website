@@ -1,14 +1,14 @@
-import { Hero } from '@/components/features/Hero';
-import { siteData } from '@/lib/data';
-import { SiteLink } from '@/components/ui/SiteLink';
-import { formatDate, sortByDateDesc } from '@/lib/utils';
+import { Hero } from "@/components/features/Hero";
+import { siteData } from "@/lib/data";
+import { SiteLink } from "@/components/ui/SiteLink";
+import { formatDate, sortByDateDesc } from "@/lib/utils";
 
 export default function HomePage() {
   const projects = siteData.projects
     .filter((project) => project.featured)
     .sort((left, right) => (left.featuredOrder ?? 99) - (right.featuredOrder ?? 99))
     .slice(0, 3);
-  const posts = sortByDateDesc(siteData.posts, 'publishedAt').slice(0, 3);
+  const posts = sortByDateDesc(siteData.posts, "publishedAt").slice(0, 3);
 
   return (
     <div className="min-h-screen">
@@ -23,23 +23,27 @@ export default function HomePage() {
           <SiteLink href="/projects" className="text-link">全部项目 <span aria-hidden="true">↗</span></SiteLink>
         </div>
 
-        <div className="project-list">
+        <div className="project-list space-y-4">
           {projects.map((project, index) => (
-            <article key={project.title} className="project-row">
-              <span className="project-index">{String(index + 1).padStart(2, '0')}</span>
+            <article key={project.title} className="project-row group">
+              <span className="project-index">{String(index + 1).padStart(2, "0")}</span>
               <div className="project-body">
                 {project.screenshots?.[0] && (
-                  <div className="mb-6 overflow-hidden rounded-lg border border-line bg-panel">
+                  <div className="mb-6 overflow-hidden rounded-xl border border-line bg-zinc-950/5 shadow-subtle transition-all duration-300 group-hover:border-zinc-400 group-hover:shadow-card">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img alt={project.screenshots[0].alt} className="aspect-[16/9] w-full object-cover object-top" src={project.screenshots[0].src} />
+                    <img
+                      alt={project.screenshots[0].alt}
+                      className="aspect-[16/9] w-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.015]"
+                      src={project.screenshots[0].src}
+                    />
                   </div>
                 )}
                 <div className="flex flex-wrap items-baseline justify-between gap-3">
-                  <h3>{project.title}</h3>
+                  <h3 className="group-hover:text-blue-600 transition-colors duration-200">{project.title}</h3>
                   <span className="project-status">{project.status}</span>
                 </div>
-                <p><strong className="text-text">问题：</strong>{project.problem}</p>
-                <p className="mt-2"><strong className="text-text">我的职责：</strong>{project.role}</p>
+                <p><strong className="text-text font-semibold">问题：</strong>{project.problem}</p>
+                <p className="mt-2"><strong className="text-text font-semibold">我的职责：</strong>{project.role}</p>
                 <ul className="tag-list" aria-label={`${project.title} 技术标签`}>
                   {project.stack.slice(0, 4).map((item) => <li key={item}>{item}</li>)}
                 </ul>
@@ -63,9 +67,9 @@ export default function HomePage() {
           <SiteLink href="/blog" className="text-link">全部文章 <span aria-hidden="true">↗</span></SiteLink>
         </div>
 
-        <div className="article-list">
+        <div className="article-list space-y-2">
           {posts.map((post) => (
-            <article key={post.title} className="article-row">
+            <article key={post.title} className="article-row group">
               <time dateTime={post.publishedAt}>{formatDate(post.publishedAt)}</time>
               <div>
                 <h3><SiteLink href={post.sourceUrl} external>{post.title}</SiteLink></h3>

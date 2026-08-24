@@ -1,23 +1,23 @@
-import { siteData } from '@/lib/data';
-import { Badge } from '@/components/ui/Badge';
-import { Button } from '@/components/ui/Button';
+import { siteData } from "@/lib/data";
+import { Badge } from "@/components/ui/Badge";
+import { Button } from "@/components/ui/Button";
 
 export default function ResumePage() {
   return (
     <main className="mx-auto min-h-screen max-w-7xl px-4 py-12 md:py-16">
-      <section className="content-card mb-7 flex flex-col gap-5 p-6 md:flex-row md:items-center md:justify-between md:p-8">
+      <section className="content-card mb-8 flex flex-col gap-5 p-6 md:flex-row md:items-center md:justify-between md:p-8">
         <div>
           <Badge>PDF 简历</Badge>
-          <h1 className="mt-3 text-3xl font-bold">张子阳 · AI 应用开发实习生</h1>
+          <h1 className="mt-3 text-3xl font-bold md:text-4xl">张子阳 · AI 应用开发实习生</h1>
         </div>
         <Button href={siteData.site.resume} download>
           下载 PDF 简历
         </Button>
       </section>
 
-      <section className="content-card overflow-hidden p-3 md:p-6">
+      <section className="content-card overflow-hidden p-4 md:p-8 shadow-card">
         <figure>
-          <div className="overflow-hidden rounded-button border border-line bg-[#fdfdf9]">
+          <div className="overflow-hidden rounded-button border border-line bg-[#fdfdf9] shadow-subtle">
             {/* The generated preview avoids browser-specific PDF plugin failures. */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -29,8 +29,8 @@ export default function ResumePage() {
               width="1325"
             />
           </div>
-          <figcaption className="flex flex-col gap-3 px-1 pb-1 pt-4 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
-            <span>以上为 PDF 第一页的高清预览。</span>
+          <figcaption className="flex flex-col gap-3 px-1 pb-1 pt-6 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
+            <span className="font-medium">以上为 PDF 第一页的高清预览。</span>
             <Button href={siteData.site.resume} external variant="secondary">
               打开 PDF 原文件
             </Button>

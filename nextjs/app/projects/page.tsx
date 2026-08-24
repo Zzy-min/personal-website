@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import { useMemo, useState } from 'react';
-import { siteData } from '@/lib/data';
-import { Badge } from '@/components/ui/Badge';
-import { Button } from '@/components/ui/Button';
-import { FilterGroup } from '@/components/ui/FilterGroup';
+import { useMemo, useState } from "react";
+import { siteData } from "@/lib/data";
+import { Badge } from "@/components/ui/Badge";
+import { Button } from "@/components/ui/Button";
+import { FilterGroup } from "@/components/ui/FilterGroup";
 
 export default function ProjectsPage() {
-  const [filter, setFilter] = useState<string>('all');
+  const [filter, setFilter] = useState<string>("all");
 
   const featuredProjects = useMemo(
     () =>
@@ -28,7 +28,7 @@ export default function ProjectsPage() {
       (left, right) => new Date(right.updatedAt).getTime() - new Date(left.updatedAt).getTime()
     );
 
-    if (filter === 'all') return projects;
+    if (filter === "all") return projects;
     return projects.filter((project) => project.stack.includes(filter));
   }, [filter]);
 
@@ -43,16 +43,16 @@ export default function ProjectsPage() {
           </p>
         </div>
 
-        <div className="mt-10 space-y-7">
+        <div className="mt-12 space-y-8">
           {featuredProjects.map((project) => (
             <article
               key={project.title}
-              className="content-card p-6 md:p-8"
+              className="content-card p-6 md:p-9"
             >
               <div className="flex flex-wrap items-center justify-between gap-4">
                 <div className="flex flex-wrap items-center gap-3">
                   <Badge>{project.status}</Badge>
-                  <span className="text-xs uppercase tracking-[0.18em] text-muted">
+                  <span className="font-mono text-xs uppercase tracking-[0.18em] text-muted">
                     {project.updatedAt}
                   </span>
                 </div>
@@ -65,27 +65,27 @@ export default function ProjectsPage() {
                 </div>
               </div>
 
-              <h2 className="mt-5 text-3xl font-bold">{project.title}</h2>
-              <p className="mt-3 text-lg">{project.summary}</p>
+              <h2 className="mt-6 text-3xl font-bold md:text-4xl">{project.title}</h2>
+              <p className="mt-3.5 text-lg leading-relaxed text-text/90">{project.summary}</p>
 
-              <div className="mt-6 grid gap-4 md:grid-cols-2">
-                <div className="rounded-card border border-line bg-paper p-5 md:p-6">
-                  <div className="text-xs uppercase tracking-[0.16em] text-muted">问题定义</div>
-                  <p className="mt-3 leading-7">{project.problem}</p>
+              <div className="mt-7 grid gap-4 md:grid-cols-2">
+                <div className="rounded-card border border-line bg-paper-soft p-5 md:p-6 shadow-subtle">
+                  <div className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-primary">问题定义</div>
+                  <p className="mt-3 leading-7 text-muted">{project.problem}</p>
                 </div>
-                <div className="rounded-card border border-line bg-paper p-5 md:p-6">
-                  <div className="text-xs uppercase tracking-[0.16em] text-muted">结果与价值</div>
-                  <p className="mt-3 leading-7">{project.outcome}</p>
+                <div className="rounded-card border border-line bg-paper-soft p-5 md:p-6 shadow-subtle">
+                  <div className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-primary">结果与价值</div>
+                  <p className="mt-3 leading-7 text-text">{project.outcome}</p>
                 </div>
               </div>
 
               <div className="mt-6">
-                <div className="text-xs uppercase tracking-[0.16em] text-muted">关键亮点</div>
+                <div className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-muted">关键亮点</div>
                 <ul className="mt-3 grid gap-3 md:grid-cols-3">
                   {project.highlights.map((highlight) => (
                     <li
                       key={highlight}
-                      className="rounded-button border border-line bg-paper-soft px-4 py-4 leading-7"
+                      className="rounded-button border border-line bg-panel p-4 text-sm font-medium leading-relaxed text-muted shadow-subtle"
                     >
                       {highlight}
                     </li>
@@ -93,13 +93,13 @@ export default function ProjectsPage() {
                 </ul>
               </div>
 
-              <div className="mt-6 flex flex-wrap gap-3">
+              <div className="mt-8 flex flex-wrap gap-3.5 border-t border-line/70 pt-6">
                 {project.slug ? (
                   <Button href={`/projects/${project.slug}`}>
-                  查看项目详情
+                    查看项目详情
                   </Button>
                 ) : null}
-                <Button href={project.githubUrl} external>
+                <Button href={project.githubUrl} external variant="secondary">
                   查看源码
                 </Button>
                 <Button href={project.demoUrl} variant="secondary" external>
@@ -111,12 +111,12 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      <section className="mx-auto mt-20 max-w-7xl md:mt-24">
+      <section className="mx-auto mt-20 max-w-7xl md:mt-28">
         <div className="max-w-3xl">
           <Badge variant="outline">项目档案</Badge>
-          <h2 className="mt-4 text-3xl font-bold">继续看完整项目谱系</h2>
+          <h2 className="mt-4 text-3xl font-bold tracking-tight md:text-4xl">继续看完整项目谱系</h2>
           <p className="mt-3 text-muted">
-          你也可以按技术方向和项目类型浏览我的其他实践。
+            你也可以按技术方向和项目类型浏览我的其他实践。
           </p>
         </div>
 
@@ -133,51 +133,55 @@ export default function ProjectsPage() {
             archiveProjects.map((project) => (
               <article
                 key={project.title}
-                className="content-card p-5 md:p-6"
+                className="content-card flex flex-col justify-between p-6 md:p-7"
               >
-                <div className="flex items-center justify-between gap-3">
-                  <Badge variant="outline">{project.status}</Badge>
-                  <span className="text-xs uppercase tracking-[0.16em] text-muted">
-                    {project.updatedAt}
-                  </span>
-                </div>
-                <h3 className="mt-4 text-2xl font-bold">{project.title}</h3>
-                <p className="mt-3 text-muted">{project.summary}</p>
-
-                <div className="mt-5 space-y-4">
-                  <div className="rounded-button border border-line bg-paper p-4">
-                    <div className="text-xs uppercase tracking-[0.16em] text-muted">问题定义</div>
-                    <p className="mt-3 leading-7">{project.problem}</p>
+                <div>
+                  <div className="flex items-center justify-between gap-3">
+                    <Badge variant="outline">{project.status}</Badge>
+                    <span className="font-mono text-xs uppercase tracking-[0.16em] text-muted">
+                      {project.updatedAt}
+                    </span>
                   </div>
-                  <div className="rounded-button border border-line bg-paper-soft p-4">
-                    <div className="text-xs uppercase tracking-[0.16em] text-muted">结果与价值</div>
-                    <p className="mt-3 leading-7">{project.outcome}</p>
+                  <h3 className="mt-4 text-2xl font-bold">{project.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted">{project.summary}</p>
+
+                  <div className="mt-5 space-y-3.5">
+                    <div className="rounded-button border border-line bg-paper-soft p-4 text-sm shadow-subtle">
+                      <div className="font-mono text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-primary">问题定义</div>
+                      <p className="mt-2 leading-relaxed text-muted">{project.problem}</p>
+                    </div>
+                    <div className="rounded-button border border-line bg-paper-soft p-4 text-sm shadow-subtle">
+                      <div className="font-mono text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-primary">结果与价值</div>
+                      <p className="mt-2 leading-relaxed text-text">{project.outcome}</p>
+                    </div>
                   </div>
                 </div>
 
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {project.stack.map((stack) => (
-                    <Badge key={stack} variant="outline">
-                      {stack}
-                    </Badge>
-                  ))}
-                </div>
+                <div className="mt-6 border-t border-line/70 pt-5">
+                  <div className="flex flex-wrap gap-2 mb-5">
+                    {project.stack.map((stack) => (
+                      <Badge key={stack} variant="outline">
+                        {stack}
+                      </Badge>
+                    ))}
+                  </div>
 
-                <div className="mt-5 flex flex-wrap gap-3">
-                  <Button href={project.githubUrl} external>
-                    查看源码
-                  </Button>
-                  <Button href={project.demoUrl} external variant="secondary">
-                    打开链接
-                  </Button>
+                  <div className="flex flex-wrap gap-3">
+                    <Button href={project.githubUrl} external>
+                      查看源码
+                    </Button>
+                    <Button href={project.demoUrl} external variant="secondary">
+                      打开链接
+                    </Button>
+                  </div>
                 </div>
               </article>
             ))
           ) : (
-            <article className="rounded-card border border-dashed border-line bg-panel p-6 shadow-card md:col-span-2">
+            <article className="rounded-card border border-dashed border-line bg-panel p-8 shadow-card md:col-span-2 text-center">
               <h3 className="text-2xl font-bold">当前筛选下还没有项目</h3>
-              <p className="mt-3 text-muted">
-            可以切换其他技术标签，或者先查看上面的项目了解我当前的开发方向。
+              <p className="mt-3 text-muted max-w-md mx-auto">
+                可以切换其他技术标签，或者先查看上面的项目了解我当前的开发方向。
               </p>
             </article>
           )}
